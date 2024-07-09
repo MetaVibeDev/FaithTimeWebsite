@@ -49,12 +49,12 @@ export const Navbar = () => {
   );
 
   return (
-    <NextUINavbar maxWidth="xl" position="sticky">
+    <NextUINavbar maxWidth="2xl" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Logo />
-            <p className="font-bold text-inherit">ACME</p>
+            {/* <Logo /> */}
+            <p className="font-bold text-inherit">FaithTime</p>
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
@@ -92,6 +92,8 @@ export const Navbar = () => {
           <ThemeSwitch />
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
+
+        {/*
         <NavbarItem className="hidden md:flex">
           <Button
             isExternal
@@ -104,6 +106,7 @@ export const Navbar = () => {
             Sponsor
           </Button>
         </NavbarItem>
+        */}
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
@@ -136,6 +139,7 @@ export const Navbar = () => {
           ))}
         </div>
       </NavbarMenu>
+
     </NextUINavbar>
   );
 };
