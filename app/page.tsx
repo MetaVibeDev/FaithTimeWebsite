@@ -15,10 +15,13 @@ import {
 import { Spacer } from "@nextui-org/spacer";
 
 import { siteConfig } from "@/config/site";
+import PageDots from "@/components/pagination"
 import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
-
-import appPreview from './public/MobileApp/AppPreview.01.png'
+import {
+  GithubIcon,
+  AppleIcon,
+  MetaIcon,
+} from "@/components/icons";
 
 export default function Home() {
   return (
@@ -29,20 +32,25 @@ export default function Home() {
           background: 'linear-gradient(180deg, rgba(126, 84, 181, 100) 0%, rgba(126, 84, 181, 0) 100%)'
         }}
       >
-        <div className = "grid grid-cols-2">
+        <div className = "grid grid-cols-2 max-w-screen">
           <div
-            className="flex-col"
+            className="flex flex-col mx-auto items-center justify-center mx-20"
           >
             <Image
-              alt="NextUI hero Image"
+              alt="Mobile App Preview"
               src="/MobileApp/AppPreview.01.png"
+              style={{
+                filter: 'drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5))'
+              }}
             />
+
+            <PageDots/>
           </div>
 
           <div
-            className="flex flex-col items-center justify-center"
+            className="flex flex-col max-w-lg items-center justify-center"
           >
-            <div className="inline-block max-w-lg text-center justify-center">
+            <div className="inline-block text-center justify-center">
               <h1 className={title()}>Make&nbsp;</h1>
               <h1 className={title({ color: "violet" })}>beautiful&nbsp;</h1>
               <br />
@@ -100,9 +108,14 @@ export default function Home() {
         style={{ marginTop: "-20vh" }}
       >
         <div className="py-10">
-          <h1 className={title({ size: "lg", color: "white" })}>FaithTime</h1>
-          <h2 className="text-2xl" style={{ color: "white" }}>
-            {" "}
+          <h1 className={title({ size: "lg", color: "white" })}
+              style={{
+                filter: 'drop-shadow(0px 0px 10px rgba(126, 84, 181, 0.75))'
+              }}>
+                FaithTime
+          </h1>
+          <h1 className={title({ size: "lg", color: "violet" })}> XR&nbsp;</h1>
+          <h2 className={subtitle({ color: "white", class: "mt-4" })}>
             Daily Prayers & Devotions
           </h2>
         </div>
@@ -125,7 +138,7 @@ export default function Home() {
               isExternal
               as={Link}
             >
-              {/*<AppleIcon />*/}
+              <AppleIcon />
               Vision Pro
             </Button>
             <Spacer x={4} />
@@ -138,7 +151,7 @@ export default function Home() {
               isExternal
               as={Link}
             >
-              {/*<MetaIcon />*/}
+              <MetaIcon />
               Meta Quest
             </Button>
           </CardFooter>

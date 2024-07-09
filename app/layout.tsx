@@ -42,24 +42,24 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col h-screen">
-            <Navbar />
-            <main className="flex-grow">
-              {children}
-            </main>
-            <footer className="w-full flex items-center justify-center relative flex-col px-10 py-3">
-              {/*
-              <Link
-                isExternal
-                className="flex items-center gap-1 text-current"
-                href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
-                title="nextui.org homepage"
-              >
-              */}
-						  <p className="text-gray-500 text-sm">© 2024 MetaVibe. All rights reserved.</p>
-              {/*</Link>*/}
-            </footer>
-          </div>
+          <Navbar />
+
+          <main className="flex-grow">
+            {children}
+          </main>
+
+          <footer className="w-full flex items-center justify-center relative flex-col px-10 py-3">
+            {/*
+            <Link
+              isExternal
+              className="flex items-center gap-1 text-current"
+              href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
+              title="nextui.org homepage"
+            >
+            */}
+            <p className="text-gray-500 text-sm">© 2024 MetaVibe. All rights reserved.</p>
+            {/*</Link>*/}
+          </footer>
         </Providers>
       </body>
     </html>
