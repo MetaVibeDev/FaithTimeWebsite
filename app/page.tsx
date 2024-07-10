@@ -32,17 +32,15 @@ let appPreviewImage = [
     src: "/MobileApp/AppPreview.01.png"
   },
   {
-    src: "/MobileApp/AppPreview.02.png"
+    src: "/MobileApp/AppPreview.04.png"
   },
+
   {
     src: "/MobileApp/AppPreview.03.png"
   },
   {
-    src: "/MobileApp/AppPreview.04.png"
+    src: "/MobileApp/AppPreview.02.png"
   },
-  // {
-  //   src: "/MobileApp/AppPreview.01.png"
-  // },
 ]
 
 export default function Home() {
@@ -222,7 +220,7 @@ export default function Home() {
               <AppleIcon />
               Vision Pro
             </Button>
-            <Spacer x={4} />
+            <Spacer x={3} />
             <Button
               className="text-lg font-bold bg-secondary/40"
               size="lg"

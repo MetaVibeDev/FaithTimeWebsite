@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + NextUI",
-  description: "Daily Prayer & Devotions",
+  name: "FaithTime App - Journey of Sacred Sites & Prayer",
+  description: "Embark on a spiritual adventure with FaithTime, your companion for spiritual journeying through sacred sites and daily devotions. Discover christian sacred places, engage in meditation prayers, and receive a daily bible verse. Our app combines pilgrimage with prayer, offering a unique blend of christian meditations and virtual exploration of christianity's most revered locations. Join our faith community church in this transformative journey.",
   navItems: [
     {
       label: "Mobile",
