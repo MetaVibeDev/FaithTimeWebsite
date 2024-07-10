@@ -23,10 +23,83 @@ import {
   MetaIcon,
 } from "@/components/icons";
 
+import React, { useEffect } from 'react';
+import { Element } from 'react-scroll';
+import '../styles/slider.css';
+
+let appPreviewImage = [
+  {
+    src: "/MobileApp/AppPreview.01.png"
+  },
+  {
+    src: "/MobileApp/AppPreview.02.png"
+  },
+  {
+    src: "/MobileApp/AppPreview.03.png"
+  },
+  {
+    src: "/MobileApp/AppPreview.04.png"
+  },
+  // {
+  //   src: "/MobileApp/AppPreview.01.png"
+  // },
+]
+
 export default function Home() {
+  const [index, setIndex] = React.useState(0)
+  const displayInterval = 4000; // ms
+
+  const timeoutRef = React.useRef(null);
+
+  function resetTimeout() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  }
+
+  useEffect(
+    () => {
+        resetTimeout();
+        timeoutRef.current = setTimeout(() =>
+          // loop scrolling
+          setIndex((prevIndex) => prevIndex === (appPreviewImage.length - 1) ? 0 : (prevIndex + 1)),
+          displayInterval
+        );
+
+        return () => {
+          resetTimeout();
+        };
+      },
+    [index]
+  );
+
+  const PreviewImages = appPreviewImage.map((item, idx) => {
+    return (
+      <Image
+        key={idx}
+        src={item.src}
+        style={{
+          filter: 'drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5))'
+        }}
+        className="slide mx-8 my-8"
+        removeWrapper
+      />)
+  });
+
+  const SlideDots = appPreviewImage.map((_, idx) => (
+    <li className="w-6 h-6">
+      <button
+        key={idx}
+        className={`w-full h-full rounded-full ${idx === index ? 'bg-secondary' : 'bg-default-300'}`}
+        onClick={ () => {setIndex(idx);} }
+      />
+    </li>
+  ))
+
   return (
     <section>
-      <section
+      <Element
+        name = "Mobile"
         className="flex flex-col items-center justify-center max-w-screen min-h-screen px-3"
         style={{
           background: 'linear-gradient(180deg, rgba(126, 84, 181, 100) 0%, rgba(126, 84, 181, 0) 100%)'
@@ -34,17 +107,24 @@ export default function Home() {
       >
         <div className = "grid grid-cols-2 max-w-screen">
           <div
-            className="flex flex-col mx-auto items-center justify-center mx-20"
+            className = "flex flex-col mx-auto items-center justify-center mx-20"
           >
-            <Image
-              alt="Mobile App Preview"
-              src="/MobileApp/AppPreview.01.png"
-              style={{
-                filter: 'drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5))'
-              }}
-            />
+            <div className = "slideViewport">
+              <div
+                className = "slideContainer"
+                style = {{
+                  transform: `translate3d(${-index * 100}%, 0, 0)`,
+                  transition: 'ease 1000ms'
+                  // transition: index === 0 ? 'none' : 'ease 2000ms'
+                }}
+              >
+                {PreviewImages}
+              </div>
+            </div>
 
-            <PageDots/>
+            <ul className="flex gap-3 items-center">
+              {SlideDots}
+            </ul>
           </div>
 
           <div
@@ -93,9 +173,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </Element>
 
-      <section
+      <Element
+        name = "XR"
         className="flex flex-col items-center justify-center max-w-screen min-h-screen px-3"
         style={{
           backgroundImage: `url('CoverArt_Landscape.png')`,
@@ -183,7 +264,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      </section>
+      </Element>
     </section>
   );
 }

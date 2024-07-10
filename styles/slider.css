@@ -1,0 +1,13 @@
+.slideViewport {
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 503px;
+}
+
+.slideContainer {
+    white-space: nowrap;
+}
+
+.slide {
+    display: inline-block;
+}
