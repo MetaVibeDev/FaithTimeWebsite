@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardBody,
   CardFooter,
+  Divider,
   Image,
 } from "@nextui-org/react";
 import { Spacer } from "@nextui-org/spacer";
@@ -21,6 +22,8 @@ import {
   GithubIcon,
   AppleIcon,
   MetaIcon,
+  AppStoreIcon,
+  GooglePlayIcon,
 } from "@/components/icons";
 
 import React, { useEffect } from 'react';
@@ -85,10 +88,10 @@ export default function Home() {
   });
 
   const SlideDots = appPreviewImage.map((_, idx) => (
-    <li className="w-6 h-6">
+    <li className="w-20 h-2">
       <button
         key={idx}
-        className={`w-full h-full rounded-full ${idx === index ? 'bg-secondary' : 'bg-default-300'}`}
+        className={`w-full h-full rounded-full ${idx === index ? 'bg-secondary' : 'bg-default-400'}`}
         onClick={ () => {setIndex(idx);} }
       />
     </li>
@@ -103,9 +106,9 @@ export default function Home() {
           background: 'linear-gradient(180deg, rgba(126, 84, 181, 100) 0%, rgba(126, 84, 181, 0) 100%)'
         }}
       >
-        <div className = "grid grid-cols-2 max-w-screen">
+        <div className = "grid grid-cols-2 max-w-screen-2xl">
           <div
-            className = "flex flex-col mx-auto items-center justify-center mx-20"
+            className = "flex flex-col ml-0 justify-center mx-20"
           >
             <div className = "slideViewport">
               <div
@@ -119,58 +122,124 @@ export default function Home() {
                 {PreviewImages}
               </div>
             </div>
-
-            <ul className="flex gap-3 items-center">
-              {SlideDots}
-            </ul>
           </div>
 
           <div
-            className="flex flex-col max-w-lg items-center justify-center"
+            className="flex flex-col max-w-lg items-center"
           >
-            <div className="inline-block text-center justify-center">
-              <h1 className={title()}>Make&nbsp;</h1>
-              <h1 className={title({ color: "violet" })}>beautiful&nbsp;</h1>
-              <br />
-              <h1 className={title()}>
-                websites regardless of your design experience.
+
+            <div
+              className="flex flex-col max-w-lg items-center"
+              style={{
+                marginTop: "13vh",
+                marginBottom: "5vh",
+              }}
+            >
+              <h1
+                className={title({size: "lg", color: "white"})}
+                style={{
+                  filter: 'drop-shadow(0px 0px 30px rgba(126, 84, 181, 1))',
+                  marginBottom: "-1vh",
+                }}
+              >
+                FaithTime :
               </h1>
-              <h2 className={subtitle({ class: "mt-4" })}>
-                Beautiful, fast and modern React UI library.
-              </h2>
+              <br />
+              <div className="inline-block text-center justify-center">
+                <h1 className={title({ color: "violet" })}>Journey of </h1>
+                <br />
+                <h1 className={title()}>Sacred Sites&nbsp;</h1>
+                <h1 className={title({ color: "violet", size: "md" })}>& </h1>
+                <h1 className={title()}>Prayer</h1>
+              </div>
             </div>
 
             <div className="flex gap-3">
-              <Link
-                isExternal
-                className={buttonStyles({
-                  color: "primary",
-                  radius: "full",
-                  variant: "shadow",
-                })}
-                href={siteConfig.links.docs}
-              >
-                Documentation
-              </Link>
-              <Link
-                isExternal
-                className={buttonStyles({ variant: "bordered", radius: "full" })}
-                href={siteConfig.links.github}
-              >
-                <GithubIcon size={20} />
-                GitHub
-              </Link>
+              <AppStoreIcon/>
+              <GooglePlayIcon/>
             </div>
 
-            <div className="mt-8">
-              <Snippet hideCopyButton hideSymbol variant="bordered">
-                <span>
-                  Get started by editing <Code color="primary">app/page.tsx</Code>
-                </span>
-              </Snippet>
+            <div
+              className="flex flex-col max-w-lg items-center justify-center"
+              style={{ marginTop: "10vh" }}
+            >
+              <Divider className="my-5" />
+
+              {/*
+              <div className="inline-block justify-start mt-2">
+                <h2 className="w-full mx-5 my-2 text-lg text-default-600 block max-w-full">
+                  Embark on a spiritual journeying with FaithTime.
+                  Explore sacred sites, engage in daily devotions and meditation prayers.
+                  Receive a daily bible verse and experience christian meditations through virtual exploration of christianity's revered locations.
+                </h2>
+              </div> */}
+
+              <div className="inline-block text-center justify-center my-1">
+                <h1 className={title({ color: "primary", size: "sm" })}>Sacred Sites Details</h1>
+              </div>
+
+              <div className="inline-block justify-start">
+                <h2 className="w-full mx-5 my-2 text-lg text-default-600 block max-w-full">
+                  Discover christianity religion history through sacred sites.
+                  Learn about churches and faith centers in our christian religion.
+                  Connect with the church of jesus christ through suggested prayers to deepen your faith.
+                </h2>
+              </div>
+
+              {/* <div className="inline-block text-center justify-center">
+                <h1 className={title({ color: "violet" })}>Calendar</h1>
+              </div>
+
+              <div className="inline-block justify-start mt-2">
+                <h2 className="w-full mx-5 my-2 text-lg text-default-600 block max-w-full">
+                  Track spiritual growth with our Calendar.
+                  Encourage devotions and mindfulness meditation, maintaining your connection with jesus christ and commitment to faith and family.
+                </h2>
+              </div> */}
+
+              {/* <div className="inline-block text-center justify-center">
+                <h1 className={title()}>Daily Scripture</h1>
+              </div>
+
+              <div className="inline-block justify-start mt-2">
+                <h2 className="w-full mx-5 my-2 text-lg text-default-600 block max-w-full">
+                  Start your day with this feature, which offers a bible verse of the day for daily devotion on prayer or bible study.
+                  Find scriptures on faith or prayers before bed for your christian journey.
+                </h2>
+              </div> */}
+
+              {/* <div className="flex gap-3">
+                <Link
+                  isExternal
+                  className={buttonStyles({
+                    color: "primary",
+                    radius: "full",
+                    variant: "shadow",
+                  })}
+                  href={siteConfig.links.docs}
+                >
+                  Documentation
+                </Link>
+                <Link
+                  isExternal
+                  className={buttonStyles({ variant: "bordered", radius: "full" })}
+                  href={siteConfig.links.github}
+                >
+                  <GithubIcon size={20} />
+                  GitHub
+                </Link>
+              </div> */}
+
+              {/* <Divider className="my-5" /> */}
+
+              <ul className="flex gap-3 items-center mt-4">
+                  {SlideDots}
+              </ul>
             </div>
+
           </div>
         </div>
+
       </Element>
 
       <Element
@@ -186,46 +255,51 @@ export default function Home() {
         className="flex flex-col max-w-screen-lg text-center justify-center"
         style={{ marginTop: "-20vh" }}
       >
-        <div className="py-10">
-          <h1 className={title({ size: "lg", color: "white" })}
-              style={{
-                filter: 'drop-shadow(0px 0px 10px rgba(126, 84, 181, 0.75))'
-              }}>
+        <div className="py-6">
+          <h1
+            className={title({ size: "lg", color: "white" })}
+            style={{
+              filter: 'drop-shadow(0px 0px 10px rgba(126, 84, 181, 0.75))'
+            }}
+          >
                 FaithTime
           </h1>
           <h1 className={title({ size: "lg", color: "violet" })}> XR&nbsp;</h1>
-          <h2 className={subtitle({ color: "white", class: "mt-4" })}>
-            Daily Prayers & Devotions
+          <br/>
+          <h2 className="text-2xl" style={{ color: "white" }}>
+              {" "}
+              Daily Prayers & Devotions
           </h2>
         </div>
 
         <Card
           className="border-none bg-background/50 dark:bg-background/50"
           isBlurred
-          shadow="sm"
+          shadow="lg"
         >
-          <CardHeader className=" ml-5 flex-col items-start p-0 pt-3">
-            <h4 className="text-sm">Available on</h4>
+          <CardHeader className=" ml-5 flex-col items-start p-0 pt-5">
+            <h4 className="text-md">Available on</h4>
           </CardHeader>
-          <CardFooter className="justify-center mb-2">
+
+          <CardFooter className="justify-center mb-4">
             <Button
-              className="text-lg font-bold bg-secondary/40"
+              className="text-lg font-bold bg-secondary/40 dark:bg-secondary/40"
               size="lg"
-              radius="full"
-              variant="flat"
+              radius="lg"
+              variant="solid"
               href="https://apps.apple.com/app/faithtime/id6503560893?platform=vision"
               isExternal
               as={Link}
             >
-              <AppleIcon />
+              <AppleIcon/>
               Vision Pro
             </Button>
             <Spacer x={3} />
             <Button
-              className="text-lg font-bold bg-secondary/40"
+              className="text-lg font-bold bg-secondary/40 dark:bg-secondary/40"
               size="lg"
-              radius="full"
-              variant="flat"
+              radius="lg"
+              variant="solid"
               href="https://www.meta.com/experiences/7932069240179240/"
               isExternal
               as={Link}
