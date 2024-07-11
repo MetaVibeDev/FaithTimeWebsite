@@ -283,7 +283,7 @@ export default function Home() {
 
           <CardFooter className="justify-center mb-4">
             <Button
-              className="text-xl font-bold border-2 border-foreground-500 bg-gradient-to-bl from-pink-400 to-secondary-600 dark: from-pink-500 dark:to-secondary-400"
+              className="text-xl font-bold border-2 border-foreground-500 bg-gradient-to-bl from-pink-400 to-secondary-600 dark:from-pink-500 dark:to-secondary-400"
               size="lg"
               radius="lg"
               variant="bordered"
@@ -296,7 +296,7 @@ export default function Home() {
             </Button>
             <Spacer x={3} />
             <Button
-              className="text-xl font-bold border-2 border-foreground-500 bg-gradient-to-tr from-pink-400 to-secondary-600 dark: from-pink-500 dark:to-secondary-400"
+              className="text-xl font-bold border-2 border-foreground-500 bg-gradient-to-tr from-pink-400 to-secondary-600 dark:from-pink-500 dark:to-secondary-400"
               size="lg"
               radius="lg"
               variant="bordered"
