@@ -283,10 +283,10 @@ export default function Home() {
 
           <CardFooter className="justify-center mb-4">
             <Button
-              className="text-lg font-bold bg-secondary/50 dark:bg-secondary/50"
+              className="text-xl font-bold border-2 border-foreground-500 bg-gradient-to-bl from-pink-400 to-secondary-600 dark: from-pink-500 dark:to-secondary-400"
               size="lg"
               radius="lg"
-              variant="solid"
+              variant="bordered"
               href="https://apps.apple.com/app/faithtime/id6503560893?platform=vision"
               isExternal
               as={Link}
@@ -296,10 +296,10 @@ export default function Home() {
             </Button>
             <Spacer x={3} />
             <Button
-              className="text-lg font-bold bg-secondary/50 dark:bg-secondary/50"
+              className="text-xl font-bold border-2 border-foreground-500 bg-gradient-to-tr from-pink-400 to-secondary-600 dark: from-pink-500 dark:to-secondary-400"
               size="lg"
               radius="lg"
-              variant="solid"
+              variant="bordered"
               href="https://www.meta.com/experiences/7932069240179240/"
               isExternal
               as={Link}
