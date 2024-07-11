@@ -89,9 +89,10 @@ export default function Home() {
 
   const SlideDots = appPreviewImage.map((_, idx) => (
     <li className="w-20 h-2">
-      <button
+      <Button
         key={idx}
-        className={`w-full h-full rounded-full ${idx === index ? 'bg-secondary' : 'bg-default-400'}`}
+        className={`w-full h-full rounded-full ${idx === index ? 'bg-secondary' : 'bg-default-300'}`}
+        variant="flat"
         onClick={ () => {setIndex(idx);} }
       />
     </li>
@@ -142,15 +143,15 @@ export default function Home() {
                   marginBottom: "-1vh",
                 }}
               >
-                FaithTime :
+                FaithTime
               </h1>
               <br />
               <div className="inline-block text-center justify-center">
                 <h1 className={title({ color: "violet" })}>Journey of </h1>
                 <br />
-                <h1 className={title()}>Sacred Sites&nbsp;</h1>
+                <h1 className={title({ size: "md" })}>Sacred Sites&nbsp;</h1>
                 <h1 className={title({ color: "violet", size: "md" })}>& </h1>
-                <h1 className={title()}>Prayer</h1>
+                <h1 className={title({ size: "md" })}>Prayer.</h1>
               </div>
             </div>
 
@@ -175,14 +176,14 @@ export default function Home() {
               </div> */}
 
               <div className="inline-block text-center justify-center my-1">
-                <h1 className={title({ color: "primary", size: "sm" })}>Sacred Sites Details</h1>
+                <h1 className={title({ color: "primary", size: "xs" })}>Sacred Sites Details</h1>
               </div>
 
               <div className="inline-block justify-start">
-                <h2 className="w-full mx-5 my-2 text-lg text-default-600 block max-w-full">
+                <h2 className="w-full mx-5 my-2 text-md text-default-600 block max-w-full">
                   Discover christianity religion history through sacred sites.
                   Learn about churches and faith centers in our christian religion.
-                  Connect with the church of jesus christ through suggested prayers to deepen your faith.
+                  Connect with the church of Jesus Christ through suggested prayers to deepen your faith.
                 </h2>
               </div>
 
@@ -193,7 +194,7 @@ export default function Home() {
               <div className="inline-block justify-start mt-2">
                 <h2 className="w-full mx-5 my-2 text-lg text-default-600 block max-w-full">
                   Track spiritual growth with our Calendar.
-                  Encourage devotions and mindfulness meditation, maintaining your connection with jesus christ and commitment to faith and family.
+                  Encourage devotions and mindfulness meditation, maintaining your connection with Jesus Christ and commitment to faith and family.
                 </h2>
               </div> */}
 
@@ -267,8 +268,7 @@ export default function Home() {
           <h1 className={title({ size: "lg", color: "violet" })}> XR&nbsp;</h1>
           <br/>
           <h2 className="text-2xl" style={{ color: "white" }}>
-              {" "}
-              Daily Prayers & Devotions
+              Daily Prayers, Immersively.
           </h2>
         </div>
 
@@ -283,7 +283,7 @@ export default function Home() {
 
           <CardFooter className="justify-center mb-4">
             <Button
-              className="text-lg font-bold bg-secondary/40 dark:bg-secondary/40"
+              className="text-lg font-bold bg-secondary/50 dark:bg-secondary/50"
               size="lg"
               radius="lg"
               variant="solid"
@@ -296,7 +296,7 @@ export default function Home() {
             </Button>
             <Spacer x={3} />
             <Button
-              className="text-lg font-bold bg-secondary/40 dark:bg-secondary/40"
+              className="text-lg font-bold bg-secondary/50 dark:bg-secondary/50"
               size="lg"
               radius="lg"
               variant="solid"

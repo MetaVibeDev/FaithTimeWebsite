@@ -5,19 +5,20 @@ export const title = tv({
   variants: {
     color: {
 			white: "from-[#FFFFFF] to-[#FFFFFF]",
-      violet: "from-[#FF1CF7] to-[#b249f8]",
+      violet: "from-pink-400 to-secondary-500 dark: from-pink-500 dark:to-secondary-500",
       yellow: "from-[#FF705B] to-[#FFB457]",
       blue: "from-[#5EA2EF] to-[#5EA2EF]",
       cyan: "from-[#00b7fa] to-[#01cfea]",
       green: "from-[#6FEE8D] to-[#17c964]",
       pink: "from-[#FF72E1] to-[#F54C7A]",
-      primary: "text-secondary-400 dark:text-secondary-600 font-normal",
+      primary: "text-secondary-400 dark:text-secondary-400 font-normal",
       foreground: "from-[#000000] to-[#808080] dark:from-[#FFFFFF] dark:to-[#808080]",
     },
     size: {
+      xs: "text-2xl lg:text-3xl",
       sm: "text-3xl lg:text-4xl",
       md: "text-[2.3rem] lg:text-5xl leading-9",
-      lg: "text-4xl lg:text-6xl",
+      lg: "text-5xl lg:text-6xl",
     },
     fullWidth: {
       true: "w-full block",
