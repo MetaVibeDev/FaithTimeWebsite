@@ -30,47 +30,12 @@ import React, { useEffect } from 'react';
 import { Element } from 'react-scroll';
 import '../styles/slider.css';
 
-let slideImageAndText = [
-  {
-    src: "/MobileApp/AppPreview.01.png",
-    title: "Daily Sacred Sites",
-    content: " \
-      Embark on a spiritual journey with FaithTime. \
-      Explore sacred sites, engage in daily devotions and meditation prayers. \
-      Receive a daily bible verse and experience christian meditations through virtual exploration of christianity's revered locations. \
-      ",
-  },
-  {
-    src: "/MobileApp/AppPreview.04.png",
-    title: "Sacred Sites Details",
-    content: " \
-      Discover christianity religion history through sacred sites. \
-      Learn about churches and faith centers in our religion. \
-      Connect with the church of Jesus Christ through suggested prayers to deepen your faith.\
-      ",
-  },
-
-  {
-    src: "/MobileApp/AppPreview.03.png",
-    title: "Daily Scripture",
-    content: " \
-      Track spiritual growth with our Calendar. \
-      Encourage devotions and mindfulness meditation, maintaining your connection with Jesus Christ and commitment to faith and family. \
-      ",
-  },
-  {
-    src: "/MobileApp/AppPreview.02.png",
-    title: "Calender",
-    content: "\
-      Start your day with this feature, which offers a bible verse of the day for daily devotion on prayer or bible study. \
-      Find scriptures on faith or prayers before bed for your christian journey. \
-      ",
-  },
-]
-
 export default function Home() {
   const [index, setIndex] = React.useState(0)
-  const displayInterval = 4000; // ms
+  const displayTime = 4000; // ms
+  const easeTime = 1000;
+
+  const slideImageAndText = siteConfig.slideImageAndText;
 
   const timeoutRef = React.useRef(null);
 
@@ -86,7 +51,7 @@ export default function Home() {
         timeoutRef.current = setTimeout(() =>
           // loop scrolling
           setIndex((prevIndex) => prevIndex === (slideImageAndText.length - 1) ? 0 : (prevIndex + 1)),
-          displayInterval
+          displayTime
         );
 
         return () => {
@@ -129,7 +94,7 @@ export default function Home() {
       </div>)
   });
 
-  const SlideDots = slideImageAndText.map((_, idx) => (
+  const SlideDots = siteConfig.slideImageAndText.map((_, idx) => (
     <li className="w-20 h-2">
       <Button
         key={idx}
@@ -158,7 +123,7 @@ export default function Home() {
                 className = "slideContainer"
                 style = {{
                   transform: `translate3d(${-index * 100}%, 0, 0)`,
-                  transition: 'ease 1000ms'
+                  transition: `ease ${easeTime}ms`,
                   // transition: index === 0 ? 'none' : 'ease 2000ms'
                 }}
               >
@@ -198,8 +163,18 @@ export default function Home() {
             </div>
 
             <div className="flex gap-3">
-              <AppStoreIcon/>
-              <GooglePlayIcon/>
+              <Link
+                href={siteConfig.links.appStore}
+                isExternal
+              >
+                <AppStoreIcon/>
+              </Link>
+              <Link
+                href={siteConfig.links.googlePlay}
+                isExternal
+              >
+                <GooglePlayIcon/>
+              </Link>
             </div>
 
             <div
@@ -213,7 +188,7 @@ export default function Home() {
                   className = "slideContainer flex flex-nowrap"
                   style = {{
                     transform: `translate3d(${-index * 100}%, 0, 0)`,
-                    transition: 'ease 1000ms'
+                    transition: `ease ${easeTime}ms`,
                     // transition: index === 0 ? 'none' : 'ease 2000ms'
                   }}
                 >
@@ -253,12 +228,12 @@ export default function Home() {
               filter: 'drop-shadow(0px 0px 10px rgba(126, 84, 181, 0.75))'
             }}
           >
-                FaithTime
+            FaithTime
           </h1>
           <h1 className={title({ size: "lg", color: "violet" })}> XR&nbsp;</h1>
           <br/>
           <h2 className="text-2xl" style={{ color: "white" }}>
-              Daily Prayers, Immersively.
+             Daily Prayers, Immersively.
           </h2>
         </div>
 
@@ -277,7 +252,7 @@ export default function Home() {
               size="lg"
               radius="lg"
               variant="bordered"
-              href="https://apps.apple.com/app/faithtime/id6503560893?platform=vision"
+              href={siteConfig.links.visionProStore}
               isExternal
               as={Link}
             >
@@ -290,7 +265,7 @@ export default function Home() {
               size="lg"
               radius="lg"
               variant="bordered"
-              href="https://www.meta.com/experiences/7932069240179240/"
+              href={siteConfig.links.metaQuestStore}
               isExternal
               as={Link}
             >
@@ -303,7 +278,7 @@ export default function Home() {
         <div className="flex text-center justify-center mt-7">
           <Link
               className="flex-shrink-0 text-white"
-              href="https://discord.gg/Mc8d5sXDp9"
+              href={siteConfig.links.discord}
               isExternal
           >
             {/*<DiscordIcon />*/}
@@ -311,7 +286,7 @@ export default function Home() {
           <Spacer x={2} />
           <Link
             className="flex-shrink-0 text-white"
-            href="https://x.com/FaithtimeApp"
+            href={siteConfig.links.twitter}
             isExternal
           >
             {/*<XIcon />*/}
@@ -319,7 +294,7 @@ export default function Home() {
           <Spacer x={2} />
           <Link
             className="flex-shrink-0 text-white"
-            href="https://www.instagram.com/faithtimelab"
+            href={siteConfig.links.instagram}
             isExternal
           >
             {/*<InstagramIcon />*/}
