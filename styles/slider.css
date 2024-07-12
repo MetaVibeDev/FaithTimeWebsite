@@ -1,7 +1,14 @@
 .slideViewport {
     margin: 0 auto;
     overflow: hidden;
+}
+
+.slideViewport.image {
     max-width: 503px;
+}
+
+.slideViewport.text {
+    max-width: 500px;
 }
 
 .slideContainer {

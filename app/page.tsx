@@ -109,7 +109,7 @@ export default function Home() {
       />)
   });
 
-  const SildeCards = slideImageAndText.map((item, idx) => {
+  const SlideTexts = slideImageAndText.map((item, idx) => {
     return (
       <div
         key={idx}
@@ -121,8 +121,8 @@ export default function Home() {
           </h1>
         </div>
 
-        <div className="justify-start">
-          <h2 className="w-full mx-5 my-2 text-md text-default-600">
+        <div className="justify-start content-evenly mt-5">
+          <h2 className="px-4 text-md text-default-600">
             {item.content}
           </h2>
         </div>
@@ -153,7 +153,7 @@ export default function Home() {
           <div
             className = "flex flex-col ml-0 justify-center mx-20"
           >
-            <div className = "slideViewport">
+            <div className = "slideViewport image">
               <div
                 className = "slideContainer"
                 style = {{
@@ -208,7 +208,7 @@ export default function Home() {
             >
               <Divider className="my-5" />
 
-              <div className = "slideViewport">
+              <div className = "slideViewport text">
                 <div
                   className = "slideContainer flex flex-nowrap"
                   style = {{
@@ -217,7 +217,7 @@ export default function Home() {
                     // transition: index === 0 ? 'none' : 'ease 2000ms'
                   }}
                 >
-                  {SildeCards}
+                  {SlideTexts}
                 </div>
               </div>
 
@@ -273,7 +273,7 @@ export default function Home() {
 
           <CardFooter className="justify-center mb-4">
             <Button
-              className="text-xl font-bold border-2 border-foreground-500 bg-gradient-to-l from-pink-400 to-secondary-400 dark:from-pink-500 dark:to-secondary-400"
+              className="text-xl font-bold border-1 border-foreground-500 bg-gradient-to-l from-pink-400 to-secondary-400 dark:from-pink-500 dark:to-secondary-400"
               size="lg"
               radius="lg"
               variant="bordered"
@@ -286,7 +286,7 @@ export default function Home() {
             </Button>
             <Spacer x={3} />
             <Button
-              className="text-xl font-bold border-2 border-foreground-500 bg-gradient-to-r from-pink-400 to-secondary-400 dark:from-pink-500 dark:to-secondary-400"
+              className="text-xl font-bold border-1 border-foreground-500 bg-gradient-to-r from-pink-400 to-secondary-400 dark:from-pink-500 dark:to-secondary-400"
               size="lg"
               radius="lg"
               variant="bordered"

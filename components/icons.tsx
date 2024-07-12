@@ -145,7 +145,7 @@ export const AppStoreIcon: React.FC<IconSvgProps> = ({
       height="53.3333"
       viewBox="0 0 119.66407 40"
     >
-      <title>Download_on_the_App_Store_Badge_US-UK_RGB_blk_4SVG_092917</title>
+      <title>FaithTime on the App Store</title>
       <g>
         <g>
           <g>
@@ -263,6 +263,7 @@ export const GooglePlayIcon: React.FC<IconSvgProps> = ({
       width="180" height="53.333"
       viewBox="0 0 180 53.333"
     >
+      <title>FaithTime on Google Play</title>
       <path
         id="path11"
         d="m173.33 53.333h-166.66c-3.6666 0-6.6665-2.9999-6.6665-6.6665v-39.999c0-3.6666 2.9999-6.6665 6.6665-6.6665h166.66c3.6666 0 6.6665 2.9999 6.6665 6.6665v39.999c0 3.6666-2.9999 6.6665-6.6665 6.6665"
