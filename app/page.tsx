@@ -30,19 +30,41 @@ import React, { useEffect } from 'react';
 import { Element } from 'react-scroll';
 import '../styles/slider.css';
 
-let appPreviewImage = [
+let slideImageAndText = [
   {
-    src: "/MobileApp/AppPreview.01.png"
+    src: "/MobileApp/AppPreview.01.png",
+    title: "Daily Sacred Sites",
+    content: " \
+      Embark on a spiritual journey with FaithTime. \
+      Explore sacred sites, engage in daily devotions and meditation prayers. \
+      Receive a daily bible verse and experience christian meditations through virtual exploration of christianity's revered locations. \
+      ",
   },
   {
-    src: "/MobileApp/AppPreview.04.png"
+    src: "/MobileApp/AppPreview.04.png",
+    title: "Sacred Sites Details",
+    content: " \
+      Discover christianity religion history through sacred sites. \
+      Learn about churches and faith centers in our religion. \
+      Connect with the church of Jesus Christ through suggested prayers to deepen your faith.\
+      ",
   },
 
   {
-    src: "/MobileApp/AppPreview.03.png"
+    src: "/MobileApp/AppPreview.03.png",
+    title: "Daily Scripture",
+    content: " \
+      Track spiritual growth with our Calendar. \
+      Encourage devotions and mindfulness meditation, maintaining your connection with Jesus Christ and commitment to faith and family. \
+      ",
   },
   {
-    src: "/MobileApp/AppPreview.02.png"
+    src: "/MobileApp/AppPreview.02.png",
+    title: "Calender",
+    content: "\
+      Start your day with this feature, which offers a bible verse of the day for daily devotion on prayer or bible study. \
+      Find scriptures on faith or prayers before bed for your christian journey. \
+      ",
   },
 ]
 
@@ -63,7 +85,7 @@ export default function Home() {
         resetTimeout();
         timeoutRef.current = setTimeout(() =>
           // loop scrolling
-          setIndex((prevIndex) => prevIndex === (appPreviewImage.length - 1) ? 0 : (prevIndex + 1)),
+          setIndex((prevIndex) => prevIndex === (slideImageAndText.length - 1) ? 0 : (prevIndex + 1)),
           displayInterval
         );
 
@@ -74,7 +96,7 @@ export default function Home() {
     [index]
   );
 
-  const PreviewImages = appPreviewImage.map((item, idx) => {
+  const SildeImages = slideImageAndText.map((item, idx) => {
     return (
       <Image
         key={idx}
@@ -87,7 +109,27 @@ export default function Home() {
       />)
   });
 
-  const SlideDots = appPreviewImage.map((_, idx) => (
+  const SildeCards = slideImageAndText.map((item, idx) => {
+    return (
+      <div
+        key={idx}
+        className="min-w-full h-full whitespace-normal"
+      >
+        <div className="text-center my-1">
+          <h1 className={title({ color: "primary", size: "xs" })}>
+            {item.title}
+          </h1>
+        </div>
+
+        <div className="justify-start">
+          <h2 className="w-full mx-5 my-2 text-md text-default-600">
+            {item.content}
+          </h2>
+        </div>
+      </div>)
+  });
+
+  const SlideDots = slideImageAndText.map((_, idx) => (
     <li className="w-20 h-2">
       <Button
         key={idx}
@@ -120,7 +162,7 @@ export default function Home() {
                   // transition: index === 0 ? 'none' : 'ease 2000ms'
                 }}
               >
-                {PreviewImages}
+                {SildeImages}
               </div>
             </div>
           </div>
@@ -166,70 +208,18 @@ export default function Home() {
             >
               <Divider className="my-5" />
 
-              {/*
-              <div className="inline-block justify-start mt-2">
-                <h2 className="w-full mx-5 my-2 text-lg text-default-600 block max-w-full">
-                  Embark on a spiritual journeying with FaithTime.
-                  Explore sacred sites, engage in daily devotions and meditation prayers.
-                  Receive a daily bible verse and experience christian meditations through virtual exploration of christianity's revered locations.
-                </h2>
-              </div> */}
-
-              <div className="inline-block text-center justify-center my-1">
-                <h1 className={title({ color: "primary", size: "xs" })}>Sacred Sites Details</h1>
-              </div>
-
-              <div className="inline-block justify-start">
-                <h2 className="w-full mx-5 my-2 text-md text-default-600 block max-w-full">
-                  Discover christianity religion history through sacred sites.
-                  Learn about churches and faith centers in our religion.
-                  Connect with the church of Jesus Christ through suggested prayers to deepen your faith.
-                </h2>
-              </div>
-
-              {/* <div className="inline-block text-center justify-center">
-                <h1 className={title({ color: "violet" })}>Calendar</h1>
-              </div>
-
-              <div className="inline-block justify-start mt-2">
-                <h2 className="w-full mx-5 my-2 text-lg text-default-600 block max-w-full">
-                  Track spiritual growth with our Calendar.
-                  Encourage devotions and mindfulness meditation, maintaining your connection with Jesus Christ and commitment to faith and family.
-                </h2>
-              </div> */}
-
-              {/* <div className="inline-block text-center justify-center">
-                <h1 className={title()}>Daily Scripture</h1>
-              </div>
-
-              <div className="inline-block justify-start mt-2">
-                <h2 className="w-full mx-5 my-2 text-lg text-default-600 block max-w-full">
-                  Start your day with this feature, which offers a bible verse of the day for daily devotion on prayer or bible study.
-                  Find scriptures on faith or prayers before bed for your christian journey.
-                </h2>
-              </div> */}
-
-              {/* <div className="flex gap-3">
-                <Link
-                  isExternal
-                  className={buttonStyles({
-                    color: "primary",
-                    radius: "full",
-                    variant: "shadow",
-                  })}
-                  href={siteConfig.links.docs}
+              <div className = "slideViewport">
+                <div
+                  className = "slideContainer flex flex-nowrap"
+                  style = {{
+                    transform: `translate3d(${-index * 100}%, 0, 0)`,
+                    transition: 'ease 1000ms'
+                    // transition: index === 0 ? 'none' : 'ease 2000ms'
+                  }}
                 >
-                  Documentation
-                </Link>
-                <Link
-                  isExternal
-                  className={buttonStyles({ variant: "bordered", radius: "full" })}
-                  href={siteConfig.links.github}
-                >
-                  <GithubIcon size={20} />
-                  GitHub
-                </Link>
-              </div> */}
+                  {SildeCards}
+                </div>
+              </div>
 
               {/* <Divider className="my-5" /> */}
 
