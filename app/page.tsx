@@ -182,7 +182,7 @@ export default function Home() {
               <div className="inline-block justify-start">
                 <h2 className="w-full mx-5 my-2 text-md text-default-600 block max-w-full">
                   Discover christianity religion history through sacred sites.
-                  Learn about churches and faith centers in our christian religion.
+                  Learn about churches and faith centers in our religion.
                   Connect with the church of Jesus Christ through suggested prayers to deepen your faith.
                 </h2>
               </div>
@@ -283,7 +283,7 @@ export default function Home() {
 
           <CardFooter className="justify-center mb-4">
             <Button
-              className="text-xl font-bold border-2 border-foreground-500 bg-gradient-to-l from-pink-400 to-secondary-500 dark:from-pink-500 dark:to-secondary-400"
+              className="text-xl font-bold border-2 border-foreground-500 bg-gradient-to-l from-pink-400 to-secondary-400 dark:from-pink-500 dark:to-secondary-400"
               size="lg"
               radius="lg"
               variant="bordered"
@@ -296,7 +296,7 @@ export default function Home() {
             </Button>
             <Spacer x={3} />
             <Button
-              className="text-xl font-bold border-2 border-foreground-500 bg-gradient-to-r from-pink-400 to-secondary-500 dark:from-pink-500 dark:to-secondary-400"
+              className="text-xl font-bold border-2 border-foreground-500 bg-gradient-to-r from-pink-400 to-secondary-400 dark:from-pink-500 dark:to-secondary-400"
               size="lg"
               radius="lg"
               variant="bordered"
