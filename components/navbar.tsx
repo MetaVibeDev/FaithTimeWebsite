@@ -13,6 +13,7 @@ import { Button } from "@nextui-org/button";
 import { Kbd } from "@nextui-org/kbd";
 import { Link } from "@nextui-org/link";
 import { Input } from "@nextui-org/input";
+import { Spacer } from "@nextui-org/spacer";
 import { link as linkStyles } from "@nextui-org/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
@@ -20,9 +21,11 @@ import clsx from "clsx";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import {
+  DiscordIcon,
+  XIcon,
+  InstagramIcon,
   TwitterIcon,
   GithubIcon,
-  DiscordIcon,
   HeartFilledIcon,
   SearchIcon,
   Logo,
@@ -87,18 +90,21 @@ export class Navbar extends React.Component {
           justify="end"
         >
           <NavbarItem className="hidden sm:flex gap-2">
-            <Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>
-              <TwitterIcon className="text-default-500" />
-            </Link>
             <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
-              <DiscordIcon className="text-default-500" />
+              <DiscordIcon className="text-default-700" />
             </Link>
-            <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-              <GithubIcon className="text-default-500" />
+            <Link isExternal aria-label="X" href={siteConfig.links.twitter}>
+              <XIcon className="text-default-700" />
             </Link>
-            <ThemeSwitch />
+            <Link isExternal aria-label="Instagram" href={siteConfig.links.instagram}>
+              <InstagramIcon className="text-default-700" />
+            </Link>
+            <ThemeSwitch className="ml-4"/>
           </NavbarItem>
-          <NavbarItem className="hidden lg:flex">{this.searchInput}</NavbarItem>
+
+          {/* <NavbarItem className="hidden lg:flex">
+            {this.searchInput}
+          </NavbarItem> */}
 
           {/*
           <NavbarItem className="hidden md:flex">
@@ -117,9 +123,6 @@ export class Navbar extends React.Component {
         </NavbarContent>
 
         <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-          <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-            <GithubIcon className="text-default-500" />
-          </Link>
           <ThemeSwitch />
           <NavbarMenuToggle />
         </NavbarContent>
@@ -134,7 +137,7 @@ export class Navbar extends React.Component {
                     index === 2
                       ? "primary"
                       : index === siteConfig.navMenuItems.length - 1
-                        ? "danger"
+                        ? "secondary"
                         : "foreground"
                   }
                   href="#"
