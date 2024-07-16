@@ -32,7 +32,7 @@ import "../styles/slider.css";
 
 type TimeoutType = ReturnType<typeof setTimeout> | null;
 
-console.log("test")
+console.log("test1")
 
 export default function Home() {
   const [index, setIndex] = React.useState(0);
