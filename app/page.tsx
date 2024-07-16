@@ -69,10 +69,29 @@ export default function Home() {
         style={{
           filter: 'drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5))'
         }}
-        className="slide mx-8 my-8"
+        className="slide object-scale-down box-border px-8 py-8"
         removeWrapper
       />)
   });
+
+  const SlideImagesWrapper = (
+    <div
+    className = "flex flex-col justify-center mx-10 md:ml-0 "
+    >
+      <div className = "slideViewport image">
+        <div
+          className = "slideContainer"
+          style = {{
+            transform: `translate3d(${-index * 100}%, 0, 0)`,
+            transition: `ease ${easeTime}ms`,
+            // transition: index === 0 ? 'none' : 'ease 2000ms'
+          }}
+        >
+          {SildeImages}
+        </div>
+      </div>
+    </div>
+  );
 
   const SlideTexts = slideImageAndText.map((item, idx) => {
     return (
@@ -94,6 +113,21 @@ export default function Home() {
       </div>)
   });
 
+  const SlideTextsWrapper = (
+    <div className = "slideViewport text">
+      <div
+        className = "slideContainer flex flex-nowrap"
+        style = {{
+          transform: `translate3d(${-index * 100}%, 0, 0)`,
+          transition: `ease ${easeTime}ms`,
+          // transition: index === 0 ? 'none' : 'ease 2000ms'
+        }}
+      >
+        {SlideTexts}
+      </div>
+    </div>
+  );
+
   const SlideDots = siteConfig.slideImageAndText.map((_, idx) => (
     <li className="w-20 h-2">
       <Button
@@ -105,6 +139,57 @@ export default function Home() {
     </li>
   ))
 
+  const SlideDotsWrapper = (
+    <ul className="flex gap-3 items-center mt-4">
+      {SlideDots}
+    </ul>
+ )
+
+  const AppNameWithSlogan = (
+    <div
+    className="flex flex-col max-w-lg items-center"
+    style={{
+      marginTop: "13vh",
+      marginBottom: "5vh",
+    }}
+    >
+      <h1
+      className={title({size: "lg", color: "white"})}
+      style={{
+        filter: 'drop-shadow(0px 0px 30px rgba(126, 84, 181, 1))',
+        marginBottom: "-1vh",
+      }}
+      >
+        FaithTime
+      </h1>
+      <br />
+      <div className="inline-block text-center justify-center">
+        <h1 className={title({ color: "violet" })}>Journey of </h1>
+        <br />
+        <h1 className={title({ size: "md" })}>Sacred Sites&nbsp;</h1>
+        <h1 className={title({ color: "violet", size: "md" })}>& </h1>
+        <h1 className={title({ size: "md" })}>Prayer.</h1>
+      </div>
+    </div>
+  );
+
+  const MobileDownloadButtons = (
+    <div className="flex gap-3">
+      <Link
+        // href={siteConfig.links.appStore}
+        isExternal
+      >
+        <AppStoreIcon/>
+      </Link>
+      <Link
+        // href={siteConfig.links.googlePlay}
+        isExternal
+      >
+        <GooglePlayIcon/>
+      </Link>
+    </div>
+  );
+
   return (
     <section>
       <Element
@@ -114,68 +199,16 @@ export default function Home() {
           background: 'linear-gradient(180deg, rgba(126, 84, 181, 100) 0%, rgba(126, 84, 181, 0) 100%)'
         }}
       >
-        <div className = "grid grid-cols-2 max-w-screen-2xl">
-          <div
-            className = "flex flex-col ml-0 justify-center mx-20"
-          >
-            <div className = "slideViewport image">
-              <div
-                className = "slideContainer"
-                style = {{
-                  transform: `translate3d(${-index * 100}%, 0, 0)`,
-                  transition: `ease ${easeTime}ms`,
-                  // transition: index === 0 ? 'none' : 'ease 2000ms'
-                }}
-              >
-                {SildeImages}
-              </div>
-            </div>
-          </div>
+        {/* large screen layout */}
+        <div className = "hidden md:grid grid-cols-2 max-w-screen-2xl">
+          {SlideImagesWrapper}
 
           <div
             className="flex flex-col max-w-lg items-center"
           >
+            {AppNameWithSlogan}
 
-            <div
-              className="flex flex-col max-w-lg items-center"
-              style={{
-                marginTop: "13vh",
-                marginBottom: "5vh",
-              }}
-            >
-              <h1
-                className={title({size: "lg", color: "white"})}
-                style={{
-                  filter: 'drop-shadow(0px 0px 30px rgba(126, 84, 181, 1))',
-                  marginBottom: "-1vh",
-                }}
-              >
-                FaithTime
-              </h1>
-              <br />
-              <div className="inline-block text-center justify-center">
-                <h1 className={title({ color: "violet" })}>Journey of </h1>
-                <br />
-                <h1 className={title({ size: "md" })}>Sacred Sites&nbsp;</h1>
-                <h1 className={title({ color: "violet", size: "md" })}>& </h1>
-                <h1 className={title({ size: "md" })}>Prayer.</h1>
-              </div>
-            </div>
-
-            <div className="flex gap-3">
-              <Link
-                href={siteConfig.links.appStore}
-                isExternal
-              >
-                <AppStoreIcon/>
-              </Link>
-              <Link
-                href={siteConfig.links.googlePlay}
-                isExternal
-              >
-                <GooglePlayIcon/>
-              </Link>
-            </div>
+            {MobileDownloadButtons}
 
             <div
               className="flex flex-col max-w-lg items-center justify-center"
@@ -183,29 +216,42 @@ export default function Home() {
             >
               <Divider className="my-5" />
 
-              <div className = "slideViewport text">
-                <div
-                  className = "slideContainer flex flex-nowrap"
-                  style = {{
-                    transform: `translate3d(${-index * 100}%, 0, 0)`,
-                    transition: `ease ${easeTime}ms`,
-                    // transition: index === 0 ? 'none' : 'ease 2000ms'
-                  }}
-                >
-                  {SlideTexts}
-                </div>
-              </div>
+              {SlideTextsWrapper}
 
               {/* <Divider className="my-5" /> */}
 
-              <ul className="flex gap-3 items-center mt-4">
-                  {SlideDots}
-              </ul>
+              {SlideDotsWrapper}
             </div>
-
           </div>
         </div>
 
+        {/* small screen layout */}
+        <div className = "md:hidden flex flex-col items-center justify-center">
+          {AppNameWithSlogan}
+
+          {MobileDownloadButtons}
+
+          <div
+            className = "flex flex-col grow-0 max-w-sm items-center justify-center"
+            style={{
+              marginTop: "10vh",
+              marginBottom: "10vh"
+            }}
+          >
+            <Divider className="my-5" />
+
+            <div className="mx-auto justify-self-center">
+              {SlideImagesWrapper}
+            </div>
+
+            <Divider className="my-5" />
+
+            {SlideTextsWrapper}
+
+            {SlideDotsWrapper}
+          </div>
+
+        </div>
       </Element>
 
       <Element
