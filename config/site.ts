@@ -82,21 +82,20 @@ export const siteConfig = {
         Connect with the church of Jesus Christ through suggested prayers to deepen your faith.\
         ",
     },
-
     {
       src: "/MobileApp/AppPreview.03.png",
       title: "Daily Scripture",
       content: " \
-        Track spiritual growth with our Calendar. \
-        Encourage devotions and mindfulness meditation, maintaining your connection with Jesus Christ and commitment to faith and family. \
+        Start your day with this feature, which offers a bible verse of the day for daily devotion on prayer or bible study. \
+        Find scriptures on faith or prayers before bed for your christian journey. \
         ",
     },
     {
       src: "/MobileApp/AppPreview.02.png",
       title: "Calender",
       content: "\
-        Start your day with this feature, which offers a bible verse of the day for daily devotion on prayer or bible study. \
-        Find scriptures on faith or prayers before bed for your christian journey. \
+        Track spiritual growth with our Calendar. \
+        Encourage devotions and mindfulness meditation, maintaining your connection with Jesus Christ and commitment to faith and family. \
         ",
     },
   ]
