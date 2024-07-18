@@ -40,6 +40,8 @@ const TrackExposure = ({
         const targetRef = useRef(null);
         const [exposed, setExposed] = useState(false);
 
+        let exposureTimer = null;
+
         const checkExposure = (entry) => {
             return (entry.isIntersecting && entry.intersectionRatio >= exposureRatioThresh);
         }
