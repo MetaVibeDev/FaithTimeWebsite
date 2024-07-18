@@ -28,11 +28,15 @@ import {
 
 import React, { useEffect, useState } from "react";
 import { Element } from "react-scroll";
+
 import "../styles/slider.css";
 
-type TimeoutType = ReturnType<typeof setTimeout> | null;
+import TrackClick from "@/components/track";
 
-console.log("test1")
+const TrackedLink = TrackClick(Link);
+const TrackedButton = TrackClick(Button);
+
+type TimeoutType = ReturnType<typeof setTimeout> | null;
 
 export default function Home() {
   const [index, setIndex] = React.useState(0);
@@ -129,16 +133,14 @@ export default function Home() {
   );
 
   const SlideDots = siteConfig.slideImageAndText.map((_, idx) => (
-    <li className="w-20 h-2">
-      <Button
-        key={idx}
-        className={`w-full h-full rounded-full ${idx === index ? "bg-secondary" : "bg-default-300"}`}
-        variant="flat"
-        onClick={() => {
-          setIndex(idx);
-        }}
-      />
-    </li>
+    <Button
+      key={idx}
+      className={`w-20 h-2 rounded-full ${idx === index ? "bg-secondary" : "bg-default-300"}`}
+      variant="flat"
+      onClick={() => {
+        setIndex(idx);
+      }}
+    />
   ));
 
   const SlideDotsWrapper = (
@@ -175,18 +177,20 @@ export default function Home() {
 
   const MobileDownloadButtons = (
     <div className="flex gap-3">
-      <Link
+      <TrackedLink
+        trackName={"DownloadMobile AppleAppStore"}
         // href={siteConfig.links.appStore}
         isExternal
       >
         <AppStoreIcon />
-      </Link>
-      <Link
+      </TrackedLink>
+      <TrackedLink
+        trackName={"DownloadMobile GooglePlay"}
         // href={siteConfig.links.googlePlay}
         isExternal
       >
         <GooglePlayIcon />
-      </Link>
+      </TrackedLink>
     </div>
   );
 
@@ -294,7 +298,8 @@ export default function Home() {
             </CardHeader>
 
             <CardFooter className="justify-center mb-4">
-              <Button
+              <TrackedButton
+                trackName={"DownloadXR AppleVisionProStore"}
                 className="text-xl font-bold border-1 border-foreground-500 bg-gradient-to-l from-pink-400 to-secondary-400 dark:from-pink-500 dark:to-secondary-400"
                 size="lg"
                 radius="lg"
@@ -305,9 +310,12 @@ export default function Home() {
               >
                 <AppleIcon />
                 Vision Pro
-              </Button>
+              </TrackedButton>
+
               <Spacer x={3} />
-              <Button
+
+              <TrackedButton
+                trackName={"DownloadXR MetaQuestStore"}
                 className="text-xl font-bold border-1 border-foreground-500 bg-gradient-to-r from-pink-400 to-secondary-400 dark:from-pink-500 dark:to-secondary-400"
                 size="lg"
                 radius="lg"
@@ -318,7 +326,7 @@ export default function Home() {
               >
                 <MetaIcon />
                 Meta Quest
-              </Button>
+              </TrackedButton>
             </CardFooter>
           </Card>
 

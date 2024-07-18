@@ -34,6 +34,11 @@ import {
 import React from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 
+import TrackClick from "@/components/track";
+
+const TrackedLink = TrackClick(Link);
+const TrackedScrollLink = TrackClick(ScrollLink);
+
 export class Navbar extends React.Component {
   searchInput = (
     <Input
@@ -67,8 +72,10 @@ export class Navbar extends React.Component {
             </NextLink>
           </NavbarBrand>
           <ul className="flex gap-4 items-center justify-cemter mx-2">
-            {siteConfig.navItems.map((item) => (
-              <ScrollLink
+            {siteConfig.navItems.map((item, idx) => (
+              <TrackedScrollLink
+                trackName={item.label}
+                key={idx}
                 to={item.label}
                 smooth={true}
                 offset={50}
@@ -80,7 +87,7 @@ export class Navbar extends React.Component {
                 >
                   {item.label}
                 </NavbarItem>
-              </ScrollLink>
+              </TrackedScrollLink>
             ))}
           </ul>
         </NavbarContent>
@@ -90,15 +97,15 @@ export class Navbar extends React.Component {
           justify="end"
         >
           <NavbarItem className="hidden sm:flex gap-2">
-            <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
-              <DiscordIcon className="text-default-700" />
-            </Link>
-            <Link isExternal aria-label="X" href={siteConfig.links.twitter}>
+            <TrackedLink trackName={"Discord"} isExternal aria-label="Discord" href={siteConfig.links.discord}>
+              <DiscordIcon className="text-default-700"/>
+            </TrackedLink>
+            <TrackedLink trackName={"X(Twitter)"} isExternal aria-label="X" href={siteConfig.links.twitter} >
               <XIcon className="text-default-700" />
-            </Link>
-            <Link isExternal aria-label="Instagram" href={siteConfig.links.instagram}>
+            </TrackedLink>
+            <TrackedLink trackName={"Instagram"} isExternal aria-label="Instagram" href={siteConfig.links.instagram}>
               <InstagramIcon className="text-default-700" />
-            </Link>
+            </TrackedLink>
             <ThemeSwitch className="ml-4"/>
           </NavbarItem>
 
