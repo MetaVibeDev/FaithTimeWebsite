@@ -33,40 +33,51 @@ export default TrackClick;
 
 // Exposure event tracking
 const TrackExposure = ({
+        trackName,
         exposureRatioThresh,
         exposureTimeThresh, // ms, second(s)
     }) => {
         const targetRef = useRef(null);
-        // const [exposed, setExposed] = useState(false);
+        const [exposed, setExposed] = useState(false);
 
-        // const checkExposure = (entry) => {
-        //     return (entry.intesectionRatio >= exposureRatioThresh);
-        // }
+        const checkExposure = (entry) => {
+            return (entry.isIntersecting && entry.intersectionRatio >= exposureRatioThresh);
+        }
 
+        const handleExposure = () => {
+          console.log("exposure collect: exposure time over "+exposureTimeThresh+" ms!");
+        }
+
+        // NOTE: manually REFRESH the localhost page in browser, to make
+        // any code modification within the useEffect part to take effect
         useEffect(() => {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
-                  if (entry.isIntersecting) {
+                  console.log("observer callback: intersectionRatio = "+entry.intersectionRatio);
+                  if (checkExposure(entry)) {
                     console.log("Component entered the viewport!");
+                    setExposed(true);
+
+                    exposureTimer = setTimeout(
+                      handleExposure,
+                      exposureTimeThresh
+                    )
+                  }
+                  else
+                  {
+                    console.log("Component exited the viewport!");
+                    setExposed(false);
+
+                    clearTimeout(exposureTimer); // Clear timer if component is no longer exposed
                   }
                 });
-                // (entry) => {
-                //     if (entry.isIntersecting) {
-                //         console.log("element exposed!");
-                //         // const exposureStartTime = Date.now();
 
-                //         // const timer = setInterval(() => {
-                //         //     if (exposed) {
-                //         //         console.log("component exposed!");
-                //         //     }
-                //         // }, exposureTimeThresh);
-                //     }
                 }
-                // ,
-                // {
-                //     root: null, // Use the viewport as the root
-                //     threshold: [0, 1], // Trigger when any part of the component is visible
-                // }
+                ,
+                {
+                    root: null, // Use the viewport as the root
+                    threshold: [0, 1], // Trigger when any part of the component is visible
+                }
             );
 
             if (targetRef.current) {
@@ -76,11 +87,11 @@ const TrackExposure = ({
             return () => {
                 observer.disconnect();
             };
-        }, [targetRef]);
+        }, [targetRef.current]);
 
         return (
             <div ref={targetRef}>
-                testComponent ABC
+                testComponent
             </div>
         );
 };

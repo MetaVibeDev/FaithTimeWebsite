@@ -31,7 +31,7 @@ import { Element } from "react-scroll";
 
 import "../styles/slider.css";
 
-import TrackClick from "@/components/track";
+import TrackClick, { TrackExposure } from "@/components/track";
 
 const TrackedLink = TrackClick(Link);
 const TrackedButton = TrackClick(Button);
@@ -329,6 +329,11 @@ export default function Home() {
               </TrackedButton>
             </CardFooter>
           </Card>
+
+          <TrackExposure
+            exposureRatioThresh={0.5}
+            exposureTimeThresh={5000}
+          />
 
           <div className="flex text-center justify-center mt-7">
             <Link
