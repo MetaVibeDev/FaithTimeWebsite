@@ -1,4 +1,15 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useContext, useEffect, useState } from 'react';
+import { UUIDContext } from './userinfo';
+
+const TimeString = () => {
+  return new Date(Date.now()).toISOString();
+}
+
+function reportCollectInfo(uuid) {
+  console.log("current uuid: "+uuid);
+
+  return;
+}
 
 // Click event tracking
 // use Higher-Order Component to enhance the wrapped component
@@ -7,9 +18,12 @@ const TrackClick = (BaseComponent) => {
     trackName,
     ...props
   }) => {
+    const { uuid } = useContext(UUIDContext);
 
-  const handleClick = (event) => {
+    const handleClick = (event) => {
       console.log("click collect:"+trackName)
+
+      reportCollectInfo(uuid);
 
       if (props.onClick)
       {
@@ -53,7 +67,7 @@ const TrackExposure = (BaseComponent) => {
 
       const observerCallback = (entries) => {
         entries.forEach((entry) => {
-          console.log("observer callback: intersectionRatio = "+entry.intersectionRatio);
+          console.log("observer callback: intersectionRatio = "+entry.intersectionRatio+", Time = "+TimeString());
 
           if (checkExposure(entry)) {
             setExposed(true);
