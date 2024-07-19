@@ -16,7 +16,6 @@ import {
 import { Spacer } from "@nextui-org/spacer";
 
 import { siteConfig } from "@/config/site";
-import PageDots from "@/components/pagination";
 import { title, subtitle } from "@/components/primitives";
 import {
   GithubIcon,
@@ -35,6 +34,8 @@ import TrackClick, { TrackExposure } from "@/components/track";
 
 const TrackedLink = TrackClick(Link);
 const TrackedButton = TrackClick(Button);
+
+const TrackedDiv = TrackExposure('div');
 
 type TimeoutType = ReturnType<typeof setTimeout> | null;
 
@@ -330,10 +331,13 @@ export default function Home() {
             </CardFooter>
           </Card>
 
-          <TrackExposure
+          <TrackedDiv
+            trackName={"test track"}
             exposureRatioThresh={0.5}
             exposureTimeThresh={5000}
-          />
+          >
+            Test Component
+          </TrackedDiv>
 
           <div className="flex text-center justify-center mt-7">
             <Link
