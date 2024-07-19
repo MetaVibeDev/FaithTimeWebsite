@@ -1,12 +1,50 @@
 import React, { useRef, useContext, useEffect, useState } from 'react';
+import axios from 'axios';
 import { UUIDContext } from './userinfo';
 
-const TimeString = () => {
-  return new Date(Date.now()).toISOString();
+const apiUrl = 'https://backend-data-test.metavibe-api.com/action/collect';
+const platformId_FaithTime = 5;
+
+const sendTrackingData = async (trackingData) => {
+  try {
+    const response = await axios.post(
+      apiUrl,
+      trackingData,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+    );
+
+    // Handle the response as needed
+    console.log('Data sent successfully: ', response.data);
+  }
+  catch (error) {
+    // Handle error
+    console.error('Error sending data:', error.response ? error.response.data : error.message);
+  }
+};
+
+const getTimeString = () => {
+  return new Date().toISOString();
 }
 
-function reportCollectInfo(uuid) {
-  console.log("current uuid: "+uuid);
+const reportCollectInfo = ({
+    uuid,
+    trackName
+  }) => {
+
+  const trackingData = {
+    actionName: trackName,
+    dateTime: getTimeString(),
+    platform: platformId_FaithTime,
+    uid: uuid,
+  };
+
+  console.log(trackingData);
+
+  sendTrackingData(trackingData);
 
   return;
 }
@@ -21,20 +59,21 @@ const TrackClick = (BaseComponent) => {
     const { uuid } = useContext(UUIDContext);
 
     const handleClick = (event) => {
-      console.log("click collect:"+trackName)
-
-      reportCollectInfo(uuid);
+      reportCollectInfo({
+        uuid: uuid,
+        trackName: "ClickEvent "+trackName,
+      });
 
       if (props.onClick)
       {
-          props.onClick(event);
+        props.onClick(event);
       }
     }
 
     return (
       <BaseComponent
-          onClick={handleClick}
-          {...props}
+        onClick={handleClick}
+        {...props}
       />
     );
   }
@@ -52,6 +91,8 @@ const TrackExposure = (BaseComponent) => {
       exposureTimeThresh, // ms, second(s)
       ...props
     }) => {
+      const { uuid } = useContext(UUIDContext);
+
       const trackTargetRef = useRef(null);
       const [exposed, setExposed] = useState(false);
 
@@ -62,12 +103,17 @@ const TrackExposure = (BaseComponent) => {
       }
 
       const handleExposure = () => {
-        console.log("exposure collect: exposure time over "+exposureTimeThresh+" ms!");
+        reportCollectInfo({
+          uuid: uuid,
+          trackName: "ExposureEvent "+trackName,
+        });
       }
 
       const observerCallback = (entries) => {
         entries.forEach((entry) => {
-          console.log("observer callback: intersectionRatio = "+entry.intersectionRatio+", Time = "+TimeString());
+          console.log("observer callback: intersectionRatio = "+entry.intersectionRatio+", Time = "+getTimeString());
+
+          handleExposure();
 
           if (checkExposure(entry)) {
             setExposed(true);

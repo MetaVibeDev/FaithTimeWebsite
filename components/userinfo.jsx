@@ -14,7 +14,7 @@ export const UUIDProvider = ({ children }) => {
   const [uuid, setUuid] = useState(null);
 
   useEffect(() => {
-    // Generate a new UUID using the uuid funvtion from uuid package
+    // Generate a new UUID using the uuid function from uuid package
     // if there is no UUID in local storage
     const uniqueId = localStorage.getItem('uuid') || uuidv4();
 
