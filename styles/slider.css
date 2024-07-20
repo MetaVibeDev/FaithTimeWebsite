@@ -1,20 +1,20 @@
 .slideViewport {
-    margin: 0 auto;
-    overflow: hidden;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .slideViewport.image {
-    max-width: 503px;
+  max-width: 503px;
 }
 
 .slideViewport.text {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .slideContainer {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .slide {
-    display: inline-block;
+  display: inline-block;
 }
