@@ -74,7 +74,7 @@ export class Navbar extends React.Component {
           <ul className="flex gap-4 items-center justify-cemter mx-2">
             {siteConfig.navItems.map((item, idx) => (
               <TrackedScrollLink
-                trackName={`Navbar ScrollLink_${item.label}`}
+                trackName={item.label}
                 key={idx}
                 to={item.label}
                 smooth={true}
@@ -97,28 +97,13 @@ export class Navbar extends React.Component {
           justify="end"
         >
           <NavbarItem className="hidden sm:flex gap-2">
-            <TrackedLink
-              trackName={"Navbar ExternalLink_SocialMedia_Discord"}
-              isExternal
-              aria-label="Discord"
-              href={siteConfig.links.discord}
-            >
+            <TrackedLink trackName={"Discord"} isExternal aria-label="Discord" href={siteConfig.links.discord}>
               <DiscordIcon className="text-default-700"/>
             </TrackedLink>
-            <TrackedLink
-              trackName={"Navbar ExternalLink_SocialMedia_X(Twitter)"}
-              isExternal
-              aria-label="X"
-              href={siteConfig.links.twitter}
-            >
+            <TrackedLink trackName={"X(Twitter)"} isExternal aria-label="X" href={siteConfig.links.twitter} >
               <XIcon className="text-default-700" />
             </TrackedLink>
-            <TrackedLink
-              trackName={"Navbar ExternalLink_SocialMedia_Instagram"}
-              isExternal
-              aria-label="Instagram"
-              href={siteConfig.links.instagram}
-            >
+            <TrackedLink trackName={"Instagram"} isExternal aria-label="Instagram" href={siteConfig.links.instagram}>
               <InstagramIcon className="text-default-700" />
             </TrackedLink>
             <ThemeSwitch className="ml-4"/>

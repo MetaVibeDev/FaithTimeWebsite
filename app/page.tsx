@@ -56,7 +56,6 @@ export default function Home() {
   }
 
   useEffect(() => {
-      console.log("a");
     resetTimeout();
     const id = setTimeout(
       () =>
@@ -180,14 +179,14 @@ export default function Home() {
   const MobileDownloadButtons = (
     <div className="flex gap-3">
       <TrackedLink
-        trackName={"Section_Mobile ExternalLink_Download_AppleAppStore"}
+        trackName={"DownloadMobile AppleAppStore"}
         // href={siteConfig.links.appStore}
         isExternal
       >
         <AppStoreIcon />
       </TrackedLink>
       <TrackedLink
-        trackName={"Section_Mobile ExternalLink_Download_GooglePlay"}
+        trackName={"DownloadMobile GooglePlay"}
         // href={siteConfig.links.googlePlay}
         isExternal
       >
@@ -301,7 +300,7 @@ export default function Home() {
 
             <CardFooter className="justify-center mb-4">
               <TrackedButton
-                trackName={"Section_XR ExternalLink_Download_AppleVisionProStore"}
+                trackName={"DownloadXR AppleVisionProStore"}
                 className="text-xl font-bold border-1 border-foreground-500 bg-gradient-to-l from-pink-400 to-secondary-400 dark:from-pink-500 dark:to-secondary-400"
                 size="lg"
                 radius="lg"
@@ -317,7 +316,7 @@ export default function Home() {
               <Spacer x={3} />
 
               <TrackedButton
-                trackName={"Section_XR ExternalLink_Download_MetaQuestStore"}
+                trackName={"DownloadXR MetaQuestStore"}
                 className="text-xl font-bold border-1 border-foreground-500 bg-gradient-to-r from-pink-400 to-secondary-400 dark:from-pink-500 dark:to-secondary-400"
                 size="lg"
                 radius="lg"
