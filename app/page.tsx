@@ -11,7 +11,6 @@ import {
 } from "@nextui-org/react";
 import { Spacer } from "@nextui-org/spacer";
 import React, { useEffect, useState } from "react";
-import { Element } from "react-scroll";
 
 import { siteConfig } from "@/config/site";
 import { title } from "@/components/primitives";
@@ -192,7 +191,11 @@ export default function Home() {
 
   return (
     <TrackedDiv trackName={"Page_Home"}>
-      <Element
+      <TrackedDiv
+        exposureRatioThresh={0.5}
+        exposureTimeThresh={3000}
+        trackName={"Section_Mobile"}
+
         className="flex flex-col items-center justify-center max-w-screen min-h-screen px-3"
         name="Mobile"
         style={{
@@ -200,65 +203,63 @@ export default function Home() {
             "linear-gradient(180deg, rgba(126, 84, 181, 100) 0%, rgba(126, 84, 181, 0) 100%)",
         }}
       >
-        <TrackedDiv
-          exposureRatioThresh={0.5}
-          exposureTimeThresh={3000}
-          trackName={"Section_Mobile"}
-        >
-          {/* large screen layout */}
-          <div className="hidden md:grid grid-cols-2 max-w-screen-2xl">
-            {SlideImagesWrapper}
+        {/* large screen layout */}
+        <div className="hidden md:grid grid-cols-2 max-w-screen-2xl">
+          {SlideImagesWrapper}
 
-            <div className="flex flex-col max-w-lg items-center">
-              {AppNameWithSlogan}
-
-              {MobileDownloadButtons}
-
-              <div
-                className="flex flex-col max-w-lg items-center justify-center"
-                style={{ marginTop: "10vh" }}
-              >
-                <Divider className="my-5" />
-
-                {SlideTextsWrapper}
-
-                {/* <Divider className="my-5" /> */}
-
-                {SlideDotsWrapper}
-              </div>
-            </div>
-          </div>
-
-          {/* small screen layout */}
-          <div className="md:hidden flex flex-col items-center justify-center">
+          <div className="flex flex-col max-w-lg items-center">
             {AppNameWithSlogan}
 
             {MobileDownloadButtons}
 
             <div
-              className="flex flex-col grow-0 max-w-sm items-center justify-center"
-              style={{
-                marginTop: "10vh",
-                marginBottom: "10vh",
-              }}
+              className="flex flex-col max-w-lg items-center justify-center"
+              style={{ marginTop: "10vh" }}
             >
-              <Divider className="my-5" />
-
-              <div className="mx-auto justify-self-center">
-                {SlideImagesWrapper}
-              </div>
-
               <Divider className="my-5" />
 
               {SlideTextsWrapper}
 
+              {/* <Divider className="my-5" /> */}
+
               {SlideDotsWrapper}
             </div>
           </div>
-        </TrackedDiv>
-      </Element>
+        </div>
 
-      <Element
+        {/* small screen layout */}
+        <div className="md:hidden flex flex-col items-center justify-center">
+          {AppNameWithSlogan}
+
+          {MobileDownloadButtons}
+
+          <div
+            className="flex flex-col grow-0 max-w-sm items-center justify-center"
+            style={{
+              marginTop: "10vh",
+              marginBottom: "10vh",
+            }}
+          >
+            <Divider className="my-5" />
+
+            <div className="mx-auto justify-self-center">
+              {SlideImagesWrapper}
+            </div>
+
+            <Divider className="my-5" />
+
+            {SlideTextsWrapper}
+
+            {SlideDotsWrapper}
+          </div>
+        </div>
+      </TrackedDiv>
+
+      <TrackedDiv
+        exposureRatioThresh={0.5}
+        exposureTimeThresh={3000}
+        trackName={"Section_XR"}
+
         className="flex flex-col items-center justify-center max-w-screen min-h-screen px-3"
         name="XR"
         style={{
@@ -267,12 +268,9 @@ export default function Home() {
           backgroundPosition: "center",
         }}
       >
-        <TrackedDiv
+        <div
           className="flex flex-col max-w-screen-lg text-center justify-center"
-          exposureRatioThresh={0.5}
-          exposureTimeThresh={3000}
           style={{ marginTop: "-20vh" }}
-          trackName={"Section_XR"}
         >
           <div className="py-6">
             <h1
@@ -362,8 +360,8 @@ export default function Home() {
               {/*<InstagramIcon />*/}
             </Link>
           </div>
-        </TrackedDiv>
-      </Element>
+        </div>
+      </TrackedDiv>
     </TrackedDiv>
   );
 }

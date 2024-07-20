@@ -69,7 +69,6 @@ export class Navbar extends React.Component {
               <TrackedScrollLink
                 key={idx}
                 duration={500}
-                offset={50}
                 smooth={true}
                 to={item.label}
                 trackName={`Navbar ScrollLink_${item.label}`}
