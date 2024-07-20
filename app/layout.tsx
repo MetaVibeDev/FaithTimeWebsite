@@ -45,8 +45,8 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <UUIDProvider>
-          <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+          <UUIDProvider>
             <Navbar />
 
             <main className="flex-grow">
@@ -65,8 +65,8 @@ export default function RootLayout({
               <p className="text-gray-500 text-sm">© 2024 MetaVibe. All rights reserved.</p>
               {/*</Link>*/}
             </footer>
-          </Providers>
-        </UUIDProvider>
+          </UUIDProvider>
+        </Providers>
       </body>
     </html>
   );
