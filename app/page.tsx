@@ -56,6 +56,7 @@ export default function Home() {
   }
 
   useEffect(() => {
+      console.log("a");
     resetTimeout();
     const id = setTimeout(
       () =>
