@@ -87,8 +87,8 @@ export default TrackClick;
 const TrackExposure = (BaseComponent) => {
   const EnhancedComponent = ({
       trackName,
-      exposureRatioThresh,
-      exposureTimeThresh, // ms, second(s)
+      exposureRatioThresh = 0.01,
+      exposureTimeThresh = 1, // ms
       ...props
     }) => {
       const { uuid } = useContext(UUIDContext);
@@ -107,22 +107,23 @@ const TrackExposure = (BaseComponent) => {
           uuid: uuid,
           trackName: trackName+" ExposureEvent",
         });
+
+        setExposed(true);
       }
 
       const observerCallback = (entries) => {
         entries.forEach((entry) => {
-          console.log("observer callback: intersectionRatio = "+entry.intersectionRatio+", Time = "+getTimeString());
+          // console.log(trackName+": intersectionRatio = "+entry.intersectionRatio+", time = "+getTimeString());
 
-          handleExposure();
-
-          if (checkExposure(entry)) {
-            setExposed(true);
-            exposureTimer = setTimeout(handleExposure, exposureTimeThresh);
-          }
-          else
+          if (!exposed)
           {
-            setExposed(false);
-            clearTimeout(exposureTimer);
+            if (checkExposure(entry)) {
+              exposureTimer = setTimeout(handleExposure, exposureTimeThresh);
+            }
+            else
+            {
+              clearTimeout(exposureTimer);
+            }
           }
         });
       }
@@ -135,7 +136,7 @@ const TrackExposure = (BaseComponent) => {
           {
               // root: null, // Use the viewport as the root
               // rootMargin: "0px 0px 0px 0px",
-              threshold: [0, 1], // Trigger when any part of the component is visible
+              threshold: [0, exposureRatioThresh], // Trigger when any part of the component is visible
           }
         );
 
@@ -146,7 +147,7 @@ const TrackExposure = (BaseComponent) => {
         return () => {
           observer.disconnect();
         };
-      }, [trackTargetRef]);
+      }, [trackTargetRef, exposed]);
 
       return (
         <BaseComponent

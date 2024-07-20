@@ -56,7 +56,6 @@ export default function Home() {
   }
 
   useEffect(() => {
-      console.log("a");
     resetTimeout();
     const id = setTimeout(
       () =>
@@ -197,7 +196,9 @@ export default function Home() {
   );
 
   return (
-    <section>
+    <TrackedDiv
+      trackName={"Page_Home"}
+    >
       <Element
         name="Mobile"
         className="flex flex-col items-center justify-center max-w-screen min-h-screen px-3"
@@ -206,56 +207,62 @@ export default function Home() {
             "linear-gradient(180deg, rgba(126, 84, 181, 100) 0%, rgba(126, 84, 181, 0) 100%)",
         }}
       >
-        {/* large screen layout */}
-        <div className="hidden md:grid grid-cols-2 max-w-screen-2xl">
-          {SlideImagesWrapper}
+        <TrackedDiv
+          trackName={"Section_Mobile"}
+          exposureRatioThresh={0.5}
+          exposureTimeThresh={3000}
+        >
+          {/* large screen layout */}
+          <div className="hidden md:grid grid-cols-2 max-w-screen-2xl">
+            {SlideImagesWrapper}
 
-          <div className="flex flex-col max-w-lg items-center">
+            <div className="flex flex-col max-w-lg items-center">
+              {AppNameWithSlogan}
+
+              {MobileDownloadButtons}
+
+              <div
+                className="flex flex-col max-w-lg items-center justify-center"
+                style={{ marginTop: "10vh" }}
+              >
+                <Divider className="my-5" />
+
+                {SlideTextsWrapper}
+
+                {/* <Divider className="my-5" /> */}
+
+                {SlideDotsWrapper}
+              </div>
+            </div>
+          </div>
+
+          {/* small screen layout */}
+          <div className="md:hidden flex flex-col items-center justify-center">
             {AppNameWithSlogan}
 
             {MobileDownloadButtons}
 
             <div
-              className="flex flex-col max-w-lg items-center justify-center"
-              style={{ marginTop: "10vh" }}
+              className="flex flex-col grow-0 max-w-sm items-center justify-center"
+              style={{
+                marginTop: "10vh",
+                marginBottom: "10vh",
+              }}
             >
+              <Divider className="my-5" />
+
+              <div className="mx-auto justify-self-center">
+                {SlideImagesWrapper}
+              </div>
+
               <Divider className="my-5" />
 
               {SlideTextsWrapper}
 
-              {/* <Divider className="my-5" /> */}
-
               {SlideDotsWrapper}
             </div>
           </div>
-        </div>
-
-        {/* small screen layout */}
-        <div className="md:hidden flex flex-col items-center justify-center">
-          {AppNameWithSlogan}
-
-          {MobileDownloadButtons}
-
-          <div
-            className="flex flex-col grow-0 max-w-sm items-center justify-center"
-            style={{
-              marginTop: "10vh",
-              marginBottom: "10vh",
-            }}
-          >
-            <Divider className="my-5" />
-
-            <div className="mx-auto justify-self-center">
-              {SlideImagesWrapper}
-            </div>
-
-            <Divider className="my-5" />
-
-            {SlideTextsWrapper}
-
-            {SlideDotsWrapper}
-          </div>
-        </div>
+        </TrackedDiv>
       </Element>
 
       <Element
@@ -267,7 +274,11 @@ export default function Home() {
           backgroundPosition: "center",
         }}
       >
-        <div
+        <TrackedDiv
+          trackName={"Section_XR"}
+          exposureRatioThresh={0.5}
+          exposureTimeThresh={3000}
+
           className="flex flex-col max-w-screen-lg text-center justify-center"
           style={{ marginTop: "-20vh" }}
         >
@@ -332,14 +343,6 @@ export default function Home() {
             </CardFooter>
           </Card>
 
-          <TrackedDiv
-            trackName={"test track"}
-            exposureRatioThresh={0.5}
-            exposureTimeThresh={5000}
-          >
-            Test Component
-          </TrackedDiv>
-
           <div className="flex text-center justify-center mt-7">
             <Link
               className="flex-shrink-0 text-white"
@@ -365,8 +368,8 @@ export default function Home() {
               {/*<InstagramIcon />*/}
             </Link>
           </div>
-        </div>
+        </TrackedDiv>
       </Element>
-    </section>
+    </TrackedDiv>
   );
 }
