@@ -10,23 +10,22 @@ export const UUIDContext = createContext();
 
 // Create a UUID provider component
 export const UUIDProvider = ({ children }) => {
+  // Generate a new UUID using the uuid function from uuid package
+  // if there is no UUID in local storage
+  const uniqueId = localStorage.getItem('uuid') || uuidv4();
+
   // store the UUID in component state
-  const [uuid, setUuid] = useState(null);
+  const [uuid, setUuid] = useState(uniqueId);
 
+  // Update the stored UUID in local storage whenever it changes
   useEffect(() => {
-    // Generate a new UUID using the uuid function from uuid package
-    // if there is no UUID in local storage
-    const uniqueId = localStorage.getItem('uuid') || uuidv4();
-
-    setUuid(uniqueId);
-  }, []); // run once on mount
-
-  useEffect(() => {
-    if (uuid) {
-      // Update the stored UUID in local storage whenever it changes
-      localStorage.setItem('uuid', uuid);
-    }
+    localStorage.setItem('uuid', uuid);
   }, [uuid]);
+
+  // Retrieve the stored UUID from local storage when the component mounts
+  useEffect(() => {
+    localStorage.getItem('uuid');
+  }, []);
 
   // Provide the UUID value to the components wrapped in the UUIDProvider
   return (

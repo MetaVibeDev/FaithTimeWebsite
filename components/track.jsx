@@ -61,7 +61,7 @@ const TrackClick = (BaseComponent) => {
     const handleClick = (event) => {
       reportCollectInfo({
         uuid: uuid,
-        trackName: "ClickEvent "+trackName,
+        trackName: trackName+" ClickEvent",
       });
 
       if (props.onClick)
@@ -105,7 +105,7 @@ const TrackExposure = (BaseComponent) => {
       const handleExposure = () => {
         reportCollectInfo({
           uuid: uuid,
-          trackName: "ExposureEvent "+trackName,
+          trackName: trackName+" ExposureEvent",
         });
       }
 

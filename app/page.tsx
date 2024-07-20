@@ -180,14 +180,14 @@ export default function Home() {
   const MobileDownloadButtons = (
     <div className="flex gap-3">
       <TrackedLink
-        trackName={"DownloadMobile AppleAppStore"}
+        trackName={"Section_Mobile ExternalLink_Download_AppleAppStore"}
         // href={siteConfig.links.appStore}
         isExternal
       >
         <AppStoreIcon />
       </TrackedLink>
       <TrackedLink
-        trackName={"DownloadMobile GooglePlay"}
+        trackName={"Section_Mobile ExternalLink_Download_GooglePlay"}
         // href={siteConfig.links.googlePlay}
         isExternal
       >
@@ -301,7 +301,7 @@ export default function Home() {
 
             <CardFooter className="justify-center mb-4">
               <TrackedButton
-                trackName={"DownloadXR AppleVisionProStore"}
+                trackName={"Section_XR ExternalLink_Download_AppleVisionProStore"}
                 className="text-xl font-bold border-1 border-foreground-500 bg-gradient-to-l from-pink-400 to-secondary-400 dark:from-pink-500 dark:to-secondary-400"
                 size="lg"
                 radius="lg"
@@ -317,7 +317,7 @@ export default function Home() {
               <Spacer x={3} />
 
               <TrackedButton
-                trackName={"DownloadXR MetaQuestStore"}
+                trackName={"Section_XR ExternalLink_Download_MetaQuestStore"}
                 className="text-xl font-bold border-1 border-foreground-500 bg-gradient-to-r from-pink-400 to-secondary-400 dark:from-pink-500 dark:to-secondary-400"
                 size="lg"
                 radius="lg"
