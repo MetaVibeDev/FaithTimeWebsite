@@ -30,7 +30,7 @@ const getTimeString = () => {
   return new Date().toISOString();
 }
 
-const reportCollectInfo = ({
+const reportTrackingData = ({
     uuid,
     trackName
   }) => {
@@ -42,7 +42,7 @@ const reportCollectInfo = ({
     uid: uuid,
   };
 
-  console.log(trackingData);
+  console.log('Tracked event: ', trackingData);
 
   sendTrackingData(trackingData);
 
@@ -59,7 +59,7 @@ const TrackClick = (BaseComponent) => {
     const { uuid } = useContext(UUIDContext);
 
     const handleClick = (event) => {
-      reportCollectInfo({
+      reportTrackingData({
         uuid: uuid,
         trackName: trackName+" ClickEvent",
       });
@@ -103,7 +103,7 @@ const TrackExposure = (BaseComponent) => {
       }
 
       const handleExposure = () => {
-        reportCollectInfo({
+        reportTrackingData({
           uuid: uuid,
           trackName: trackName+" ExposureEvent",
         });
