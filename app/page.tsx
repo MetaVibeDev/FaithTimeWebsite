@@ -1,32 +1,26 @@
 "use client";
 
 import { Link } from "@nextui-org/link";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
-import { button as buttonStyles } from "@nextui-org/theme";
 import {
   Button,
   Card,
   CardHeader,
-  CardBody,
   CardFooter,
   Divider,
   Image,
 } from "@nextui-org/react";
 import { Spacer } from "@nextui-org/spacer";
+import React, { useEffect, useState } from "react";
+import { Element } from "react-scroll";
 
 import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
+import { title } from "@/components/primitives";
 import {
-  GithubIcon,
   AppleIcon,
   MetaIcon,
   AppStoreIcon,
   GooglePlayIcon,
 } from "@/components/icons";
-
-import React, { useEffect, useState } from "react";
-import { Element } from "react-scroll";
 
 import "../styles/slider.css";
 
@@ -35,7 +29,7 @@ import TrackClick, { TrackExposure } from "@/components/track";
 const TrackedLink = TrackClick(Link);
 const TrackedButton = TrackClick(Button);
 
-const TrackedDiv = TrackExposure('div');
+const TrackedDiv = TrackExposure("div");
 
 type TimeoutType = ReturnType<typeof setTimeout> | null;
 
@@ -60,10 +54,11 @@ export default function Home() {
     const id = setTimeout(
       () =>
         setIndex((prevIndex) =>
-          prevIndex === slideImageAndText.length - 1 ? 0 : prevIndex + 1
+          prevIndex === slideImageAndText.length - 1 ? 0 : prevIndex + 1,
         ),
-      displayTime
+      displayTime,
     );
+
     setTimeoutId(id);
 
     return () => {
@@ -75,12 +70,12 @@ export default function Home() {
     return (
       <Image
         key={idx}
+        removeWrapper
+        className="slide object-scale-down box-border px-8 py-8"
         src={item.src}
         style={{
           filter: "drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5))",
         }}
-        className="slide object-scale-down box-border px-8 py-8"
-        removeWrapper
       />
     );
   });
@@ -196,21 +191,19 @@ export default function Home() {
   );
 
   return (
-    <TrackedDiv
-      trackName={"Page_Home"}
-    >
+    <TrackedDiv trackName={"Page_Home"}>
       <Element
-        name="Mobile"
         className="flex flex-col items-center justify-center max-w-screen min-h-screen px-3"
+        name="Mobile"
         style={{
           background:
             "linear-gradient(180deg, rgba(126, 84, 181, 100) 0%, rgba(126, 84, 181, 0) 100%)",
         }}
       >
         <TrackedDiv
-          trackName={"Section_Mobile"}
           exposureRatioThresh={0.5}
           exposureTimeThresh={3000}
+          trackName={"Section_Mobile"}
         >
           {/* large screen layout */}
           <div className="hidden md:grid grid-cols-2 max-w-screen-2xl">
@@ -266,8 +259,8 @@ export default function Home() {
       </Element>
 
       <Element
-        name="XR"
         className="flex flex-col items-center justify-center max-w-screen min-h-screen px-3"
+        name="XR"
         style={{
           backgroundImage: `url('CoverArt_Landscape.png')`,
           backgroundSize: "cover",
@@ -275,12 +268,11 @@ export default function Home() {
         }}
       >
         <TrackedDiv
-          trackName={"Section_XR"}
+          className="flex flex-col max-w-screen-lg text-center justify-center"
           exposureRatioThresh={0.5}
           exposureTimeThresh={3000}
-
-          className="flex flex-col max-w-screen-lg text-center justify-center"
           style={{ marginTop: "-20vh" }}
+          trackName={"Section_XR"}
         >
           <div className="py-6">
             <h1
@@ -302,8 +294,8 @@ export default function Home() {
           </div>
 
           <Card
-            className="border-none bg-background/50 dark:bg-background/50"
             isBlurred
+            className="border-none bg-background/50 dark:bg-background/50"
             shadow="lg"
           >
             <CardHeader className=" ml-5 flex-col items-start p-0 pt-5">
@@ -312,14 +304,16 @@ export default function Home() {
 
             <CardFooter className="justify-center mb-4">
               <TrackedButton
-                trackName={"Section_XR ExternalLink_Download_AppleVisionProStore"}
-                className="text-xl font-bold border-1 border-foreground-500 bg-gradient-to-l from-pink-400 to-secondary-400 dark:from-pink-500 dark:to-secondary-400"
-                size="lg"
-                radius="lg"
-                variant="bordered"
-                href={siteConfig.links.visionProStore}
                 isExternal
                 as={Link}
+                className="text-xl font-bold border-1 border-foreground-500 bg-gradient-to-l from-pink-400 to-secondary-400 dark:from-pink-500 dark:to-secondary-400"
+                href={siteConfig.links.visionProStore}
+                radius="lg"
+                size="lg"
+                trackName={
+                  "Section_XR ExternalLink_Download_AppleVisionProStore"
+                }
+                variant="bordered"
               >
                 <AppleIcon />
                 Vision Pro
@@ -328,14 +322,14 @@ export default function Home() {
               <Spacer x={3} />
 
               <TrackedButton
-                trackName={"Section_XR ExternalLink_Download_MetaQuestStore"}
-                className="text-xl font-bold border-1 border-foreground-500 bg-gradient-to-r from-pink-400 to-secondary-400 dark:from-pink-500 dark:to-secondary-400"
-                size="lg"
-                radius="lg"
-                variant="bordered"
-                href={siteConfig.links.metaQuestStore}
                 isExternal
                 as={Link}
+                className="text-xl font-bold border-1 border-foreground-500 bg-gradient-to-r from-pink-400 to-secondary-400 dark:from-pink-500 dark:to-secondary-400"
+                href={siteConfig.links.metaQuestStore}
+                radius="lg"
+                size="lg"
+                trackName={"Section_XR ExternalLink_Download_MetaQuestStore"}
+                variant="bordered"
               >
                 <MetaIcon />
                 Meta Quest
@@ -345,25 +339,25 @@ export default function Home() {
 
           <div className="flex text-center justify-center mt-7">
             <Link
+              isExternal
               className="flex-shrink-0 text-white"
               href={siteConfig.links.discord}
-              isExternal
             >
               {/*<DiscordIcon />*/}
             </Link>
             <Spacer x={2} />
             <Link
+              isExternal
               className="flex-shrink-0 text-white"
               href={siteConfig.links.twitter}
-              isExternal
             >
               {/*<XIcon />*/}
             </Link>
             <Spacer x={2} />
             <Link
+              isExternal
               className="flex-shrink-0 text-white"
               href={siteConfig.links.instagram}
-              isExternal
             >
               {/*<InstagramIcon />*/}
             </Link>

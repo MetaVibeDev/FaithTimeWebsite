@@ -1,6 +1,5 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
-import { Link } from "@nextui-org/link";
 import clsx from "clsx";
 
 import { Providers } from "./providers";
@@ -8,7 +7,6 @@ import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
-
 import { UUIDProvider } from "@/components/userinfo";
 
 export const metadata: Metadata = {
@@ -37,7 +35,10 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <head>
-        <meta name="google-site-verification" content="VUnM5YuI09m5zxQfW9K8D67jmRsE_LLQgkgL-sB6wUM" />
+        <meta
+          content="VUnM5YuI09m5zxQfW9K8D67jmRsE_LLQgkgL-sB6wUM"
+          name="google-site-verification"
+        />
       </head>
       <body
         className={clsx(
@@ -49,9 +50,7 @@ export default function RootLayout({
           <UUIDProvider>
             <Navbar />
 
-            <main className="flex-grow">
-              {children}
-            </main>
+            <main className="flex-grow">{children}</main>
 
             <footer className="w-full flex items-center justify-center relative flex-col px-10 py-3">
               {/*
@@ -62,7 +61,9 @@ export default function RootLayout({
                 title="nextui.org homepage"
               >
               */}
-              <p className="text-gray-500 text-sm">© 2024 MetaVibe. All rights reserved.</p>
+              <p className="text-gray-500 text-sm">
+                © 2024 MetaVibe. All rights reserved.
+              </p>
               {/*</Link>*/}
             </footer>
           </UUIDProvider>

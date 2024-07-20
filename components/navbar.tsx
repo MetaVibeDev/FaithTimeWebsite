@@ -9,14 +9,12 @@ import {
   NavbarItem,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
-import { Button } from "@nextui-org/button";
 import { Kbd } from "@nextui-org/kbd";
 import { Link } from "@nextui-org/link";
 import { Input } from "@nextui-org/input";
-import { Spacer } from "@nextui-org/spacer";
-import { link as linkStyles } from "@nextui-org/theme";
 import NextLink from "next/link";
-import clsx from "clsx";
+import React from "react";
+import { Link as ScrollLink } from "react-scroll";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
@@ -24,16 +22,8 @@ import {
   DiscordIcon,
   XIcon,
   InstagramIcon,
-  TwitterIcon,
-  GithubIcon,
-  HeartFilledIcon,
   SearchIcon,
-  Logo,
 } from "@/components/icons";
-
-import React from 'react';
-import { Link as ScrollLink } from 'react-scroll';
-
 import TrackClick from "@/components/track";
 
 const TrackedLink = TrackClick(Link);
@@ -66,7 +56,10 @@ export class Navbar extends React.Component {
       <NextUINavbar maxWidth="2xl" position="sticky">
         <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
           <NavbarBrand as="li" className="gap-3 max-w-fit">
-            <NextLink className="flex justify-start items-center gap-1" href="/">
+            <NextLink
+              className="flex justify-start items-center gap-1"
+              href="/"
+            >
               {/* <Logo /> */}
               <p className="font-bold text-inherit">FaithTime</p>
             </NextLink>
@@ -74,16 +67,16 @@ export class Navbar extends React.Component {
           <ul className="flex gap-4 items-center justify-cemter mx-2">
             {siteConfig.navItems.map((item, idx) => (
               <TrackedScrollLink
-                trackName={`Navbar ScrollLink_${item.label}`}
                 key={idx}
-                to={item.label}
-                smooth={true}
-                offset={50}
                 duration={500}
+                offset={50}
+                smooth={true}
+                to={item.label}
+                trackName={`Navbar ScrollLink_${item.label}`}
               >
                 <NavbarItem
                   key={item.href}
-                  className = "hover:cursor-pointer hover:text-secondary hover:font-bold"
+                  className="hover:cursor-pointer hover:text-secondary hover:font-bold"
                 >
                   {item.label}
                 </NavbarItem>
@@ -98,30 +91,30 @@ export class Navbar extends React.Component {
         >
           <NavbarItem className="hidden sm:flex gap-2">
             <TrackedLink
-              trackName={"Navbar ExternalLink_SocialMedia_Discord"}
               isExternal
               aria-label="Discord"
               href={siteConfig.links.discord}
+              trackName={"Navbar ExternalLink_SocialMedia_Discord"}
             >
-              <DiscordIcon className="text-default-700"/>
+              <DiscordIcon className="text-default-700" />
             </TrackedLink>
             <TrackedLink
-              trackName={"Navbar ExternalLink_SocialMedia_X(Twitter)"}
               isExternal
               aria-label="X"
               href={siteConfig.links.twitter}
+              trackName={"Navbar ExternalLink_SocialMedia_X(Twitter)"}
             >
               <XIcon className="text-default-700" />
             </TrackedLink>
             <TrackedLink
-              trackName={"Navbar ExternalLink_SocialMedia_Instagram"}
               isExternal
               aria-label="Instagram"
               href={siteConfig.links.instagram}
+              trackName={"Navbar ExternalLink_SocialMedia_Instagram"}
             >
               <InstagramIcon className="text-default-700" />
             </TrackedLink>
-            <ThemeSwitch className="ml-4"/>
+            <ThemeSwitch className="ml-4" />
           </NavbarItem>
 
           {/* <NavbarItem className="hidden lg:flex">
@@ -171,7 +164,6 @@ export class Navbar extends React.Component {
             ))}
           </div>
         </NavbarMenu>
-
       </NextUINavbar>
     );
   }

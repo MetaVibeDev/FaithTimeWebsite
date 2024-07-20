@@ -4,15 +4,17 @@ export const title = tv({
   base: "tracking-tight inline font-semibold",
   variants: {
     color: {
-			white: "from-[#FFFFFF] to-[#FFFFFF]",
-      violet: "from-pink-400 to-secondary-500 dark: from-pink-500 dark:to-secondary-500",
+      white: "from-[#FFFFFF] to-[#FFFFFF]",
+      violet:
+        "from-pink-400 to-secondary-500 dark: from-pink-500 dark:to-secondary-500",
       yellow: "from-[#FF705B] to-[#FFB457]",
       blue: "from-[#5EA2EF] to-[#5EA2EF]",
       cyan: "from-[#00b7fa] to-[#01cfea]",
       green: "from-[#6FEE8D] to-[#17c964]",
       pink: "from-[#FF72E1] to-[#F54C7A]",
       primary: "text-secondary-400 dark:text-secondary-500 font-normal",
-      foreground: "from-[#000000] to-[#808080] dark:from-[#FFFFFF] dark:to-[#808080]",
+      foreground:
+        "from-[#000000] to-[#808080] dark:from-[#FFFFFF] dark:to-[#808080]",
     },
     size: {
       xs: "text-2xl lg:text-3xl",
@@ -30,7 +32,7 @@ export const title = tv({
   compoundVariants: [
     {
       color: [
-				"white",
+        "white",
         "violet",
         "yellow",
         "blue",
@@ -50,7 +52,7 @@ export const subtitle = tv({
     color: {
       white: "text-white",
     },
-  fullWidth: {
+    fullWidth: {
       true: "!w-full",
     },
   },
@@ -59,9 +61,7 @@ export const subtitle = tv({
   },
   compoundVariants: [
     {
-      color: [
-				"white",
-      ],
+      color: ["white"],
     },
   ],
 });
