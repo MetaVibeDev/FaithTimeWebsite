@@ -2,7 +2,7 @@ import React, { useRef, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { UUIDContext } from "./userinfo";
 
-const apiUrl = "https://backend-data-test.metavibe-api.com/action/collect";
+const apiUrl = "https://backend-data.metavibe-api.com/action/collect";
 const platformId_FaithTime = 5;
 
 // Simulate enum-like behavior by object in javascript
@@ -20,7 +20,7 @@ const sendTrackingData = async (trackingData) => {
     });
 
     // Handle the response as needed
-    console.log("Data sent successfully: ", response.data);
+    // console.log("Data sent successfully: ", response.data);
   } catch (error) {
     // Handle error
     console.error(
@@ -47,7 +47,7 @@ const reportTrackingData = ({
     uid: uuid,
   };
 
-  console.log("Tracked event: ", trackingData);
+  // console.log("Tracked event: ", trackingData);
 
   sendTrackingData(trackingData);
 
@@ -103,7 +103,7 @@ const TrackExposure = (BaseComponent) => {
     };
 
     const handleExposure = () => {
-      console.log(trackName+": exposureCount = "+(exposureCount.current + 1)+", exposureTimer id = "+exposureTimer);
+      // console.log(trackName+": exposureCount = "+(exposureCount.current + 1)+", exposureTimer id = "+exposureTimer);
 
       reportTrackingData({
         uuid: uuid,
