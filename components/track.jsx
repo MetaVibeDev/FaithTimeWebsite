@@ -84,6 +84,7 @@ export default TrackClick;
 const TrackExposure = (BaseComponent) => {
   const EnhancedComponent = ({
     trackName,
+    trackOnlyOnce = false,
     exposureRatioThresh = 0.01,
     exposureTimeThresh = 1, // ms
     ...props
@@ -91,7 +92,7 @@ const TrackExposure = (BaseComponent) => {
     const { uuid } = useContext(UUIDContext);
 
     const trackTargetRef = useRef(null);
-    const [exposed, setExposed] = useState(false);
+    const exposureCount = useRef(0);
 
     let exposureTimer = null;
 
@@ -102,20 +103,24 @@ const TrackExposure = (BaseComponent) => {
     };
 
     const handleExposure = () => {
+      console.log(trackName+": exposureCount = "+(exposureCount.current + 1)+", exposureTimer id = "+exposureTimer);
+
       reportTrackingData({
         uuid: uuid,
         trackName: trackName,
         trackType: trackedEventType.Exposure,
       });
 
-      setExposed(true);
+      exposureCount.current++;
     };
 
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
         // console.log(trackName+": intersectionRatio = "+entry.intersectionRatio+", time = "+getTimeString());
 
-        if (!exposed) {
+        const needCheck = !(trackOnlyOnce && (exposureCount.current > 0));
+
+        if (needCheck) {
           if (checkExposure(entry)) {
             exposureTimer = setTimeout(handleExposure, exposureTimeThresh);
           } else {
