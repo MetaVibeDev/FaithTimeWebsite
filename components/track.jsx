@@ -5,6 +5,12 @@ import { UUIDContext } from "./userinfo";
 const apiUrl = "https://backend-data-test.metavibe-api.com/action/collect";
 const platformId_FaithTime = 5;
 
+// Simulate enum-like behavior by object in javascript
+const trackedEventType = Object.freeze({
+  Click: 0,
+  Exposure: 1,
+});
+
 const sendTrackingData = async (trackingData) => {
   try {
     const response = await axios.post(apiUrl, trackingData, {
@@ -26,11 +32,16 @@ const sendTrackingData = async (trackingData) => {
 
 const getTimeString = () => {
   return new Date().toISOString();
-};
+}
 
-const reportTrackingData = ({ uuid, trackName }) => {
+const reportTrackingData = ({
+    uuid,
+    trackName,
+    trackType,
+  }) => {
   const trackingData = {
     actionName: trackName,
+    actionType: trackType,
     dateTime: getTimeString(),
     platform: platformId_FaithTime,
     uid: uuid,
@@ -52,7 +63,8 @@ const TrackClick = (BaseComponent) => {
     const handleClick = (event) => {
       reportTrackingData({
         uuid: uuid,
-        trackName: trackName + " ClickEvent",
+        trackName: trackName,
+        trackType: trackedEventType.Click,
       });
 
       if (props.onClick) {
@@ -92,7 +104,8 @@ const TrackExposure = (BaseComponent) => {
     const handleExposure = () => {
       reportTrackingData({
         uuid: uuid,
-        trackName: trackName + " ExposureEvent",
+        trackName: trackName,
+        trackType: trackedEventType.Exposure,
       });
 
       setExposed(true);
@@ -128,7 +141,7 @@ const TrackExposure = (BaseComponent) => {
       return () => {
         observer.disconnect();
       };
-    }, [trackTargetRef, exposed]);
+    }, [trackTargetRef]);
 
     return <BaseComponent ref={trackTargetRef} {...props} />;
   };
