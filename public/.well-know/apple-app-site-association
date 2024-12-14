@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "HQBS955K28.com.metavibe.Faithtime",
+        "paths": [ "/share", "/share/*"]
+      }
+    ]
+  }
+}
