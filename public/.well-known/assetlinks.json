@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+
+      "namespace": "android_app",
+      "package_name": "com.metavibe.faithtime",
+      "sha256_cert_fingerprints": [
+        "A4:20:35:E7:B2:9F:D1:30:9F:B3:28:9E:6B:D5:8E:96:03:E9:CA:E2:5F:B9:E0:CF:FF:7B:F5:EE:1D:B0:01:BA"
+      ]
+    }
+  }
+]
