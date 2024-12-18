@@ -161,11 +161,13 @@ export default function Home() {
       </h1>
       <br />
       <div className="inline-block text-center justify-center">
-        <h1 className={title({ color: "violet" })}>Journey of </h1>
+        <h1 className={title({ color: "violet" })}>Daily </h1>
         <br />
-        <h1 className={title({ size: "md" })}>Sacred Sites&nbsp;</h1>
-        <h1 className={title({ color: "violet", size: "md" })}>& </h1>
-        <h1 className={title({ size: "md" })}>Prayer.</h1>
+        <h1 className={title({ size: "md" })}>Spiritual Companion</h1>
+        <br />
+        <h1 className={title({ color: "violet" })}>for </h1>
+        <br />
+        <h1 className={title({ size: "md" })}>Young Christians</h1>
       </div>
     </div>
   );
@@ -255,6 +257,7 @@ export default function Home() {
         </div>
       </TrackedDiv>
 
+      {/* 移除XR App展示区
       <TrackedDiv
         exposureRatioThresh={0.5}
         exposureTimeThresh={3000}
@@ -341,7 +344,7 @@ export default function Home() {
               className="flex-shrink-0 text-white"
               href={siteConfig.links.discord}
             >
-              {/*<DiscordIcon />*/}
+              // {<DiscordIcon />}
             </Link>
             <Spacer x={2} />
             <Link
@@ -349,7 +352,7 @@ export default function Home() {
               className="flex-shrink-0 text-white"
               href={siteConfig.links.twitter}
             >
-              {/*<XIcon />*/}
+              // {<XIcon /> }
             </Link>
             <Spacer x={2} />
             <Link
@@ -357,11 +360,12 @@ export default function Home() {
               className="flex-shrink-0 text-white"
               href={siteConfig.links.instagram}
             >
-              {/*<InstagramIcon />*/}
+              // {<InstagramIcon />}
             </Link>
           </div>
         </div>
       </TrackedDiv>
+      */}
     </TrackedDiv>
   );
 }
