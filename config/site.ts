@@ -50,9 +50,10 @@ export const siteConfig = {
   ],
   links: {
     // social medias
+    tiktok: "https://www.tiktok.com/@faithtime777",
     discord: "https://discord.gg/Mc8d5sXDp9",
     twitter: "https://x.com/FaithtimeApp",
-    instagram: "https://www.instagram.com/faithtimelab",
+    instagram: "https://www.instagram.com/faithtime_app",
     // mobile stores
     appStore: "#",
     googlePlay: "#",
@@ -67,7 +68,7 @@ export const siteConfig = {
   },
   slideImageAndText: [
     {
-      src: "/MobileApp/AppPreview.01.png",
+      src: "/MobileApp/AppPreview.01_iPhone16_Home_Pilgrimage.png",
       title: "FaithTime App",
       content:
         " \
@@ -75,7 +76,7 @@ export const siteConfig = {
         ",
     },
     {
-      src: "/MobileApp/AppPreview.04.png",
+      src: "/MobileApp/AppPreview.02_iPhone16_Lumi_Profile.png",
       title: "Growth Journey",
       content:
         " \
@@ -83,7 +84,7 @@ export const siteConfig = {
         ",
     },
     {
-      src: "/MobileApp/AppPreview.03.png",
+      src: "/MobileApp/AppPreview.03_iPhone16_Bible_SetGoal.png",
       title: "Bible Reading",
       content:
         " \
@@ -91,7 +92,7 @@ export const siteConfig = {
         ",
     },
     {
-      src: "/MobileApp/AppPreview.02.png",
+      src: "/MobileApp/AppPreview.04_iPhone16_DailySacredSites.png",
       title: "Daily Sacred Sites & Prayer",
       content:
         "\
@@ -99,7 +100,7 @@ export const siteConfig = {
         ",
     },
     {
-      src: "/MobileApp/AppPreview.02.png",
+      src: "/MobileApp/AppPreview.05_iPhone16_PrayerRequest.png",
       title: "Prayer Community",
       content:
         "\
@@ -107,7 +108,7 @@ export const siteConfig = {
         ",
     },
     {
-      src: "/MobileApp/AppPreview.02.png",
+      src: "/MobileApp/AppPreview.06_iPhone16_Journal.png",
       title: "Faith Journal",
       content:
         "\

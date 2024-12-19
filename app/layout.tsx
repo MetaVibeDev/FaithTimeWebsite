@@ -62,7 +62,7 @@ export default function RootLayout({
               >
               */}
               <p className="text-gray-500 text-sm">
-                © 2024 MetaVibe. All rights reserved.
+                © 2025 MetaVibe. All rights reserved.
               </p>
               {/*</Link>*/}
             </footer>
