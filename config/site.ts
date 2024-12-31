@@ -50,7 +50,7 @@ export const siteConfig = {
   ],
   links: {
     // social medias
-    tiktok: "https://www.tiktok.com/@faithtime777",
+    tiktok: "https://www.tiktok.com/@faithtime_app",
     discord: "https://discord.gg/Mc8d5sXDp9",
     twitter: "https://x.com/FaithtimeApp",
     instagram: "https://www.instagram.com/faithtime_app",
