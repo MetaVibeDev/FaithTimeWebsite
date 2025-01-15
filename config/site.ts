@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "FaithTime App - Journey of Sacred Sites & Prayer",
+  name: "FaithTime App - Daily Spiritual Companion for Young Christians",
   description:
     "Embark on a spiritual adventure with FaithTime, your companion for spiritual journeying through sacred sites and daily devotions. Discover christian sacred places, engage in meditation prayers, and receive a daily bible verse. Our app combines pilgrimage with prayer, offering a unique blend of christian meditations and virtual exploration of christianity's most revered locations. Join our faith community church in this transformative journey.",
   navItems: [
@@ -9,10 +9,10 @@ export const siteConfig = {
       label: "Mobile",
       href: "/mobile",
     },
-    {
-      label: "XR",
-      href: "/XR",
-    },
+    // {
+    //   label: "XR",
+    //   href: "/XR",
+    // },
   ],
   navMenuItems: [
     // {
@@ -50,9 +50,10 @@ export const siteConfig = {
   ],
   links: {
     // social medias
+    tiktok: "https://www.tiktok.com/@faithtime_app",
     discord: "https://discord.gg/Mc8d5sXDp9",
     twitter: "https://x.com/FaithtimeApp",
-    instagram: "https://www.instagram.com/faithtimelab",
+    instagram: "https://www.instagram.com/faithtime_app",
     // mobile stores
     appStore: "#",
     googlePlay: "#",
@@ -67,41 +68,51 @@ export const siteConfig = {
   },
   slideImageAndText: [
     {
-      src: "/MobileApp/AppPreview.01.png",
-      title: "Daily Sacred Sites",
+      src: "/MobileApp/AppPreview.01_iPhone16_Home_Pilgrimage.png",
+      title: "FaithTime App",
       content:
         " \
-        Embark on a spiritual journey with FaithTime. \
-        Explore sacred sites, engage in daily devotions and meditation prayers. \
-        Receive a daily bible verse and experience christian meditations through virtual exploration of christianity's revered locations. \
+        Embark on a spiritual journey with Lumi the little lamb. \
         ",
     },
     {
-      src: "/MobileApp/AppPreview.04.png",
-      title: "Sacred Sites Details",
+      src: "/MobileApp/AppPreview.02_iPhone16_Lumi_Profile.png",
+      title: "Growth Journey",
       content:
         " \
-        Discover christianity religion history through sacred sites. \
-        Learn about churches and faith centers in our religion. \
-        Connect with the church of Jesus Christ through suggested prayers to deepen your faith.\
+        Track the growth of spritual companion as you both evolve in faith. \
         ",
     },
     {
-      src: "/MobileApp/AppPreview.03.png",
-      title: "Daily Scripture",
+      src: "/MobileApp/AppPreview.03_iPhone16_Bible_SetGoal.png",
+      title: "Bible Reading",
       content:
         " \
-        Start your day with this feature, which offers a bible verse of the day for daily devotion on prayer or bible study. \
-        Find scriptures on faith or prayers before bed for your christian journey. \
+        Stay on track with personalized bible plan. \
         ",
     },
     {
-      src: "/MobileApp/AppPreview.02.png",
-      title: "Calender",
+      src: "/MobileApp/AppPreview.04_iPhone16_DailySacredSites.png",
+      title: "Daily Sacred Sites & Prayer",
       content:
         "\
-        Track spiritual growth with our Calendar. \
-        Encourage devotions and mindfulness meditation, maintaining your connection with Jesus Christ and commitment to faith and family. \
+        Connect with God through prayer and sacred sites worldwide. \
+        ",
+    },
+    {
+      src: "/MobileApp/AppPreview.05_iPhone16_PrayerRequest.png",
+      title: "Prayer Community",
+      content:
+        "\
+        Share and support prayers within the community. \
+        ",
+    },
+    {
+      src: "/MobileApp/AppPreview.06_iPhone16_Journal.png",
+      title: "Faith Journal",
+      content:
+        "\
+        Reflect on your thoughts and prayers. \
         ",
     },
   ],

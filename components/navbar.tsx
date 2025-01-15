@@ -19,6 +19,7 @@ import { Link as ScrollLink } from "react-scroll";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import {
+  TiktokIcon,
   DiscordIcon,
   XIcon,
   InstagramIcon,
@@ -90,12 +91,12 @@ export class Navbar extends React.Component {
         >
           <NavbarItem className="hidden sm:flex gap-2">
             <TrackedLink
-              isExternal
-              aria-label="Discord"
-              href={siteConfig.links.discord}
-              trackName={"Navbar ExternalLink_SocialMedia_Discord"}
-            >
-              <DiscordIcon className="text-default-700" />
+                isExternal
+                aria-label="Tiktok"
+                href={siteConfig.links.tiktok}
+                trackName={"Navbar ExternalLink_SocialMedia_Tiktok"}
+              >
+              <TiktokIcon className="text-default-700" />
             </TrackedLink>
             <TrackedLink
               isExternal
@@ -112,6 +113,14 @@ export class Navbar extends React.Component {
               trackName={"Navbar ExternalLink_SocialMedia_Instagram"}
             >
               <InstagramIcon className="text-default-700" />
+            </TrackedLink>
+            <TrackedLink
+              isExternal
+              aria-label="Discord"
+              href={siteConfig.links.discord}
+              trackName={"Navbar ExternalLink_SocialMedia_Discord"}
+            >
+              <DiscordIcon className="text-default-700" />
             </TrackedLink>
             <ThemeSwitch className="ml-4" />
           </NavbarItem>
