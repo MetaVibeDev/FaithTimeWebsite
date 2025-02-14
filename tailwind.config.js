@@ -8,7 +8,17 @@ module.exports = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        'pulse-scale': {
+          '0%, 100%': { transform: 'scale(0.9)' },
+          '50%': { transform: 'scale(1.03)' },
+        }
+      },
+      animation: {
+        'pulse-scale': 'pulse-scale 1s ease-in-out infinite',
+      }
+    },
   },
   darkMode: "class",
   plugins: [nextui()],
