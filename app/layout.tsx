@@ -53,13 +53,12 @@ export default function RootLayout({
             <NavbarWrapper>
               <main className="flex-grow">{children}</main>
             </NavbarWrapper>
-
+            {/* 
             <footer className="w-full flex items-center justify-center relative flex-col px-10 py-3">
               <p className="text-gray-500 text-sm">
                 © 2025 MetaVibe. All rights reserved.
               </p>
-              {/*</Link>*/}
-            </footer>
+            </footer> */}
           </UUIDProvider>
         </Providers>
       </body>
