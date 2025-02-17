@@ -42,19 +42,19 @@ function RuleDialog({ onClose }: { onClose: () => void }) {
       <div className="fixed inset-0 bg-black/50 z-40" onClick={onClose} />
       <div className="fixed inset-0 z-50 flex items-center justify-center">
         <div className="bg-white rounded-[20px] w-[90vw] max-w-[400px] p-5">
-          <h2 className="text-[28px] font-bold text-center mb-6">
+          <h2 className="text-[28px] font-bold text-center mb-6 text-black">
             Activity Rules
           </h2>
           <div className="space-y-6 mb-8">
-            <p className="text-[16px]">
+            <p className="text-[16px] text-black">
               1.Each user can only be invited once. Users who have been invited
               before will not be eligible for rewards.
             </p>
-            <p className="text-[16px]">
+            <p className="text-[16px] text-black">
               2.Fraudulent invitation attempts will result in clearing of data
               and rewards.
             </p>
-            <p className="text-[16px]">
+            <p className="text-[16px] text-black">
               3.FaithTime reserves the final right to interpret this activity.
               Contact us for any inquiries.
             </p>
