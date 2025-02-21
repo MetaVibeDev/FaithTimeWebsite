@@ -4,6 +4,7 @@ import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Copy } from "lucide-react";
 import Image from "next/image";
+import { fontSans } from "@/config/fonts";
 
 function QuestionDialog({ onAnswer }: { onAnswer: (isUser: boolean) => void }) {
   return (
@@ -77,11 +78,26 @@ function InvitePageContent() {
   const searchParams = useSearchParams();
   const [showQuestion, setShowQuestion] = useState(true);
   const [showRules, setShowRules] = useState(false);
+  const [name, setName] = useState<string | null>(null);
 
   useEffect(() => {
     const code = searchParams.get("inviteCode");
     setInviteCode(code);
+    const name = searchParams.get("name");
+    setName(name);
   }, [searchParams]);
+
+  useEffect(() => {
+    if (showQuestion) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [showQuestion]);
 
   const handleAnswer = (isUser: boolean) => {
     setShowQuestion(false);
@@ -108,9 +124,31 @@ function InvitePageContent() {
   return (
     <>
       <div
-        className="w-full bg-cover bg-top bg-no-repeat relative"
+        className={`w-full bg-cover bg-top bg-no-repeat relative ${fontSans.className}`}
         style={{ backgroundImage: "url('/invite/old-user-background.png')" }}
       >
+        {name && (
+          <div
+            className="absolute top-[100px] left-[20px] text-white text-[31px] font-bold"
+            style={{
+              textShadow: `
+                -2.5px -2.5px 0 #4400C8,
+                -2.5px 0 0 #4400C8,
+                -2.5px 2.5px 0 #4400C8,
+                0 -2.5px 0 #4400C8,
+                0 2.5px 0 #4400C8,
+                2.5px -2.5px 0 #4400C8,
+                2.5px 0 0 #4400C8,
+                2.5px 2.5px 0 #4400C8
+              `,
+              WebkitFontSmoothing: "antialiased",
+              MozOsxFontSmoothing: "grayscale",
+            }}
+          >
+            {name}
+          </div>
+        )}
+
         <div
           className="absolute top-[68px] right-0 bg-[#00000050] text-[#ffffffc2] px-4 py-1 rounded-l-full font-medium cursor-pointer"
           onClick={() => setShowRules(true)}
@@ -155,7 +193,7 @@ function InvitePageContent() {
         </div>
 
         <img
-          src="/invite/how-to-pray-2.png"
+          src="/invite/how-to-pray.png"
           alt="how to pray"
           className="p-4 mt-1"
         />
