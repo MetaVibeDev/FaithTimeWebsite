@@ -3,7 +3,6 @@
 import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Copy } from "lucide-react";
-import Image from "next/image";
 import { fontSans } from "@/config/fonts";
 
 function QuestionDialog({ onAnswer }: { onAnswer: (isUser: boolean) => void }) {
@@ -195,7 +194,7 @@ function InvitePageContent() {
         <img
           src="/invite/how-to-pray.png"
           alt="how to pray"
-          className="p-4 mt-1"
+          className="ml-2 mt-3 p-2"
         />
       </div>
       {showQuestion && <QuestionDialog onAnswer={handleAnswer} />}
