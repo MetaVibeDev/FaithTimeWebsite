@@ -6,8 +6,10 @@ import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
-import { Navbar } from "@/components/navbar";
 import { UUIDProvider } from "@/components/userinfo";
+
+// 将 NavbarWrapper 移动到单独的客户端组件文件中
+import { NavbarWrapper } from "@/components/navbar-wrapper";
 
 export const metadata: Metadata = {
   title: {
@@ -43,29 +45,20 @@ export default function RootLayout({
       <body
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
+          fontSans.variable
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <UUIDProvider>
-            <Navbar />
-
-            <main className="flex-grow">{children}</main>
-
+            <NavbarWrapper>
+              <main className="flex-grow">{children}</main>
+            </NavbarWrapper>
+            {/* 
             <footer className="w-full flex items-center justify-center relative flex-col px-10 py-3">
-              {/*
-              <Link
-                isExternal
-                className="flex items-center gap-1 text-current"
-                href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
-                title="nextui.org homepage"
-              >
-              */}
               <p className="text-gray-500 text-sm">
                 © 2025 MetaVibe. All rights reserved.
               </p>
-              {/*</Link>*/}
-            </footer>
+            </footer> */}
           </UUIDProvider>
         </Providers>
       </body>
