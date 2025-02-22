@@ -68,51 +68,51 @@ export const siteConfig = {
   },
   slideImageAndText: [
     {
-      src: "/MobileApp/AppPreview.01_iPhone16_Home_Pilgrimage.png",
-      title: "FaithTime App",
+      src: "/MobileApp/1.png",
+      title: "Spiritual journey",
       content:
         " \
-        Embark on a spiritual journey with Lumi the little lamb. \
+        Embark on a spiritual journey with Lumi, your spiritual companion\
         ",
     },
     {
-      src: "/MobileApp/AppPreview.02_iPhone16_Lumi_Profile.png",
-      title: "Growth Journey",
-      content:
-        " \
-        Track the growth of spritual companion as you both evolve in faith. \
-        ",
-    },
-    {
-      src: "/MobileApp/AppPreview.03_iPhone16_Bible_SetGoal.png",
-      title: "Bible Reading",
-      content:
-        " \
-        Stay on track with personalized bible plan. \
-        ",
-    },
-    {
-      src: "/MobileApp/AppPreview.04_iPhone16_DailySacredSites.png",
-      title: "Daily Sacred Sites & Prayer",
-      content:
-        "\
-        Connect with God through prayer and sacred sites worldwide. \
-        ",
-    },
-    {
-      src: "/MobileApp/AppPreview.05_iPhone16_PrayerRequest.png",
+      src: "/MobileApp/2.png",
       title: "Prayer Community",
       content:
-        "\
-        Share and support prayers within the community. \
+        " \
+        Share and support prayers within the community\
         ",
     },
     {
-      src: "/MobileApp/AppPreview.06_iPhone16_Journal.png",
+      src: "/MobileApp/3.png",
+      title: "Daily Devotion",
+      content:
+        " \
+        Share your feelings and reflect on God's message tailored just for you\
+        ",
+    },
+    {
+      src: "/MobileApp/4.png",
+      title: "Growth Journey",
+      content:
+        "\
+        Track the growth of spritual companion as you both evolve in faith\
+        ",
+    },
+    {
+      src: "/MobileApp/5.png",
+      title: "Bible Reading",
+      content:
+        "\
+        Stay on track with personalized bible plan\
+        ",
+    },
+    {
+      src: "/MobileApp/6.png",
       title: "Faith Journal",
       content:
         "\
-        Reflect on your thoughts and prayers. \
+        Reflect on your thoughts and prayers \
         ",
     },
   ],
