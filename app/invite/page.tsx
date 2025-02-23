@@ -119,7 +119,7 @@ function InvitePageContent() {
       setShowBrowserTip(true);
     } else {
       // 尝试打开应用
-      window.location.href = "faithtime://prayer-request-invite";
+      window.location.href = `faithtime://prayer-request-invite/${inviteCode}`;
 
       // 如果2.5秒后还在当前页面，跳转到应用商店
       setTimeout(() => {
