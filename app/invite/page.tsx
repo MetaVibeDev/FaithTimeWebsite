@@ -78,6 +78,7 @@ function InvitePageContent() {
   const [showQuestion, setShowQuestion] = useState(true);
   const [showRules, setShowRules] = useState(false);
   const [name, setName] = useState<string | null>(null);
+  const [showBrowserTip, setShowBrowserTip] = useState(false);
 
   useEffect(() => {
     const code = searchParams.get("inviteCode");
@@ -103,8 +104,35 @@ function InvitePageContent() {
     setHasVisited(isUser);
   };
 
+  const isInAppBrowser = () => {
+    const ua = navigator.userAgent || navigator.vendor || (window as any).opera;
+    return (
+      /FBAN|FBAV|Instagram|Twitter|LinkedInApp/i.test(ua) || // Facebook, Instagram, Twitter, LinkedIn
+      /Line/i.test(ua) || // Line
+      /WhatsApp/i.test(ua) || // WhatsApp
+      /Messenger/i.test(ua) // Messenger
+    );
+  };
+
   const handleStartPraying = () => {
-    window.location.href = "faithtime://";
+    if (isInAppBrowser()) {
+      setShowBrowserTip(true);
+    } else {
+      // 尝试打开应用
+      window.location.href = "faithtime://prayer-request-invite";
+
+      // 如果2.5秒后还在当前页面，跳转到应用商店
+      setTimeout(() => {
+        // 根据设备类型跳转到相应的应用商店
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        if (isIOS) {
+          window.location.href = "https://apps.apple.com/app/6503560893";
+        } else {
+          window.location.href =
+            "https://play.google.com/store/apps/details?id=com.metavibe.faithtime";
+        }
+      }, 2500);
+    }
   };
 
   const handleCopyInviteCode = () => {
@@ -199,6 +227,30 @@ function InvitePageContent() {
       </div>
       {showQuestion && <QuestionDialog onAnswer={handleAnswer} />}
       {showRules && <RuleDialog onClose={() => setShowRules(false)} />}
+
+      {showBrowserTip && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div
+            className="fixed inset-0 bg-black/50"
+            onClick={() => setShowBrowserTip(false)}
+          />
+          <div className="bg-white rounded-[20px] w-[90vw] max-w-[400px] p-5 z-50">
+            <h2 className="text-[20px] font-bold text-center mb-4">
+              Open in Browser
+            </h2>
+            <p className="text-[16px] text-gray-600 mb-6 text-center">
+              Please tap the menu icon and select <br />
+              "Open in Browser" or "Open in Safari/Chrome"
+            </p>
+            <button
+              onClick={() => setShowBrowserTip(false)}
+              className="w-full py-2 rounded-full bg-[#A07CCF] text-white font-bold"
+            >
+              Got it
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }
