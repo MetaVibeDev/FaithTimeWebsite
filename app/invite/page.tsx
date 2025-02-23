@@ -235,7 +235,7 @@ function InvitePageContent() {
             onClick={() => setShowBrowserTip(false)}
           />
           <div className="bg-white rounded-[20px] w-[90vw] max-w-[400px] p-5 z-50">
-            <h2 className="text-[20px] font-bold text-center mb-4">
+            <h2 className="text-[20px] font-bold text-center mb-4 text-black">
               Open in Browser
             </h2>
             <p className="text-[16px] text-gray-600 mb-6 text-center">
