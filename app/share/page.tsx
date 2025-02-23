@@ -2,7 +2,7 @@
 
 import Home from "@/app/page";
 import { useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 
 export default function Share() {
   const searchParams = useSearchParams();
@@ -12,5 +12,9 @@ export default function Share() {
     window.location.href = `faithtime://prayer-request-share/${postID}`;
   }, [searchParams]);
 
-  return <Home />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Home />
+    </Suspense>
+  );
 }
