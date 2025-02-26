@@ -12,7 +12,11 @@ const nextConfig = {
     return [
       {
         source: '/share/:path*',
-        destination: '/share', // 这里是目标页面
+        destination: '/share',
+      },
+      {
+        source: '/invite/:path*',
+        destination: '/invite',
       },
     ];
   },

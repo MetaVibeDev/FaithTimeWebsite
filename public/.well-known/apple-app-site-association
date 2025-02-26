@@ -4,7 +4,12 @@
     "details": [
       {
         "appID": "HQBS955K28.com.metavibe.FaithTime",
-        "paths": [ "/share", "/share/*", "/share?*"]
+        "paths": [
+          "/share",
+          "/share/*",
+          "/invite",
+          "/invite/*"
+        ]
       }
     ]
   }
