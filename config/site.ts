@@ -55,8 +55,8 @@ export const siteConfig = {
     twitter: "https://x.com/FaithtimeApp",
     instagram: "https://www.instagram.com/faithtime_app",
     // mobile stores
-    appStore: "#",
-    googlePlay: "#",
+    appStore: "https://apps.apple.com/app/faithtime/id6503560893",
+    googlePlay: "https://play.google.com/store/apps/details?id=com.metavibe.faithtime&gl=SG",
     // XR stores
     visionProStore:
       "https://apps.apple.com/app/faithtime/id6503560893?platform=vision",

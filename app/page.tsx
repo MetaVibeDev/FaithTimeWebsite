@@ -176,14 +176,14 @@ export default function Home() {
     <div className="flex gap-3">
       <TrackedLink
         trackName={"Section_Mobile ExternalLink_Download_AppleAppStore"}
-        // href={siteConfig.links.appStore}
+        href={siteConfig.links.appStore}
         isExternal
       >
         <AppStoreIcon />
       </TrackedLink>
       <TrackedLink
         trackName={"Section_Mobile ExternalLink_Download_GooglePlay"}
-        // href={siteConfig.links.googlePlay}
+        href={siteConfig.links.googlePlay}
         isExternal
       >
         <GooglePlayIcon />
