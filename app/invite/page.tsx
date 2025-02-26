@@ -121,7 +121,7 @@ function InvitePageContent() {
       // 尝试打开应用
       window.location.href = `faithtime://prayer-request-invite/${inviteCode}`;
 
-      // 如果2.5秒后还在当前页面，跳转到应用商店
+      // 如果1秒后还在当前页面，跳转到应用商店
       setTimeout(() => {
         // 根据设备类型跳转到相应的应用商店
         const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
@@ -131,7 +131,7 @@ function InvitePageContent() {
           window.location.href =
             "https://play.google.com/store/apps/details?id=com.metavibe.faithtime";
         }
-      }, 2500);
+      }, 1000);
     }
   };
 
