@@ -118,20 +118,43 @@ function InvitePageContent() {
     if (isInAppBrowser()) {
       setShowBrowserTip(true);
     } else {
-      // 尝试打开应用
-      window.location.href = `faithtime://prayer-request-invite/${inviteCode}`;
+      // 创建隐藏的iframe来尝试唤醒App
+      const appScheme = `faithtime://prayer-request-invite/${inviteCode}`;
+      const iframe = document.createElement("iframe");
+      iframe.style.display = "none";
+      iframe.src = appScheme;
+      document.body.appendChild(iframe);
 
-      // 如果1秒后还在当前页面，跳转到应用商店
-      setTimeout(() => {
-        // 根据设备类型跳转到相应的应用商店
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-        if (isIOS) {
-          window.location.href = "https://apps.apple.com/app/6503560893";
-        } else {
-          window.location.href =
-            "https://play.google.com/store/apps/details?id=com.metavibe.faithtime";
+      // 记录开始时间
+      const startTime = Date.now();
+
+      // 检测唤醒是否成功
+      const timer = setInterval(() => {
+        const elapsed = Date.now() - startTime;
+
+        // 页面隐藏或超时3秒视为成功唤醒
+        if (document.hidden) {
+          clearInterval(timer);
+          document.body.removeChild(iframe);
+          // 成功唤醒，不需要额外操作
+        } else if (elapsed > 2000) {
+          // 2秒后未隐藏视为失败，跳转到应用商店
+          clearInterval(timer);
+          document.body.removeChild(iframe);
+
+          // 根据设备类型跳转到相应的应用商店
+          const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+          if (isIOS) {
+            window.location.href = "https://apps.apple.com/app/6503560893";
+          } else {
+            window.location.href =
+              "https://play.google.com/store/apps/details?id=com.metavibe.faithtime";
+          }
         }
-      }, 1000);
+      }, 200);
+
+      // 直接尝试通过location唤醒（作为备用方案）
+      window.location.href = appScheme;
     }
   };
 
