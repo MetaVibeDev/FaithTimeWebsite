@@ -41,6 +41,7 @@ export const reportTrackingData = ({ uuid, trackName, trackType }) => {
     unique_id: uuid,
     params: {
       button_name: name,
+      page: name,
       type: trackType,
     },
   };
