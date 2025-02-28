@@ -23,7 +23,7 @@ import {
 
 import "../styles/slider.css";
 
-import TrackClick, { TrackExposure } from "@/components/track";
+import  { TrackClick, TrackExposure } from "@/components/track";
 
 const TrackedLink = TrackClick(Link);
 const TrackedButton = TrackClick(Button);

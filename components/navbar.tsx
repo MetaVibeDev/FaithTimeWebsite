@@ -25,7 +25,7 @@ import {
   InstagramIcon,
   SearchIcon,
 } from "@/components/icons";
-import TrackClick from "@/components/track";
+import { TrackClick } from "@/components/track";
 
 const TrackedLink = TrackClick(Link);
 const TrackedScrollLink = TrackClick(ScrollLink);

@@ -1,9 +1,13 @@
 "use client";
 
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, useState, Suspense, useContext } from "react";
 import { useSearchParams } from "next/navigation";
 import { Copy } from "lucide-react";
 import { fontSans } from "@/config/fonts";
+import { TrackExposure, reportTrackingData } from "@/components/track";
+import { UUIDContext } from "@/components/userinfo";
+
+const TrackedDiv = TrackExposure("div");
 
 function QuestionDialog({ onAnswer }: { onAnswer: (isUser: boolean) => void }) {
   return (
@@ -79,6 +83,7 @@ function InvitePageContent() {
   const [showRules, setShowRules] = useState(false);
   const [name, setName] = useState<string | null>(null);
   const [showBrowserTip, setShowBrowserTip] = useState(false);
+  const { uuid } = useContext(UUIDContext);
 
   useEffect(() => {
     const code = searchParams.get("inviteCode");
@@ -115,6 +120,12 @@ function InvitePageContent() {
   };
 
   const handleStartPraying = () => {
+    reportTrackingData({
+      uuid: uuid,
+      trackName: "inviteH5_index_startPraying",
+      trackType: 0,
+    });
+
     if (isInAppBrowser()) {
       setShowBrowserTip(true);
     } else {
@@ -173,7 +184,8 @@ function InvitePageContent() {
 
   return (
     <>
-      <div
+      <TrackedDiv
+        trackName="inviteH5_index"
         className={`w-full bg-cover bg-top bg-no-repeat relative ${fontSans.className}`}
         style={{ backgroundImage: "url('/invite/old-user-background.png')" }}
       >
@@ -247,7 +259,7 @@ function InvitePageContent() {
           alt="how to pray"
           className="ml-2 mt-3 p-2"
         />
-      </div>
+      </TrackedDiv>
       {showQuestion && <QuestionDialog onAnswer={handleAnswer} />}
       {showRules && <RuleDialog onClose={() => setShowRules(false)} />}
 

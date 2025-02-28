@@ -25,20 +25,16 @@ const sendTrackingData = async (trackingData) => {
     // Handle error
     console.error(
       "Error sending data:",
-      error.response ? error.response.data : error.message,
+      error.response ? error.response.data : error.message
     );
   }
 };
 
 const getTimeString = () => {
   return new Date().toISOString();
-}
+};
 
-const reportTrackingData = ({
-    uuid,
-    trackName,
-    trackType,
-  }) => {
+export const reportTrackingData = ({ uuid, trackName, trackType }) => {
   const trackingData = {
     actionName: trackName,
     actionType: trackType,
@@ -47,38 +43,33 @@ const reportTrackingData = ({
     uid: uuid,
   };
 
-  // console.log("Tracked event: ", trackingData);
-
   sendTrackingData(trackingData);
 
   return;
 };
 
-// Click event tracking
-// use Higher-Order Component to enhance the wrapped component
 const TrackClick = (BaseComponent) => {
   const EnhancedComponent = ({ trackName, ...props }) => {
     const { uuid } = useContext(UUIDContext);
 
-    const handleClick = (event) => {
-      reportTrackingData({
-        uuid: uuid,
-        trackName: trackName,
-        trackType: trackedEventType.Click,
-      });
+      const handleClick = (event) => {
 
-      if (props.onClick) {
-        props.onClick(event);
-      }
+        reportTrackingData({
+          uuid: uuid,
+          trackName: trackName,
+          trackType: trackedEventType.Click,
+        });
+
+        if (props.onClick) {
+          props.onClick(event);
+        }
+      };
+
+      return <BaseComponent onClick={handleClick} {...props} />;
     };
-
-    return <BaseComponent onClick={handleClick} {...props} />;
-  };
 
   return EnhancedComponent;
 };
-
-export default TrackClick;
 
 // Exposure event tracking
 const TrackExposure = (BaseComponent) => {
@@ -103,7 +94,13 @@ const TrackExposure = (BaseComponent) => {
     };
 
     const handleExposure = () => {
-      // console.log(trackName+": exposureCount = "+(exposureCount.current + 1)+", exposureTimer id = "+exposureTimer);
+      console.log(
+        trackName +
+          ": exposureCount = " +
+          (exposureCount.current + 1) +
+          ", exposureTimer id = " +
+          exposureTimer
+      );
 
       reportTrackingData({
         uuid: uuid,
@@ -116,9 +113,15 @@ const TrackExposure = (BaseComponent) => {
 
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
-        // console.log(trackName+": intersectionRatio = "+entry.intersectionRatio+", time = "+getTimeString());
+        console.log(
+          trackName +
+            ": intersectionRatio = " +
+            entry.intersectionRatio +
+            ", time = " +
+            getTimeString()
+        );
 
-        const needCheck = !(trackOnlyOnce && (exposureCount.current > 0));
+        const needCheck = !(trackOnlyOnce && exposureCount.current > 0);
 
         if (needCheck) {
           if (checkExposure(entry)) {
@@ -154,4 +157,4 @@ const TrackExposure = (BaseComponent) => {
   return EnhancedComponent;
 };
 
-export { TrackExposure };
+export { TrackExposure, TrackClick };
