@@ -122,8 +122,8 @@ function InvitePageContent() {
   const handleStartPraying = () => {
     reportTrackingData({
       uuid: uuid,
-      trackName: "inviteH5_index_startPraying",
-      trackType: 0,
+      trackName: "invite_H5_startPraying",
+      trackType: "click",
     });
 
     if (isInAppBrowser()) {
@@ -185,7 +185,7 @@ function InvitePageContent() {
   return (
     <>
       <TrackedDiv
-        trackName="inviteH5_index"
+        trackName="invite_H5"
         className={`w-full bg-cover bg-top bg-no-repeat relative ${fontSans.className}`}
         style={{ backgroundImage: "url('/invite/old-user-background.png')" }}
       >

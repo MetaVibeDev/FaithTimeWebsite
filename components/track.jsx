@@ -2,13 +2,13 @@ import React, { useRef, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { UUIDContext } from "./userinfo";
 
-const apiUrl = "https://backend-data.metavibe-api.com/action/collect";
+const apiUrl = "https://qbf04j2xsl.execute-api.ap-southeast-1.amazonaws.com/default/EventTracking";
 const platformId_FaithTime = 5;
 
 // Simulate enum-like behavior by object in javascript
 const trackedEventType = Object.freeze({
-  Click: 0,
-  Exposure: 1,
+  Click: 'click',
+  Exposure: 'exposure',
 });
 
 const sendTrackingData = async (trackingData) => {
@@ -35,12 +35,14 @@ const getTimeString = () => {
 };
 
 export const reportTrackingData = ({ uuid, trackName, trackType }) => {
+  const name = trackName;
   const trackingData = {
-    actionName: trackName,
-    actionType: trackType,
-    dateTime: getTimeString(),
-    platform: platformId_FaithTime,
-    uid: uuid,
+    app_name: "faithtime",
+    unique_id: uuid,
+    params: {
+      button_name: name,
+      type: trackType,
+    },
   };
 
   sendTrackingData(trackingData);
