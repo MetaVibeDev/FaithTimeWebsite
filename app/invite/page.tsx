@@ -221,7 +221,11 @@ function InvitePageContent() {
         <div className="flex flex-col space-y-5 pt-[500px] w-full px-4">
           <div className="relative w-full">
             <img
-              src="/invite/your-rewards.png"
+              src={
+                hasVisited
+                  ? "/invite/your-rewards-old.png"
+                  : "/invite/your-rewards.png"
+              }
               alt="your rewards"
               className="w-full"
             />
