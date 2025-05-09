@@ -161,9 +161,9 @@ export default function Home() {
       </h1>
       <br />
       <div className="inline-block text-center justify-center">
-        <h1 className={title({ color: "violet" })}>Daily </h1>
+        <h1 className={title({ color: "violet" })}>The</h1>
         <br />
-        <h1 className={title({ size: "md" })}>Spiritual Companion</h1>
+        <h1 className={title({ size: "md" })}>#1 App</h1>
         <br />
         <h1 className={title({ color: "violet" })}>for </h1>
         <br />

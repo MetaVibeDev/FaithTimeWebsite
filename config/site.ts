@@ -69,51 +69,59 @@ export const siteConfig = {
   slideImageAndText: [
     {
       src: "/MobileApp/1.png",
-      title: "Spiritual journey",
+      title: "The #1 App for Young Christians",
       content:
         " \
-        Embark on a spiritual journey with Lumi, your spiritual companion\
+        Grow Your Faith, Every Day\
         ",
     },
     {
       src: "/MobileApp/2.png",
-      title: "Prayer Community",
+      title: "Personalized Daily Plan",
       content:
         " \
-        Share and support prayers within the community\
+        Grow in faith through daily Bible reading and prayer.\
         ",
     },
     {
       src: "/MobileApp/3.png",
-      title: "Daily Devotion",
+      title: "Spiritual Companion",
       content:
         " \
-        Share your feelings and reflect on God's message tailored just for you\
+        Meet Your Al Faith Friend\
         ",
     },
     {
       src: "/MobileApp/4.png",
-      title: "Growth Journey",
+      title: "A Loving Community",
       content:
         "\
-        Track the growth of spritual companion as you both evolve in faith\
+        Share Prayers, and Witness God's Grace\
         ",
     },
     {
       src: "/MobileApp/5.png",
-      title: "Bible Reading",
+      title: "Daily Manna",
       content:
         "\
-        Stay on track with personalized bible plan\
+        Journey with Lumi for your daily spiritual nourishment\
         ",
     },
     {
       src: "/MobileApp/6.png",
-      title: "Faith Journal",
+      title: "Bible Interpretation",
       content:
         "\
-        Reflect on your thoughts and prayers \
+        Ask questions and uncover Bible truths through conversation \
         ",
+    },
+    {
+      src: "/MobileApp/7.png",
+      title: "Spiritual Guide",
+      content:
+          "\
+          Daily guidance to walk closer with God\
+          ",
     },
   ],
 };
