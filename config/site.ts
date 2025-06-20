@@ -56,7 +56,8 @@ export const siteConfig = {
     instagram: "https://www.instagram.com/faithtime_app",
     // mobile stores
     appStore: "https://apps.apple.com/app/faithtime/id6503560893",
-    googlePlay: "https://play.google.com/store/apps/details?id=com.metavibe.faithtime&gl=SG",
+    googlePlay:
+      "https://play.google.com/store/apps/details?id=com.metavibe.faithtime&gl=SG",
     // XR stores
     visionProStore:
       "https://apps.apple.com/app/faithtime/id6503560893?platform=vision",
@@ -69,58 +70,58 @@ export const siteConfig = {
   slideImageAndText: [
     {
       src: "/MobileApp/1.png",
-      title: "The #1 App for Young Christians",
+      title: "No time for devotion?",
       content:
         " \
-        Grow Your Faith, Every Day\
+        3 minutes a day, closer to God\
         ",
     },
     {
       src: "/MobileApp/2.png",
-      title: "Personalized Daily Plan",
+      title: "Can’t stay consistent?",
       content:
         " \
-        Grow in faith through daily Bible reading and prayer.\
+        3 steps to grow your faith lamb.\
         ",
     },
     {
       src: "/MobileApp/3.png",
-      title: "Spiritual Companion",
+      title: "Walking alone",
       content:
         " \
-        Meet Your Al Faith Friend\
+        You're not alone on this path\
         ",
     },
     {
       src: "/MobileApp/4.png",
-      title: "A Loving Community",
+      title: "Need Guidance?",
       content:
         "\
-        Share Prayers, and Witness God's Grace\
+        Daily guidance to walk closer with God\
         ",
     },
     {
       src: "/MobileApp/5.png",
-      title: "Daily Manna",
+      title: "Bible Dive!",
       content:
         "\
-        Journey with Lumi for your daily spiritual nourishment\
+        Every verse, a new adventure\
         ",
     },
     {
       src: "/MobileApp/6.png",
-      title: "Bible Interpretation",
+      title: "Feeling lost?",
       content:
         "\
-        Ask questions and uncover Bible truths through conversation \
+        Let God’s word bring daily strength \
         ",
     },
     {
       src: "/MobileApp/7.png",
-      title: "Spiritual Guide",
+      title: "Questions about the Bible?",
       content:
-          "\
-          Daily guidance to walk closer with God\
+        "\
+          Get answers and discover truths\
           ",
     },
   ],
