@@ -56,16 +56,16 @@ export class Navbar extends React.Component {
     return (
       <NextUINavbar maxWidth="2xl" position="sticky">
         <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-          <NavbarBrand as="li" className="gap-3 max-w-fit">
+          <NavbarBrand as="li" className="gap-3 max-w-fit ml-20">
             <NextLink
-              className="flex justify-start items-center gap-1"
+              className="flex justify-start items-center gap-1 ml-20"
               href="/"
             >
               {/* <Logo /> */}
-              <p className="font-bold text-inherit">FaithTime</p>
+              <p className="font-bold text-inherit text-3xl">FaithTime</p>
             </NextLink>
           </NavbarBrand>
-          <ul className="flex gap-4 items-center justify-cemter mx-2">
+          <ul className="flex gap-8 items-center justify-cemter mx-10">
             {siteConfig.navItems.map((item, idx) => (
               <TrackedScrollLink
                 key={idx}
@@ -76,7 +76,7 @@ export class Navbar extends React.Component {
               >
                 <NavbarItem
                   key={item.href}
-                  className="hover:cursor-pointer hover:text-secondary hover:font-bold"
+                  className="hover:cursor-pointer hover:text-secondary hover:font-bold ml-2"
                 >
                   {item.label}
                 </NavbarItem>
@@ -88,14 +88,32 @@ export class Navbar extends React.Component {
         <NavbarContent
           className="hidden sm:flex basis-1/5 sm:basis-full"
           justify="end"
+          style={{
+            backgroundImage: "url('/MobileApp/GO Plus.png')",
+            backgroundSize: "contain", // 或 "cover" / "100% 100%"
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            width: "100px", // 调整成图片的实际宽度
+            height: "30px", // 调整成图片的实际高度
+            cursor: "pointer", // 让鼠标悬停时显示手型指针
+          }}
         >
-          <NavbarItem className="hidden sm:flex gap-2">
+          <NavbarBrand as="li" className="gap-3 max-w-fit">
+            <NextLink
+              className="block w-full h-full" // 让链接占满整个 NavbarBrand
+              href="/" // 跳转的目标链接
+            >
+              {/* 空内容，仅图片背景可点击 */}
+            </NextLink>
+          </NavbarBrand>
+        </NavbarContent>
+        {/**<NavbarItem className="hidden sm:flex gap-2">
             <TrackedLink
-                isExternal
-                aria-label="Tiktok"
-                href={siteConfig.links.tiktok}
-                trackName={"Navbar ExternalLink_SocialMedia_Tiktok"}
-              >
+              isExternal
+              aria-label="Tiktok"
+              href={siteConfig.links.tiktok}
+              trackName={"Navbar ExternalLink_SocialMedia_Tiktok"}
+            >
               <TiktokIcon className="text-default-700" />
             </TrackedLink>
             <TrackedLink
@@ -123,13 +141,13 @@ export class Navbar extends React.Component {
               <DiscordIcon className="text-default-700" />
             </TrackedLink>
             <ThemeSwitch className="ml-4" />
-          </NavbarItem>
+          </NavbarItem>*/}
 
-          {/* <NavbarItem className="hidden lg:flex">
+        {/* <NavbarItem className="hidden lg:flex">
             {this.searchInput}
           </NavbarItem> */}
 
-          {/*
+        {/*
           <NavbarItem className="hidden md:flex">
             <Button
               isExternal
@@ -142,8 +160,7 @@ export class Navbar extends React.Component {
               Sponsor
             </Button>
           </NavbarItem>
-          */}
-        </NavbarContent>
+          **/}
 
         <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
           <ThemeSwitch />
@@ -160,8 +177,8 @@ export class Navbar extends React.Component {
                     index === 2
                       ? "primary"
                       : index === siteConfig.navMenuItems.length - 1
-                        ? "secondary"
-                        : "foreground"
+                      ? "secondary"
+                      : "foreground"
                   }
                   href="#"
                   size="lg"

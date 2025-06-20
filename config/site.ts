@@ -6,8 +6,28 @@ export const siteConfig = {
     "Embark on a spiritual adventure with FaithTime, your companion for spiritual journeying through sacred sites and daily devotions. Discover christian sacred places, engage in meditation prayers, and receive a daily bible verse. Our app combines pilgrimage with prayer, offering a unique blend of christian meditations and virtual exploration of christianity's most revered locations. Join our faith community church in this transformative journey.",
   navItems: [
     {
-      label: "Mobile",
-      href: "/mobile",
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Services",
+      href: "/",
+    },
+    {
+      label: "About",
+      href: "/",
+    },
+    {
+      label: "reviews",
+      href: "/",
+    },
+    {
+      label: "Downland",
+      href: "/",
+    },
+    {
+      label: "Contact",
+      href: "/",
     },
     // {
     //   label: "XR",
@@ -56,7 +76,8 @@ export const siteConfig = {
     instagram: "https://www.instagram.com/faithtime_app",
     // mobile stores
     appStore: "https://apps.apple.com/app/faithtime/id6503560893",
-    googlePlay: "https://play.google.com/store/apps/details?id=com.metavibe.faithtime&gl=SG",
+    googlePlay:
+      "https://play.google.com/store/apps/details?id=com.metavibe.faithtime&gl=SG",
     // XR stores
     visionProStore:
       "https://apps.apple.com/app/faithtime/id6503560893?platform=vision",
@@ -119,7 +140,7 @@ export const siteConfig = {
       src: "/MobileApp/7.png",
       title: "Spiritual Guide",
       content:
-          "\
+        "\
           Daily guidance to walk closer with God\
           ",
     },

@@ -3,11 +3,10 @@ import { Metadata, Viewport } from "next";
 import clsx from "clsx";
 
 import { Providers } from "./providers";
-
+import Footer from "@/components/footer";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { UUIDProvider } from "@/components/userinfo";
-
 // 将 NavbarWrapper 移动到单独的客户端组件文件中
 import { NavbarWrapper } from "@/components/navbar-wrapper";
 
@@ -53,12 +52,8 @@ export default function RootLayout({
             <NavbarWrapper>
               <main className="flex-grow">{children}</main>
             </NavbarWrapper>
-            {/* 
-            <footer className="w-full flex items-center justify-center relative flex-col px-10 py-3">
-              <p className="text-gray-500 text-sm">
-                © 2025 MetaVibe. All rights reserved.
-              </p>
-            </footer> */}
+
+            <Footer />
           </UUIDProvider>
         </Providers>
       </body>
