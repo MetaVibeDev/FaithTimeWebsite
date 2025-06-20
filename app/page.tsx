@@ -23,7 +23,7 @@ import {
 
 import "../styles/slider.css";
 
-import  { TrackClick, TrackExposure } from "@/components/track";
+import { TrackClick, TrackExposure } from "@/components/track";
 
 const TrackedLink = TrackClick(Link);
 const TrackedButton = TrackClick(Button);
@@ -53,9 +53,9 @@ export default function Home() {
     const id = setTimeout(
       () =>
         setIndex((prevIndex) =>
-          prevIndex === slideImageAndText.length - 1 ? 0 : prevIndex + 1,
+          prevIndex === slideImageAndText.length - 1 ? 0 : prevIndex + 1
         ),
-      displayTime,
+      displayTime
     );
 
     setTimeoutId(id);
@@ -99,14 +99,20 @@ export default function Home() {
   const SlideTexts = slideImageAndText.map((item, idx) => {
     return (
       <div key={idx} className="min-w-full h-full whitespace-normal">
-        <div className="text-center my-1">
-          <h1 className={title({ color: "primary", size: "xs" })}>
-            {item.title}
-          </h1>
-        </div>
-
-        <div className="justify-start content-evenly mt-5">
-          <h2 className="px-4 text-md text-default-600">{item.content}</h2>
+        <div className="flex flex-col items-center justify-center">
+          {" "}
+          <div className="text-center my-1">
+            <h1 className={title({ color: "primary", size: "xs" })}>
+              {item.title}
+            </h1>
+          </div>
+          <div className="text-center mt-2 w-full">
+            {" "}
+            <h2 className="text-md text-default-600 mx-auto max-w-prose">
+              {" "}
+              {item.content}
+            </h2>
+          </div>
         </div>
       </div>
     );
@@ -130,7 +136,9 @@ export default function Home() {
   const SlideDots = siteConfig.slideImageAndText.map((_, idx) => (
     <Button
       key={idx}
-      className={`w-20 h-2 rounded-full ${idx === index ? "bg-secondary" : "bg-default-300"}`}
+      className={`w-20 h-2 rounded-full ${
+        idx === index ? "bg-secondary" : "bg-default-300"
+      }`}
       variant="flat"
       onClick={() => {
         setIndex(idx);
@@ -197,7 +205,6 @@ export default function Home() {
         exposureRatioThresh={0.5}
         exposureTimeThresh={3000}
         trackName={"Section_Mobile"}
-
         className="flex flex-col items-center justify-center max-w-screen min-h-screen px-3"
         name="Mobile"
         style={{
