@@ -11,7 +11,8 @@ import {
 } from "@nextui-org/react";
 import { Spacer } from "@nextui-org/spacer";
 import React, { useEffect, useState } from "react";
-import footer from "./footer/page";
+import Footer from "@/components/footer";
+import Ccard from "@/components/card";
 import { siteConfig } from "@/config/site";
 import { title } from "@/components/primitives";
 import {
@@ -20,7 +21,7 @@ import {
   AppStoreIcon,
   GooglePlayIcon,
 } from "@/components/icons";
-
+import "../styles/satr.css";
 import "../styles/slider.css";
 
 import { TrackClick, TrackExposure } from "@/components/track";
@@ -80,130 +81,44 @@ export default function Home() {
         className="flex flex-col items-center justify-center min-h-screen px-3"
         style={{
           background:
-            "linear-gradient(180deg, rgba(126, 84, 181, 1) 0%, rgba(126, 84, 181, 0) 100%)",
+            "linear-gradient(135deg, rgba(255, 192, 203, 1) 0%, rgba(0, 191, 255, 1) 100%)",
         }}
       >
-        <div className="w-full max-w-screen-2xl ">
-          <div className="mx-auto md:grid md:grid-cols-2 md:gap-8">
-            <div className="flex flex-col items-center md:top-8 md:right-12">
-              {AppNameWithSlogan}
-              {MobileDownloadButtons}
-              <footer />
+        <div className="relative min-h-screen">
+          <div className="relative z-10">
+            <div className="w-full max-w-screen-2xl mx-auto">
+              <div className="mx-auto md:grid md:grid-cols-2 md:gap-8">
+                <div className="flex flex-col items-center md:right-12">
+                  {AppNameWithSlogan}
+                  {MobileDownloadButtons}
+                </div>
+              </div>
             </div>
-            {/* 可添加右侧内容 */}
-          </div>
-        </div>
-      </TrackedDiv>
 
-      {/* 移除XR App展示区
-      <TrackedDiv
-        exposureRatioThresh={0.5}
-        exposureTimeThresh={3000}
-        trackName={"Section_XR"}
-
-        className="flex flex-col items-center justify-center max-w-screen min-h-screen px-3"
-        name="XR"
-        style={{
-          backgroundImage: `url('CoverArt_Landscape.png')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div
-          className="flex flex-col max-w-screen-lg text-center justify-center"
-          style={{ marginTop: "-20vh" }}
-        >
-          <div className="py-6">
-            <h1
-              className={title({ size: "lg", color: "white" })}
-              style={{
-                filter: "drop-shadow(0px 0px 10px rgba(126, 84, 181, 0.75))",
-              }}
-            >
-              FaithTime
-            </h1>
-            <h1 className={title({ size: "lg", color: "violet" })}>
+            <div className="background-container relative">
               {" "}
-              XR&nbsp;
-            </h1>
-            <br />
-            <h2 className="text-2xl" style={{ color: "white" }}>
-              Daily Prayers, Immersively.
-            </h2>
-          </div>
-
-          <Card
-            isBlurred
-            className="border-none bg-background/50 dark:bg-background/50"
-            shadow="lg"
-          >
-            <CardHeader className=" ml-5 flex-col items-start p-0 pt-5">
-              <h4 className="text-md">Available on</h4>
-            </CardHeader>
-
-            <CardFooter className="justify-center mb-4">
-              <TrackedButton
-                isExternal
-                as={Link}
-                className="text-xl font-bold border-1 border-foreground-500 bg-gradient-to-l from-pink-400 to-secondary-400 dark:from-pink-500 dark:to-secondary-400"
-                href={siteConfig.links.visionProStore}
-                radius="lg"
-                size="lg"
-                trackName={
-                  "Section_XR ExternalLink_Download_AppleVisionProStore"
-                }
-                variant="bordered"
-              >
-                <AppleIcon />
-                Vision Pro
-              </TrackedButton>
-
-              <Spacer x={3} />
-
-              <TrackedButton
-                isExternal
-                as={Link}
-                className="text-xl font-bold border-1 border-foreground-500 bg-gradient-to-r from-pink-400 to-secondary-400 dark:from-pink-500 dark:to-secondary-400"
-                href={siteConfig.links.metaQuestStore}
-                radius="lg"
-                size="lg"
-                trackName={"Section_XR ExternalLink_Download_MetaQuestStore"}
-                variant="bordered"
-              >
-                <MetaIcon />
-                Meta Quest
-              </TrackedButton>
-            </CardFooter>
-          </Card>
-
-          <div className="flex text-center justify-center mt-7">
-            <Link
-              isExternal
-              className="flex-shrink-0 text-white"
-              href={siteConfig.links.discord}
-            >
-              // {<DiscordIcon />}
-            </Link>
-            <Spacer x={2} />
-            <Link
-              isExternal
-              className="flex-shrink-0 text-white"
-              href={siteConfig.links.twitter}
-            >
-              // {<XIcon /> }
-            </Link>
-            <Spacer x={2} />
-            <Link
-              isExternal
-              className="flex-shrink-0 text-white"
-              href={siteConfig.links.instagram}
-            >
-              // {<InstagramIcon />}
-            </Link>
+              {/* 添加 relative 作为定位基准 */}
+              <div className="relative h-[500px]">
+                {" "}
+                {/* 设置容器高度 */}
+                {/* 第一张图片 - 上帝图像 */}
+                <img
+                  src="/star/god.png"
+                  alt="God"
+                  className="absolute w-[500px] bottom-[-2%] left-[35%] z-20"
+                />
+                {/* 第二张图片 - 十字架 */}
+                <img
+                  src="/star/cross.png"
+                  alt="Cross"
+                  className="absolute w-[300px] bottom-[5%] left-[52%] z-10"
+                />
+              </div>
+            </div>
           </div>
         </div>
+        <Ccard />
       </TrackedDiv>
-      */}
     </TrackedDiv>
   );
 }

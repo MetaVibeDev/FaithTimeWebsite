@@ -1,0 +1,33 @@
+/* styles/slider.css */
+.jesus-cross-container {
+  position: absolute;
+  top: 50%; /* 根据需要调整垂直位置 */
+  left: 10%; /* 根据需要调整水平位置 */
+  transform: translateY(-50%); /* 垂直居中 */
+}
+
+.jesus-cross-image {
+  width: 200px; /* 根据需要调整宽度 */
+  height: auto; /* 保持图片比例 */
+}
+/* 在你的CSS文件中 */
+.background-container img {
+  width: 100%; /* 或具体像素值如300px */
+  max-width: 750px; /* 最大宽度限制 */
+  height: auto; /* 保持宽高比 */
+  margin: 10px; /* 可选：添加间距 */
+}
+
+/* 如果需要为不同图片设置不同大小 */
+.background-container img.god-image {
+  width: 300px;
+  max-width: 750px; /* 最大宽度限制 */
+  height: auto; /* 保持宽高比 */
+
+}
+
+.background-container img.cross-image {
+  width: 200px;
+  max-width: 550px; /* 最大宽度限制 */
+  height: auto; /* 保持宽高比 */
+}

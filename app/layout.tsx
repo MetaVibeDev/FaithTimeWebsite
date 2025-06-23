@@ -52,7 +52,6 @@ export default function RootLayout({
             <NavbarWrapper>
               <main className="flex-grow">{children}</main>
             </NavbarWrapper>
-
             <Footer />
           </UUIDProvider>
         </Providers>

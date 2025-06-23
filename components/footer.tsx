@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "@/styles/Foot.module.css";
 import { siteConfig } from "@/config/site";
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
@@ -100,8 +100,15 @@ const Footer = () => {
           Facebook
         </a>
       </div>
+      <section>
+        <div>
+          <hr />
+          <p>
+            ©2025 Faith Time. All rights reserved. Privacy Policy. Terms &
+            License.
+          </p>
+        </div>
+      </section>
     </footer>
   );
-};
-
-export default Footer;
+}
