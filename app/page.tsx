@@ -62,12 +62,24 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      <Header />
-      {/* <Card /> */}
-      <Detail />
-      <Testimonials />
-      <Download />
-      <Footer />
+      <div id="home">
+        <Header />
+      </div>
+      <div id="card">
+        <Card />
+      </div>
+      <div id="detail">
+        <Detail />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+      <div id="download">
+        <Download />
+      </div>
+      <div id="footer">
+        <Footer />
+      </div>
     </>
   );
 }

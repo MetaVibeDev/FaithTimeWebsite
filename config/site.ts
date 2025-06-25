@@ -7,27 +7,27 @@ export const siteConfig = {
   navItems: [
     {
       label: "Home",
-      href: "/",
+      href: "/home",
     },
     {
       label: "Services",
-      href: "/",
+      href: "/header",
     },
     {
       label: "About",
-      href: "/",
+      href: "/card",
     },
     {
       label: "Reviews",
-      href: "/",
+      href: "/detail",
     },
     {
       label: "Downland",
-      href: "/",
+      href: "/download",
     },
     {
       label: "Contact",
-      href: "/",
+      href: "/footer",
     },
     // {
     //   label: "XR",

@@ -54,8 +54,6 @@ export default function Card() {
         </p>
       </header>
 
-      <div className="divider"></div>
-
       <div className="features-container">
         {/* 卡片 1 - Light Devotion */}
         <div
@@ -76,11 +74,11 @@ export default function Card() {
           </div>
 
           <h2 className="card-title">Light Devotion, Everyday Growth</h2>
-          <p className="card-text">
-            With Light Devotion, you set simple duty together to a strong target
-            on a blue movie. As you plan comforting your own longtime with your
-            LIBELIants, creating greater accomplishments makes devotion a light
-            you belong back.
+          <p className="card-text ">
+            With Light Devotion, you set simple daily goals—like a short prayer
+            or a Bible verse. As you stay consistent, you grow together with
+            your Little Lamb, receiving gentle encouragement that makes devotion
+            a light yet lasting habit.
           </p>
         </div>
 
@@ -104,9 +102,9 @@ export default function Card() {
 
           <h2 className="card-title">A Warm and Supportive Faith Community</h2>
           <p className="card-text">
-            Just folks! One of the key professional people in the community is
-            getting good dreams and 50 other ways to help you clear details and
-            develop your standard understanding.
+            Ask Bible Chat offers you professional and easy-to-understand
+            answers about doctrine and Scripture anytime, helping to clear
+            doubts and deepen your spiritual understanding.
           </p>
         </div>
 
@@ -132,9 +130,9 @@ export default function Card() {
             Authoritative and Intelligent Faith Guidance
           </h2>
           <p className="card-text">
-            Just folks! One of the latest approaches that are very complementary
-            to those about how much work you can do for future leaders, helping
-            you clear details and discuss what will be done accordingly.
+            Ask Bible Chat offers users professional and easy-to-understand
+            answers about doctrine and Scripture anytime, helping to clear
+            doubts and deepen spiritual understanding.
           </p>
         </div>
       </div>

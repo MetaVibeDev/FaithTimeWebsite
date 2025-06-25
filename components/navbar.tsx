@@ -89,7 +89,7 @@ export class Navbar extends React.Component {
           className="hidden sm:flex basis-1/5 sm:basis-full"
           justify="end"
           style={{
-            backgroundImage: "url('/MobileApp/GO Plus.png')",
+            backgroundImage: "url('/MobileApp/go-plus.png')",
             backgroundSize: "contain", // 或 "cover" / "100% 100%"
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",

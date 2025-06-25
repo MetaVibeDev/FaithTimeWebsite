@@ -1,5 +1,5 @@
-import React from 'react';
-import { AppStoreIcon, DiscordIcon, InstagramIcon, TiktokIcon } from './icons';
+import React from "react";
+import { AppStoreIcon, DiscordIcon, InstagramIcon, TiktokIcon } from "./icons";
 
 interface SocialIconProps {
   children: React.ReactNode;
@@ -70,19 +70,35 @@ const Footer: React.FC = () => {
             </div>
             <div className="flex flex-col gap-4">
               <SocialIcon href="https://www.instagram.com/faithtime_app">
-                <InstagramIcon />
+                <img
+                  src="/MobileApp/ins.png" // 注意：要去掉"/public"前缀
+                  alt="Instagram"
+                  className="w-6 h-6"
+                />
                 Instagram
               </SocialIcon>
               <SocialIcon href="https://www.tiktok.com/@faithtime_app">
-                <TiktokIcon />
+                <img
+                  src="/MobileApp/TikTok.png" // 注意：要去掉"/public"前缀
+                  alt="TikTok"
+                  className="w-6 h-6"
+                />
                 TikTok
               </SocialIcon>
               <SocialIcon href="https://x.com/FaithtimeApp">
-                <TiktokIcon />
+                <img
+                  src="/MobileApp/tuite.png" // 注意：要去掉"/public"前缀
+                  alt="X (Twitter)"
+                  className="w-6 h-6"
+                />
                 X
               </SocialIcon>
               <SocialIcon href="https://www.facebook.com/your_facebook">
-                <TiktokIcon />
+                <img
+                  src="/MobileApp/facebook.png" // 注意：要去掉"/public"前缀
+                  alt="X (Twitter)"
+                  className="w-6 h-6"
+                />
                 Facebook
               </SocialIcon>
             </div>
@@ -93,7 +109,8 @@ const Footer: React.FC = () => {
       {/* Footer */}
       <div className="max-w-[1200px] flex justify-between items-center px-2 py-3 border-t-1 border-white text-xs">
         <div className="text-white/80">
-          ©2025 Faith Time. All rights reserved. Privacy Policy. Terms & License.
+          ©2025 Faith Time. All rights reserved. Privacy Policy. Terms &
+          License.
         </div>
         <div className="flex gap-5">
           <a
