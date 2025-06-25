@@ -48,12 +48,7 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <UUIDProvider>
-            <NavbarWrapper>
-              <main className="flex-grow">{children}</main>
-            </NavbarWrapper>
-            <Footer />
-          </UUIDProvider>
+          <main className="flex-grow">{children}</main>
         </Providers>
       </body>
     </html>
