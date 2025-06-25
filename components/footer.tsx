@@ -35,29 +35,20 @@ const ContactLink: React.FC<ContactLinkProps> = ({ children, href }) => (
 
 const Footer: React.FC = () => {
   return (
-    <div className="gap-[84px] pt-[100px] pb-[65px] bg-gradient-to-br from-[#9548FA] to-[#564DDD] w-full  text-white font-sans flex flex-col justify-between items-center">
+    <div className="md:gap-[84px] gap-8 md:pt-[100px] pt-8  md:pb-[65px] pb-8 bg-gradient-to-br from-[#9548FA] to-[#564DDD] w-full  text-white font-sans flex flex-col justify-between items-center">
       {/* Main Header Content */}
-      <div className="flex items-start px-10 py-5 flex-1 w-[1000px] h-[230]">
+      <div className="flex items-start px-10  flex-1 w-full h-[230]">
         {/* Logo - 1/4 width */}
-        <div className="flex-1 flex justify-center items-center self-center ">
-          <div className="text-[48px]  font-bold text-white tracking-normal">
+        <div className="hidden sm:flex  flex-1  justify-center items-center self-center ">
+          <div className="text-[48px]   font-bold text-white tracking-normal">
             FaithTime
           </div>
-        </div>
-
-        <div className="flex-1 flex justify-center items-center">
-          <a
-            href="#"
-            className="text-base font-bold text-white no-underline transition-opacity duration-200 ease-in-out hover:opacity-80"
-          >
-            Home
-          </a>
         </div>
 
         {/* Contact Us Section - 1/4 width */}
         <div className="flex-1 flex justify-center">
           <div className="text-left">
-            <div className="text-base font-bold mb-8 text-white">
+            <div className="text-base font-bold md:mb-8 mb-4 text-white">
               Contact Us
             </div>
             <div className="flex flex-col gap-4">
@@ -74,7 +65,7 @@ const Footer: React.FC = () => {
         {/* Social Media Section - 1/4 width */}
         <div className="flex-1 flex justify-center">
           <div className="text-left">
-            <div className="text-base font-bold mb-8 text-white">
+            <div className="text-base font-bold md:mb-8 mb-4 text-white">
               Social Media
             </div>
             <div className="flex flex-col gap-4">

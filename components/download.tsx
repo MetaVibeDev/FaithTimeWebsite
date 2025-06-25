@@ -2,16 +2,16 @@ import { AppStoreIcon, GooglePlayIcon } from "./icons";
 
 export default function Download() {
     return (
-        <div className="w-full  relative overflow-hidden">
+        <div className="w-full relative overflow-hidden bg-white md:py-32 py-12">
             {/* 渐变背景 */}
-            <div className="absolute top-0 left-0 w-full h-full">
-                <div className="absolute top-[-100px] left-[20%] w-[400px] h-[400px] rounded-full bg-purple-200 opacity-30 blur-3xl"></div>
-                <div className="absolute bottom-[-100px] right-[20%] w-[400px] h-[400px] rounded-full bg-pink-200 opacity-30 blur-3xl"></div>
+            <div className="absolute top-0 bottom-0 left-0 right-0 flex justify-center items-center">
+                <img src="/star/colorful-ball.png" className="" />
             </div>
 
+
             {/* 主要内容 */}
-            <div className="relative max-w-6xl mx-auto px-4 py-20 text-center">
-                <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <div className="relative max-w-6xl mx-auto px-4 text-center">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 text-black">
                     Your faith deserves a space.
                     <br />
                     Start journaling today !
