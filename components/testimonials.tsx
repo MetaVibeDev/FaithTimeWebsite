@@ -116,11 +116,12 @@ export default function Testimonials() {
                         onBeforeInit={(swiper) => {
                             swiperRef.current = swiper;
                         }}
-                        className="testimonials-swiper !overflow-visible"
+                        className="testimonials-swiper !overflow-visible justify-center"
+                        centeredSlides={itemsToShow === 1}
                     >
                         {testimonials.map((testimonial) => (
                             <SwiperSlide key={testimonial.id} className="!overflow-visible">
-                                <div className="min-w-[300px] max-w-[400px] h-[350px] bg-white hover:bg-[#FFB020] rounded-xl p-8 shadow-lg transform transition-all duration-300 hover:scale-105 hover:z-20">
+                                <div className="min-w-[200px] max-w-[400px] h-[350px] bg-white hover:bg-[#FFB020] rounded-xl p-8 shadow-lg transform transition-all duration-300 hover:scale-105 hover:z-20">
                                     <div className="flex items-center gap-4 mb-6">
                                         <img
                                             src={"/star/avatar1.png"}
