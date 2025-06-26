@@ -25,7 +25,7 @@ export default function Header() {
                 </p>
                 <div className="mt-20 sm:mt-0 flex-col sm:flex-row justify-center  md:justify-start  items-center gap-8 sm:gap-4 flex">
                     <a
-                        href="#"
+                        href="https://apps.apple.com/app/faithtime/id6503560893"
                         className=" h-14 transition-transform hover:scale-105"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -33,7 +33,7 @@ export default function Header() {
                         <AppStoreIcon width={width > 800 ? 180 : 300} height={width < 800 ? 70 : 53} />
                     </a>
                     <a
-                        href="#"
+                        href="https://play.google.com/store/apps/details?id=com.metavibe.faithtime&gl=SG"
                         className="h-14 transition-transform hover:scale-105"
                         target="_blank"
                         rel="noopener noreferrer"
