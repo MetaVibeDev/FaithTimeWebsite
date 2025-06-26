@@ -22,7 +22,7 @@
 .header {
   text-align: center;
   max-width: 800px;
-  margin: 2rem auto 3rem;
+  margin: 1rem auto 2rem;
   padding: 0 1rem;
 }
 
@@ -86,7 +86,7 @@
 .feature-card:hover {
   transform: translateY(-15px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(252, 211, 77, 0.4);
+
   background: rgba(40, 5, 239, 0.85);
 }
 .feature-card:hover .card-title {
@@ -157,15 +157,19 @@
   }
 
   .card-title {
-    font-size: 1rem;
+    font-size: 1.7rem;
   }
 
   .card-text {
     font-size: 0.9rem;
   }
+  .header {
+  margin: 0rem auto 1.5rem;
+}
 }
 
 @media (max-width: 900px) {
+
   .features-container {
     gap: 2rem;
   }
@@ -182,15 +186,21 @@
   }
 
   .card-title {
-    font-size: 0.9rem;
+    font-size: 1.6rem;
   }
 
   .card-text {
     font-size: 0.8rem;
   }
+  .header {
+    margin: -1rem auto 0rem;
+  }
 }
 
 @media (max-width: 768px) {
+  .header {
+  margin: -1.5rem auto 0.5rem;
+}
   .subtitle {
     font-size: 1.1rem;
   }
@@ -208,7 +218,7 @@
   }
 
   .card-title {
-    font-size: 0.8rem;
+    font-size: 1.55rem;
   }
 
   .card-text {
@@ -217,6 +227,9 @@
 }
 
 @media (max-width: 480px) {
+  .header {
+  margin: -2rem auto 0rem;
+}
   .faith-app {
     padding: 1rem;
   }
@@ -234,7 +247,7 @@
   }
 
   .card-title {
-    font-size: 0.7rem;
+    font-size: 1.5rem;
   }
 
   .card-text {
