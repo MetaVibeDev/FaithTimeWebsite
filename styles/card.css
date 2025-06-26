@@ -120,8 +120,11 @@
 .feature-card:hover {
   transform: translateY(-15px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-
-  background: rgba(40, 5, 239, 0.85);
+  background: linear-gradient(
+    to right,
+    rgba(149, 72, 250, 0.85) 0%,    /* #9548FA 带透明度 */
+    rgba(86, 77, 221, 0.85) 100%    /* #564DDD 带透明度 */
+  );
 }
 .feature-card:hover .card-title {
   color: #ffffff; 
