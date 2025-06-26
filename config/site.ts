@@ -6,8 +6,28 @@ export const siteConfig = {
     "Embark on a spiritual adventure with FaithTime, your companion for spiritual journeying through sacred sites and daily devotions. Discover christian sacred places, engage in meditation prayers, and receive a daily bible verse. Our app combines pilgrimage with prayer, offering a unique blend of christian meditations and virtual exploration of christianity's most revered locations. Join our faith community church in this transformative journey.",
   navItems: [
     {
-      label: "Mobile",
-      href: "/mobile",
+      label: "Home",
+      href: "/home",
+    },
+    {
+      label: "Services",
+      href: "/header",
+    },
+    {
+      label: "About",
+      href: "/card",
+    },
+    {
+      label: "Reviews",
+      href: "/detail",
+    },
+    {
+      label: "Downland",
+      href: "/download",
+    },
+    {
+      label: "Contact",
+      href: "/footer",
     },
     // {
     //   label: "XR",
@@ -121,7 +141,7 @@ export const siteConfig = {
       title: "Questions about the Bible?",
       content:
         "\
-          Get answers and discover truths\
+          Daily guidance to walk closer with God\
           ",
     },
   ],
