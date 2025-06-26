@@ -1,16 +1,44 @@
 .faith-app {
-  background: 
-    radial-gradient(circle at center, rgba(255, 255, 255, 0.8) 0%, transparent 100%),
-    linear-gradient(to top right, #f5d3d4 0%, #fafafa 90%, #7d3aed 100%);
-  color: #f8fafc;
-  min-height: 60vh; /* 改为min-height而不是固定height */
+  position: relative;
+  min-height: 60vh;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding-top: 20px; /* 修复缺少单位的padding-top */
+  overflow: hidden;
 }
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.white-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f4f6fa;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover; 
+  background-position: center;
+  opacity: 1;
+  mix-blend-mode: multiply;
+}
+
+/* 确保内容在背景之上 */
 .content-wrapper {
   width: 100%;
   max-width: 1400px;
@@ -18,12 +46,16 @@
   flex-direction: column;
   align-items: center;
   flex: 1; /* 确保填充剩余空间 */
+  position: relative;
+  z-index: 1;
 }
 .header {
   text-align: center;
   max-width: 800px;
   margin: 1rem auto 2rem;
   padding: 0 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .main-title {
@@ -69,6 +101,8 @@
   padding: 0 1rem;
   padding-top: 40px;
   padding-bottom: 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .feature-card {
@@ -91,9 +125,11 @@
 }
 .feature-card:hover .card-title {
   color: #ffffff; 
-}.feature-card:hover .card-text {
+}
+.feature-card:hover .card-text {
   color: #edeff5; 
 }
+.feature-card:hover .card-text
 .card-icon {
   display: flex;
   justify-content: center;
@@ -144,7 +180,6 @@
   .features-container {
     gap: 3rem;
   }
-
   .feature-card {
     min-width: 250px;
   }
@@ -166,10 +201,15 @@
   .header {
   margin: 0rem auto 1.5rem;
 }
+.background-image {
+    background-size: contain; /* 在小屏幕上使用 contain 以包含整个图片 */
+  }
 }
 
 @media (max-width: 900px) {
-
+.background-image {
+    background-size: auto; /* 在中等屏幕上使用 auto 以适应容器大小 */
+  }
   .features-container {
     gap: 2rem;
   }
@@ -198,6 +238,9 @@
 }
 
 @media (max-width: 768px) {
+  .background-image {
+    background-size: auto; /* 在中等屏幕上使用 auto 以适应容器大小 */
+  }
   .header {
   margin: -1.5rem auto 0.5rem;
 }
@@ -227,6 +270,9 @@
 }
 
 @media (max-width: 480px) {
+  .background-image {
+    background-size: auto; /* 在中等屏幕上使用 auto 以适应容器大小 */
+  }
   .header {
   margin: -2rem auto 0rem;
 }
@@ -254,3 +300,20 @@
     font-size: 0.7rem;
   }
 }
+
+@media (min-width: 201px) and (max-width: 768px) {
+  .background-image {
+    background-size: 100%; /* 在中等屏幕上使用 100% 以填满容器 */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .background-image {
+    background-size: auto; /* 在大屏幕上使用 auto 以适应容器大小 */
+  }
+}
+
+@media (min-width: 1025px) {
+  .background-image {
+  background-size: cover; /* 在更大屏幕上使用 cover 以覆盖整个容器 */
+}}

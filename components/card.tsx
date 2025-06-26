@@ -47,6 +47,12 @@ export default function Card() {
 
   return (
     <div className="faith-app">
+      <div className="white-background">
+        <img src="/star/BG.png" className="w-full h-full" alt="Background" />
+      </div>
+      <div className="background-container">
+        <div className="background-image"></div>
+      </div>
       <header className="header">
         <h1 className="main-title">What Sets Us Apart</h1>
         <p className="subtitle">
