@@ -37,7 +37,7 @@ export default function Header() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <GooglePlayIcon width={width > 800 ? 180 : 300} height={width < 800 ? 70 : 53} />
+                        <GooglePlayIcon width={width > 800 ? 170 : 255} height={width < 800 ? 62 : 53} />
                     </a>
                 </div>
             </div>
@@ -88,7 +88,7 @@ export default function Header() {
         }} className="absolute z-1  hidden md:flex ">
             <div className="absolute top-0 bottom-0 left-0 right-0 justify-center items-center">
                 <div className="scale-150">
-                    <img className="animate-spin [animation-duration:10s]" src="/mobileApp/glow.png" />
+                    <img className="animate-spin [animation-duration:20s]" src="/mobileApp/glow.png" />
                 </div>
             </div>
 

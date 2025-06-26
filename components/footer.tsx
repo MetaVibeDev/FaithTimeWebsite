@@ -35,7 +35,7 @@ const ContactLink: React.FC<ContactLinkProps> = ({ children, href }) => (
 
 const Footer: React.FC = () => {
   return (
-    <div className="md:gap-[84px] gap-8 md:pt-[100px] pt-8  md:pb-[65px] pb-8 bg-gradient-to-br from-[#9548FA] to-[#564DDD] w-full  text-white font-sans flex flex-col justify-between items-center">
+    <div className="md:gap-[84px] px-8 gap-8 md:pt-[100px] pt-8  md:pb-[65px] pb-8 bg-gradient-to-br from-[#9548FA] to-[#564DDD] w-full  text-white font-sans flex flex-col justify-between items-center">
       {/* Main Header Content */}
       <div className="flex items-start px-10  flex-1 w-full h-[230]">
         {/* Logo - 1/4 width */}
@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Footer */}
-      <div className="max-w-[1200px] flex justify-between items-center px-2 py-3 border-t-1 border-white text-xs">
+      <div className="w-full  flex justify-between items-center px-2 py-3 border-t-1 border-white text-xs">
         <div className="text-white/80">
           ©2025 Faith Time. All rights reserved. Privacy Policy. Terms &
           License.

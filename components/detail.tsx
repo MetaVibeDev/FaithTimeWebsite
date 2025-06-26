@@ -40,7 +40,7 @@ export default function Detail() {
             <div className="font-normal text-[16px] mt-8 px-8 lg:px:0 text-black text-center">Here, you will have a lamb who grows with you—your reflection in Christ.</div>
             <div className="relative w-full">
                 <img src="/star/mainBg.png" />
-                <div className="w-full absolute md:top-24 top-16 flex flex-col lg:gap-64 md:gap-64 sm:gap-32 gap-8">
+                <div className="w-full absolute md:top-24 top-16 flex flex-col lg:gap-64 md:gap-64 sm:gap-12 gap-8 px-4">
 
                     <section
                         className="relative w-full px-4"
@@ -108,11 +108,11 @@ export default function Detail() {
                                         onBeforeInit={(swiper) => {
                                             swiperRefs.current[1] = swiper;
                                         }}
-                                        className="testimonials-swiper !overflow-visible"
+                                        className="testimonials-swiper w-full h-full !overflow-visible"
                                     >
                                         {arr2.map((item) => (
-                                            <SwiperSlide key={item}>
-                                                <img src={item} alt="FaithTime App Screenshot" />
+                                            <SwiperSlide className="w-full h-full" key={item}>
+                                                <img className="w-full h-full" src={item} alt="FaithTime App Screenshot" />
                                             </SwiperSlide>
                                         ))}
                                     </Swiper>
@@ -158,11 +158,11 @@ export default function Detail() {
                                         onBeforeInit={(swiper) => {
                                             swiperRefs.current[2] = swiper;
                                         }}
-                                        className="testimonials-swiper !overflow-visible"
+                                        className="testimonials-swiper !overflow-visible w-full h-full"
                                     >
                                         {arr3.map((item) => (
                                             <SwiperSlide key={item}>
-                                                <img src={item} alt="FaithTime App Screenshot" />
+                                                <img src={item} className="w-full h-full" alt="FaithTime App Screenshot" />
                                             </SwiperSlide>
                                         ))}
                                     </Swiper>
@@ -181,7 +181,7 @@ export default function Detail() {
                         </div>
                         <div className="relative w-full mx-auto flex flex-row items-center lg:items-start gap-12">
                             <div className="md:w-1/2 w-2/5 flex justify-center" >
-                                <div className="border-4 border-solid border-black rounded-3xl md:w-[50%] overflow-hidden w-[80%]">
+                                <div className="border-4 border-solid border-black rounded-3xl w-[80%] md:w-[50%]  overflow-hidden">
                                     <Swiper
                                         modules={[Autoplay]}
                                         slidesPerView={1}
@@ -198,7 +198,7 @@ export default function Detail() {
                                     >
                                         {arr4.map((item) => (
                                             <SwiperSlide key={item}>
-                                                <img src={item} alt="FaithTime App Screenshot" />
+                                                <img src={item} alt="FaithTime App Screenshot" className="w-full h-full object-cover" />
                                             </SwiperSlide>
                                         ))}
                                     </Swiper>

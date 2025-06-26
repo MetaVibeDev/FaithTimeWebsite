@@ -44,7 +44,7 @@ const NavigationHeader: React.FC<NavigationHeaderProps> = ({
               href="#testimonials"
               className="text-sm font-medium text-black hover:text-gray-600 transition-colors duration-200"
             >
-              reviews
+              Reviews
             </a>
             <a
               href="#download"
