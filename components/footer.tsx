@@ -52,10 +52,10 @@ const Footer: React.FC = () => {
               Contact Us
             </div>
             <div className="flex flex-col gap-4">
-              <ContactLink href="https://discord.gg/Mc8d5sXDp9">
+              <ContactLink href="https://discord.gg/GDHzvamn7a">
                 Discord
               </ContactLink>
-              <ContactLink href="https://t.me/your_telegram_link">
+              <ContactLink href="https://t.me/FaithTimeApp">
                 Telegram
               </ContactLink>
             </div>
@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
                 />
                 TikTok
               </SocialIcon>
-              <SocialIcon href="https://x.com/FaithtimeApp">
+              <SocialIcon href="https://x.com/faithtimeapp?s=21">
                 <img
                   src="/MobileApp/tuite.png" // 注意：要去掉"/public"前缀
                   alt="X (Twitter)"
@@ -93,7 +93,7 @@ const Footer: React.FC = () => {
                 />
                 X
               </SocialIcon>
-              <SocialIcon href="https://www.facebook.com/your_facebook">
+              <SocialIcon href="https://www.facebook.com/faithtimeapp/?rdid=XTf5hxyjc7o3pAdA">
                 <img
                   src="/MobileApp/facebook.png" // 注意：要去掉"/public"前缀
                   alt="X (Twitter)"

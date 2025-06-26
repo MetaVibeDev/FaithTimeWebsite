@@ -132,7 +132,7 @@ export default function Testimonials() {
           >
             {testimonials.map((testimonial) => (
               <SwiperSlide key={testimonial.id} className="!overflow-visible">
-                <div className="min-w-[200px] max-w-[400px] h-[350px] bg-white hover:bg-[#FFB020] rounded-xl p-8 shadow-lg transform transition-all duration-300 hover:scale-105 hover:z-20">
+                <div className="min-w-[200px] max-w-[400px] h-[350px] overflow-auto scrollbar-hide bg-white hover:bg-[#FFB020] rounded-xl p-8 shadow-lg transform transition-all duration-300 hover:scale-105 hover:z-20">
                   <div className="flex items-center gap-4 mb-6">
                     <img
                       src={testimonial.avatar}
@@ -174,10 +174,10 @@ export default function Testimonials() {
           <div className="w-full flex justify-center mt-8 gap-24">
             <button
               onClick={() => swiperRef.current?.slidePrev()}
-              className="bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-all z-10"
+              className="text-[#8A58FF] hover:text-white bg-white rounded-full p-2 shadow-lg hover:bg-[#8A58FF] transition-all z-10"
             >
               <svg
-                className="w-8 h-8 text-[#8A58FF]"
+                className="w-8 h-8"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -192,10 +192,10 @@ export default function Testimonials() {
             </button>
             <button
               onClick={() => swiperRef.current?.slideNext()}
-              className="bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-all z-10"
+              className="text-[#8A58FF] hover:text-white bg-white rounded-full p-2 shadow-lg hover:bg-[#8A58FF] transition-all z-10"
             >
               <svg
-                className="w-8 h-8 text-[#8A58FF]"
+                className="w-8 h-8"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

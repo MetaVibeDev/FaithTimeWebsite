@@ -20,12 +20,12 @@ export default function Download() {
                 {/* 下载按钮容器 */}
                 <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-12">
                     {/* App Store 按钮 */}
-                    <a href="#" className="w-[200px] transition-transform hover:scale-105">
+                    <a href="https://apps.apple.com/app/faithtime/id6503560893" className="w-[200px] transition-transform hover:scale-105">
                         <AppStoreIcon />
                     </a>
 
                     {/* Google Play 按钮 */}
-                    <a href="#" className="w-[200px] transition-transform hover:scale-105">
+                    <a href="https://play.google.com/store/apps/details?id=com.metavibe.faithtime&gl=SG" className="w-[200px] transition-transform hover:scale-105">
                         <GooglePlayIcon />
                     </a>
                 </div>

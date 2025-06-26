@@ -1,6 +1,7 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { animationConfigs, LumiAnimationType, LumiColorType } from "./config";
-import Lottie from "lottie-react";
+import Lottie, { LottieRefCurrentProps } from "lottie-react";
+
 interface LottieProps {
   source?: string;
 }
@@ -14,6 +15,7 @@ export interface LumiAnimationProps {
   progress?: number;
   showBible?: boolean;
   showStar?: boolean;
+  isPlaying?: boolean;
 }
 
 export default function Lumi(props: LumiAnimationProps) {
@@ -24,10 +26,12 @@ export default function Lumi(props: LumiAnimationProps) {
     progress,
     showBible,
     showStar,
+    isPlaying = false,
     ...restProps
   } = props;
 
   const [animationData, setAnimationData] = useState(null);
+  const lottieRef = useRef<LottieRefCurrentProps>(null);
 
   useEffect(() => {
     const animationSource = () => {
@@ -37,16 +41,30 @@ export default function Lumi(props: LumiAnimationProps) {
       return levelConfig[1];
     };
 
-    fetch(animationSource().uri) // 可是本地 public 文件，也可以是远程 URL
+    fetch(animationSource().uri)
       .then((res) => res.json())
       .then(setAnimationData);
   }, []);
+
+  useEffect(() => {
+    if (isPlaying) {
+      lottieRef.current?.play();
+    } else {
+      lottieRef.current?.pause();
+    }
+  }, [isPlaying]);
+
   if (!animationData) return null;
+
   return (
-    <Lottie
-      animationData={animationData}
-      style={{ width: size, height: size }}
-      loop={true}
-    />
+    <div>
+      <Lottie
+        lottieRef={lottieRef}
+        animationData={animationData}
+        style={{ width: size, height: size }}
+        loop={true}
+        autoplay={false}
+      />
+    </div>
   );
 }
