@@ -1,18 +1,20 @@
 "use client";
-
 import Home from "@/app/page";
-import {usePathname} from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useEffect, Suspense } from "react";
 
 function SharePageContent() {
   const pathname = usePathname();
-  const pathSegments = pathname.split('/');
+  const pathSegments = pathname?.split('/') || [];
+
   useEffect(() => {
-    const type = pathSegments[2]; // 获取 prayer-request-share
-    const params = pathSegments[3]; // 获取 252
-    console.log(type,params)
-    window.location.href = `faithtime://${type}/${params}`;
-  }, []);
+    if (typeof window !== 'undefined') {
+      const type = pathSegments[2];
+      const params = pathSegments[3];
+      console.log(type, params);
+      window.location.href = `faithtime://${type}/${params}`;
+    }
+  }, [pathSegments]);
 
   return <Home />;
 }

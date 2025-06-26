@@ -89,7 +89,7 @@ export const siteConfig = {
   },
   slideImageAndText: [
     {
-      src: "/MobileApp/1.png",
+      src: "/images/1.png",
       title: "No time for devotion?",
       content:
         " \
@@ -97,7 +97,7 @@ export const siteConfig = {
         ",
     },
     {
-      src: "/MobileApp/2.png",
+      src: "/images/2.png",
       title: "Can’t stay consistent?",
       content:
         " \
@@ -105,7 +105,7 @@ export const siteConfig = {
         ",
     },
     {
-      src: "/MobileApp/3.png",
+      src: "/images/3.png",
       title: "Walking alone",
       content:
         " \
@@ -113,7 +113,7 @@ export const siteConfig = {
         ",
     },
     {
-      src: "/MobileApp/4.png",
+      src: "/images/4.png",
       title: "Need Guidance?",
       content:
         "\
@@ -121,7 +121,7 @@ export const siteConfig = {
         ",
     },
     {
-      src: "/MobileApp/5.png",
+      src: "/images/5.png",
       title: "Bible Dive!",
       content:
         "\
@@ -129,7 +129,7 @@ export const siteConfig = {
         ",
     },
     {
-      src: "/MobileApp/6.png",
+      src: "/images/6.png",
       title: "Feeling lost?",
       content:
         "\
@@ -137,7 +137,7 @@ export const siteConfig = {
         ",
     },
     {
-      src: "/MobileApp/7.png",
+      src: "/images/7.png",
       title: "Questions about the Bible?",
       content:
         "\

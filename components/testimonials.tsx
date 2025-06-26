@@ -79,28 +79,32 @@ export default function Testimonials() {
 
   useEffect(() => {
     const handleResize = () => {
-      const width = window.innerWidth;
-      if (width < 640) {
-        // sm
-        setItemsToShow(1);
-      } else if (width < 1024) {
-        // md
-        setItemsToShow(2);
-      } else if (width < 1280) {
-        // lg
-        setItemsToShow(3);
-      } else if (width < 1536) {
-        // xl
-        setItemsToShow(4);
-      } else {
-        // 2xl
-        setItemsToShow(5);
+      if (typeof window !== 'undefined') {
+        const width = window.innerWidth;
+        if (width < 640) {
+          // sm
+          setItemsToShow(1);
+        } else if (width < 1024) {
+          // md
+          setItemsToShow(2);
+        } else if (width < 1280) {
+          // lg
+          setItemsToShow(3);
+        } else if (width < 1536) {
+          // xl
+          setItemsToShow(4);
+        } else {
+          // 2xl
+          setItemsToShow(5);
+        }
       }
     };
 
     handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    if (typeof window !== 'undefined') {
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
   }, []);
 
   return (

@@ -1,5 +1,7 @@
 import React from "react";
-import { AppStoreIcon, DiscordIcon, InstagramIcon, TiktokIcon } from "./icons";
+import { DiscordIcon, InstagramIcon, TiktokIcon, XIcon } from "./icons";
+import { FacebookIcon } from "lucide-react";
+import TelegramIcon from "@/public/telegram-brands-solid.svg";
 
 interface SocialIconProps {
   children: React.ReactNode;
@@ -27,7 +29,7 @@ const ContactLink: React.FC<ContactLinkProps> = ({ children, href }) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="font-semibold text-[16px]  text-white no-underline transition-opacity duration-200 ease-in-out block whitespace-nowrap hover:opacity-80"
+    className="font-semibold text-[16px] flex gap-2  text-white no-underline transition-opacity duration-200 ease-in-out  whitespace-nowrap hover:opacity-80"
   >
     {children}
   </a>
@@ -48,14 +50,21 @@ const Footer: React.FC = () => {
         {/* Contact Us Section - 1/4 width */}
         <div className="flex-1 flex justify-center">
           <div className="text-left">
-            <div className="text-base font-bold md:mb-8 mb-4 text-white">
+            <div className="text-[20px]  font-bold md:mb-8 mb-4 text-white">
               Contact Us
             </div>
             <div className="flex flex-col gap-4">
               <ContactLink href="https://discord.gg/GDHzvamn7a">
+                <DiscordIcon />
                 Discord
               </ContactLink>
               <ContactLink href="https://t.me/FaithTimeApp">
+                <img
+                  src="/telegram-brands-solid.svg"
+                  alt="Logo SVG"
+                  className="filter invert brightness-100"
+                  style={{ width: '24px', height: '24px' }}
+                />
                 Telegram
               </ContactLink>
             </div>
@@ -65,40 +74,24 @@ const Footer: React.FC = () => {
         {/* Social Media Section - 1/4 width */}
         <div className="flex-1 flex justify-center">
           <div className="text-left">
-            <div className="text-base font-bold md:mb-8 mb-4 text-white">
+            <div className="text-[20px] font-bold md:mb-8 mb-4 text-white">
               Social Media
             </div>
             <div className="flex flex-col gap-4">
               <SocialIcon href="https://www.instagram.com/faithtime_app">
-                <img
-                  src="/MobileApp/ins.png" // 注意：要去掉"/public"前缀
-                  alt="Instagram"
-                  className="w-6 h-6"
-                />
+                <InstagramIcon />
                 Instagram
               </SocialIcon>
               <SocialIcon href="https://www.tiktok.com/@faithtime_app">
-                <img
-                  src="/MobileApp/TikTok.png" // 注意：要去掉"/public"前缀
-                  alt="TikTok"
-                  className="w-6 h-6"
-                />
+                <TiktokIcon />
                 TikTok
               </SocialIcon>
               <SocialIcon href="https://x.com/faithtimeapp?s=21">
-                <img
-                  src="/MobileApp/tuite.png" // 注意：要去掉"/public"前缀
-                  alt="X (Twitter)"
-                  className="w-6 h-6"
-                />
+                <XIcon />
                 X
               </SocialIcon>
               <SocialIcon href="https://www.facebook.com/faithtimeapp/?rdid=XTf5hxyjc7o3pAdA">
-                <img
-                  src="/MobileApp/facebook.png" // 注意：要去掉"/public"前缀
-                  alt="X (Twitter)"
-                  className="w-6 h-6"
-                />
+                <FacebookIcon />
                 Facebook
               </SocialIcon>
             </div>
@@ -109,8 +102,7 @@ const Footer: React.FC = () => {
       {/* Footer */}
       <div className="w-full  flex justify-between items-center px-2 py-3 border-t-1 border-white text-xs">
         <div className="text-white/80">
-          ©2025 Faith Time. All rights reserved. Privacy Policy. Terms &
-          License.
+          ©2025 MetaVibe. All rights reserved.
         </div>
         <div className="flex gap-5">
           <a

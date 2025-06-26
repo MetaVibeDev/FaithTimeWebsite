@@ -11,16 +11,16 @@ export default function Card() {
   // 定义每张卡片的图片集合（使用 CardImage 类型）
   const cardImages: CardImage[] = [
     {
-      default: "/star/icon-1.png",
-      hover: "/star/icon.png",
+      default: "/star/fire-1.png",
+      hover: "/star/fire.png",
     },
     {
       default: "/star/love-1.png",
       hover: "/star/love.png",
     },
     {
-      default: "/star/Frame-1.png",
-      hover: "/star/Frame.png",
+      default: "/star/fframe-1.png",
+      hover: "/star/fframe.png",
     },
   ];
 

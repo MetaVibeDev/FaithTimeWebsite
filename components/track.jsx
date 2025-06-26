@@ -37,7 +37,7 @@ const getTimeString = () => {
 export const reportTrackingData = ({ uuid, trackName, trackType }) => {
   const name = trackName;
   const trackingData = {
-    app_name: "faithtime",
+    app_name: "metavibe",
     unique_id: uuid,
     params: {
       button_name: name,
@@ -55,21 +55,21 @@ const TrackClick = (BaseComponent) => {
   const EnhancedComponent = ({ trackName, ...props }) => {
     const { uuid } = useContext(UUIDContext);
 
-      const handleClick = (event) => {
+    const handleClick = (event) => {
 
-        reportTrackingData({
-          uuid: uuid,
-          trackName: trackName,
-          trackType: trackedEventType.Click,
-        });
+      reportTrackingData({
+        uuid: uuid,
+        trackName: trackName,
+        trackType: trackedEventType.Click,
+      });
 
-        if (props.onClick) {
-          props.onClick(event);
-        }
-      };
-
-      return <BaseComponent onClick={handleClick} {...props} />;
+      if (props.onClick) {
+        props.onClick(event);
+      }
     };
+
+    return <BaseComponent onClick={handleClick} {...props} />;
+  };
 
   return EnhancedComponent;
 };
@@ -99,10 +99,10 @@ const TrackExposure = (BaseComponent) => {
     const handleExposure = () => {
       console.log(
         trackName +
-          ": exposureCount = " +
-          (exposureCount.current + 1) +
-          ", exposureTimer id = " +
-          exposureTimer
+        ": exposureCount = " +
+        (exposureCount.current + 1) +
+        ", exposureTimer id = " +
+        exposureTimer
       );
 
       reportTrackingData({
@@ -118,10 +118,10 @@ const TrackExposure = (BaseComponent) => {
       entries.forEach((entry) => {
         console.log(
           trackName +
-            ": intersectionRatio = " +
-            entry.intersectionRatio +
-            ", time = " +
-            getTimeString()
+          ": intersectionRatio = " +
+          entry.intersectionRatio +
+          ", time = " +
+          getTimeString()
         );
 
         const needCheck = !(trackOnlyOnce && exposureCount.current > 0);

@@ -89,7 +89,7 @@ export class Navbar extends React.Component {
           className="hidden sm:flex basis-1/5 sm:basis-full"
           justify="end"
           style={{
-            backgroundImage: "url('/MobileApp/go-plus.png')",
+            backgroundImage: "url('/images/go-plus.png')",
             backgroundSize: "contain", // 或 "cover" / "100% 100%"
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -177,8 +177,8 @@ export class Navbar extends React.Component {
                     index === 2
                       ? "primary"
                       : index === siteConfig.navMenuItems.length - 1
-                      ? "secondary"
-                      : "foreground"
+                        ? "secondary"
+                        : "foreground"
                   }
                   href="#"
                   size="lg"

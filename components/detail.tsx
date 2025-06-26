@@ -5,20 +5,23 @@ import type { Swiper as SwiperType } from 'swiper';
 import Lumi from "./lumi/Lumi";
 
 export default function Detail() {
-    const [width, setWidth] = useState(window.innerWidth);
+    const [width, setWidth] = useState(0);
     const [activeSection, setActiveSection] = useState<number | null>(null);
     const swiperRefs = useRef<(SwiperType | undefined)[]>([]);
 
     useEffect(() => {
-        const handleResize = () => setWidth(window.innerWidth);
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+        if (typeof window !== 'undefined') {
+            setWidth(window.innerWidth);
+            const handleResize = () => setWidth(window.innerWidth);
+            window.addEventListener('resize', handleResize);
+            return () => window.removeEventListener('resize', handleResize);
+        }
     }, []);
 
-    const arr1 = ["/mobileApp/screen-1.png", "/mobileApp/screen-2.png", "/mobileApp/screen-3.png", "/mobileApp/screen-4.png"];
-    const arr2 = ["/mobileApp/screen-5.png", "/mobileApp/screen-6.png", "/mobileApp/screen-7.png"];
-    const arr3 = ["/mobileApp/screen-8.png", "/mobileApp/screen-9.png", "/mobileApp/screen-10.png"];
-    const arr4 = ["/mobileApp/screen-11.png", "/mobileApp/screen-12.png"];
+    const arr1 = ["/images/screen-1.png", "/images/screen-2.png", "/images/screen-3.png", "/images/screen-4.png"];
+    const arr2 = ["/images/screen-5.png", "/images/screen-6.png", "/images/screen-7.png"];
+    const arr3 = ["/images/screen-8.png", "/images/screen-9.png", "/images/screen-10.png"];
+    const arr4 = ["/images/screen-11.png", "/images/screen-12.png"];
 
     const handleSectionMouseEnter = (index: number) => {
         setActiveSection(index);
@@ -41,7 +44,6 @@ export default function Detail() {
             <div className="relative w-full">
                 <img src="/star/mainBg.png" />
                 <div className="w-full absolute md:top-24 top-16 flex flex-col lg:gap-64 md:gap-64 sm:gap-12 gap-8 px-4">
-
                     <section
                         className="relative w-full px-4"
                         onMouseEnter={() => handleSectionMouseEnter(0)}
@@ -52,7 +54,7 @@ export default function Detail() {
                         </div>
                         <div className="relative z-2 w-full mx-auto flex flex-row items-center lg:items-start gap-12 ">
                             <div className="md:w-1/2 w-3/5 space-y-6 flex-col flex gap-4" >
-                                <h2 className="lg:text-[32px] md:text-xl text-sm font-semibold leading-tight text-black">Walk the Path as the Little Lamb — Grow, Reflect, and Glow in Faith!</h2>
+                                <h2 className="lg:text-[32px] md:text-xl text-sm font-semibold text-black" style={{ lineHeight: width > 800 ? '2.5rem' : "1.5rem" }}>Walk the Path as the Little Lamb — Grow, Reflect, and Glow in Faith!</h2>
                                 <p className="lg:text-lg text-sm text-[#2F106D] md:flex hidden">We creates a warm and mindful space for your spiritual growth. With Devotion Tracking, you'll build a steady, devout routine. Day & Night Themes set the mood for prayer, morning to night. And your animated lamb? It cheers you on, celebrates your progress, and grows with you — a joyful reminder that faith is a journey, not a checklist.</p>
                                 <div className="flex justify-start">
                                     <button onClick={() => window.location.href = '#download'} className="bg-[#8A58FF] text-white text-[10px] md:text-xl md:px-8 md:py-3 p-3 rounded-full hover:bg-purple-700 transition-colors">Get Started</button>
@@ -119,7 +121,7 @@ export default function Detail() {
                                 </div>
                             </div>
                             <div className="md:w-1/2 w-3/5 space-y-6 flex-col flex gap-4">
-                                <h2 className="lg:text-[32px] md:text-xl text-sm  font-semibold leading-tight text-black">You're Not Alone — Share, Pray, Connect!</h2>
+                                <h2 className="lg:text-[32px] md:text-xl text-sm  font-semibold leading-tight text-black" style={{ lineHeight: width > 800 ? '2.5rem' : "1.5rem" }}>You're Not Alone — Share, Pray, Connect!</h2>
                                 <p className="lg:text-lg text-sm text-[#2F106D] md:flex hidden">This is your space to open up, ask for prayer, and lift others up too. Share what's on your heart, join meaningful conversations, or offer encouragement through prayer. Here, faith becomes community — real, supportive, and alive.</p>
                                 <div className="flex justify-end">
                                     <button onClick={() => window.location.href = '#download'} className="bg-[#8A58FF] text-white text-[10px] md:text-xl md:px-8 md:py-3 p-3 rounded-full hover:bg-purple-700 transition-colors">Get Started</button>
@@ -138,7 +140,7 @@ export default function Detail() {
                         </div>
                         <div className="relative w-full mx-auto flex flex-row items-center lg:items-start gap-12">
                             <div className="md:w-1/2 w-3/5 space-y-6 flex-col flex gap-4">
-                                <h2 className="lg:text-[32px] md:text-xl text-sm font-semibold leading-tight text-black">Feeling lost? Let God's word bring daily strength</h2>
+                                <h2 className="lg:text-[32px] md:text-xl text-sm font-semibold leading-tight text-black" style={{ lineHeight: width > 800 ? '2.5rem' : "1.5rem" }}>Feeling lost? Let God's word bring daily strength</h2>
                                 <p className="lg:text-lg text-sm text-[#2F106D] md:flex hidden">Manna delivers a timely word — handpicked for your heart. It's like a divine nudge that comforts, strengthens, and keeps you anchored in His love, one day at a time.</p>
                                 <div className="flex justify-start">
                                     <button onClick={() => window.location.href = '#download'} className="bg-[#8A58FF] text-white text-[10px] md:text-xl md:px-8 md:py-3 p-3 rounded-full hover:bg-purple-700 transition-colors">Get Started</button>
@@ -205,7 +207,7 @@ export default function Detail() {
                                 </div>
                             </div>
                             <div className="md:w-1/2 w-3/5 space-y-6 flex-col flex gap-4">
-                                <h2 className="lg:text-[32px] md:text-xl text-sm font-semibold leading-tight text-black">Got Faith Questions? Ask Away — Bible Chat's Got You!</h2>
+                                <h2 className="lg:text-[32px] md:text-xl text-sm font-semibold leading-tight text-black" style={{ lineHeight: width > 800 ? '2.5rem' : "1.5rem" }}>Got Faith Questions? Ask Away — Bible Chat's Got You!</h2>
                                 <p className="lg:text-lg text-sm text-[#2F106D] md:flex hidden">Wondering about a verse? Wrestling with a tough question? Bible Chat is your on-call faith companion — always ready with wise, Bible-based answers that make things clearer (and deeper).</p>
                                 <div className="flex justify-end">
                                     <button onClick={() => window.location.href = '#download'} className="bg-[#8A58FF] text-white text-[10px] md:text-xl md:px-8 md:py-3 p-3 rounded-full hover:bg-purple-700 transition-colors">Get Started</button>

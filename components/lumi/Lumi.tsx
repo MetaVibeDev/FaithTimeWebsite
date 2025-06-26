@@ -44,15 +44,18 @@ export default function Lumi(props: LumiAnimationProps) {
     fetch(animationSource().uri)
       .then((res) => res.json())
       .then(setAnimationData);
-  }, []);
+  }, [animation, color]); // 添加依赖项
 
+  // 合并两个useEffect，确保在animationData加载完成后再控制播放
   useEffect(() => {
-    if (isPlaying) {
-      lottieRef.current?.play();
-    } else {
-      lottieRef.current?.pause();
+    if (animationData && lottieRef.current) {
+      if (isPlaying) {
+        lottieRef.current.play();
+      } else {
+        lottieRef.current.pause();
+      }
     }
-  }, [isPlaying]);
+  }, [isPlaying, animationData]); // 添加animationData作为依赖
 
   if (!animationData) return null;
 
@@ -63,7 +66,7 @@ export default function Lumi(props: LumiAnimationProps) {
         animationData={animationData}
         style={{ width: size, height: size }}
         loop={true}
-        autoplay={false}
+        autoplay={isPlaying} // 直接使用isPlaying作为autoplay
       />
     </div>
   );
