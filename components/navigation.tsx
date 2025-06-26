@@ -10,9 +10,9 @@ const NavigationHeader: React.FC<NavigationHeaderProps> = ({
 }) => {
   return (
     <header
-      className={`w-full lg:px-[200px] px-24 bg-white border-b border-gray-200 fixed z-10 ${className}`}
+      className={`hidden sm:flex w-full lg:px-[200px] px-24 bg-white border-b border-gray-200 fixed z-50 ${className}`}
     >
-      <div className="mx-auto py-4 max-w-[1200px]">
+      <div className="mx-auto py-4 w-[1200px]">
         <div className="flex items-center justify-between">
           {/* Brand Logo */}
           <div>
