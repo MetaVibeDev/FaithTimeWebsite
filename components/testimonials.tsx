@@ -38,9 +38,8 @@ const testimonials: Testimonial[] = [
     name: "Thomas Smith",
     date: "2025-04-10",
     rating: 5,
-    title: "Awesome Agency", // 添加标题
-    comment:
-      "I had the pleasure of working with this amazing Digital Agency, and it was a fantastic experience.",
+    title: "This app is very lovely!", // 添加标题
+    comment: "I really think this app could help me with this relationship with God, and especially Jesus Christ! I really think this app is very cool and fun to play with. And it also could be used for your goals. I give this app 5 stars because I think this app is very kind. Thank you to the developer of this app. Pls notice me!",
     avatar: "/star/avatar7.png",
   },
   {
