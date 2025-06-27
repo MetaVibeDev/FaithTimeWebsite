@@ -19,7 +19,7 @@ const testimonials: Testimonial[] = [
     id: 1,
     name: "Lynn688",
     date: "2025-05-14",
-    rating: 4,
+    rating: 5,
     title: "Very Good", // 添加标题
     comment: "Beautiful UI design and easy to use!",
     avatar: "/star/avatar1.png",
@@ -39,14 +39,14 @@ const testimonials: Testimonial[] = [
     date: "2025-04-10",
     rating: 5,
     title: "This app is very lovely!", // 添加标题
-    comment: "I really think this app could help me with this relationship with God, and especially Jesus Christ! I really think this app is very cool and fun to play with. And it also could be used for your goals. I give this app 5 stars because I think this app is very kind. Thank you to the developer of this app. Pls notice me!",
+    comment: "I really think this app could help me with this relationship with God, and especially Jesus Christ! I really think this app is very cool and fun to play with...",
     avatar: "/star/avatar7.png",
   },
   {
     id: 4,
     name: "Lvvvlin",
     date: "2025-04-10",
-    rating: 4,
+    rating: 5,
     title: "Nice app!!! Nice app!", // 添加标题
     comment:
       "This app allows me to experience God's grace and strength every day. The content is a source of inspiration and love, and the interface is simple and warm!",
@@ -83,13 +83,13 @@ export default function Testimonials() {
         if (width < 640) {
           // sm
           setItemsToShow(1);
-        } else if (width < 1024) {
+        } else if (width < 1200) {
           // md
           setItemsToShow(2);
-        } else if (width < 1280) {
+        } else if (width < 1400) {
           // lg
           setItemsToShow(3);
-        } else if (width < 1536) {
+        } else if (width < 1800) {
           // xl
           setItemsToShow(4);
         } else {
@@ -117,7 +117,7 @@ export default function Testimonials() {
           Christ.
         </p>
 
-        <div className="relative overflow-visible">
+        <div className="relative overflow-visible px-4">
           <Swiper
             modules={[Autoplay]}
             spaceBetween={32}
@@ -135,7 +135,7 @@ export default function Testimonials() {
           >
             {testimonials.map((testimonial) => (
               <SwiperSlide key={testimonial.id} className="!overflow-visible">
-                <div className="min-w-[200px] max-w-[400px] h-[350px] overflow-auto scrollbar-hide bg-white hover:bg-[#FFB020] rounded-xl p-8 shadow-lg transform transition-all duration-300 hover:scale-105 hover:z-20">
+                <div className=" h-[350px]  scrollbar-hide bg-white hover:bg-[#FFB020] rounded-xl p-8 shadow-lg transform transition-all duration-300 hover:scale-105 hover:z-20">
                   <div className="flex items-center gap-4 mb-6">
                     <img
                       src={testimonial.avatar}
@@ -150,11 +150,12 @@ export default function Testimonials() {
                         {testimonial.date}
                       </p>
                     </div>
+
                   </div>
-                  <h4 className="text-xl font-bold mb-4 text-black">
+                  <h4 className="text-xl font-bold mb-2 text-black">
                     {testimonial.title}
                   </h4>
-                  <div className="flex mb-4">
+                  <div className="flex mb-2">
                     {[...Array(5)].map((_, i) => (
                       <svg
                         key={i}
@@ -166,7 +167,7 @@ export default function Testimonials() {
                       </svg>
                     ))}
                   </div>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-normal overflow-auto h-36 scrollbar-hide">
                     {testimonial.comment}
                   </p>
                 </div>
