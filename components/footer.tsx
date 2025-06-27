@@ -2,37 +2,45 @@ import React from "react";
 import { DiscordIcon, InstagramIcon, TiktokIcon, XIcon } from "./icons";
 import { FacebookIcon } from "lucide-react";
 import TelegramIcon from "@/public/telegram-brands-solid.svg";
+import { TrackClick } from "./track";
+
+// 创建被 TrackClick 包装的链接组件
+const TrackedLink = TrackClick('a');
 
 interface SocialIconProps {
   children: React.ReactNode;
   href: string;
+  trackName: string;
 }
 
-const SocialIcon: React.FC<SocialIconProps> = ({ children, href }) => (
-  <a
+const SocialIcon: React.FC<SocialIconProps> = ({ children, href, trackName }) => (
+  <TrackedLink
+    trackName={trackName}
     href={href}
     target="_blank"
     rel="noopener noreferrer"
     className="flex font-semibold text-[16px] items-center font no-underline gap-1.5 transition-opacity duration-200 ease-in-out whitespace-nowrap hover:opacity-80"
   >
     {children}
-  </a>
+  </TrackedLink>
 );
 
 interface ContactLinkProps {
   children: React.ReactNode;
   href: string;
+  trackName: string;
 }
 
-const ContactLink: React.FC<ContactLinkProps> = ({ children, href }) => (
-  <a
+const ContactLink: React.FC<ContactLinkProps> = ({ children, href, trackName }) => (
+  <TrackedLink
+    trackName={trackName}
     href={href}
     target="_blank"
     rel="noopener noreferrer"
     className="font-semibold text-[16px] flex gap-2  text-white no-underline transition-opacity duration-200 ease-in-out  whitespace-nowrap hover:opacity-80"
   >
     {children}
-  </a>
+  </TrackedLink>
 );
 
 const Footer: React.FC = () => {
@@ -54,11 +62,17 @@ const Footer: React.FC = () => {
               Contact Us
             </div>
             <div className="flex flex-col gap-4">
-              <ContactLink href="https://discord.gg/GDHzvamn7a">
+              <ContactLink
+                trackName="footer_discord_contact"
+                href="https://discord.gg/GDHzvamn7a"
+              >
                 <DiscordIcon />
                 Discord
               </ContactLink>
-              <ContactLink href="https://t.me/FaithTimeApp">
+              <ContactLink
+                trackName="footer_telegram_contact"
+                href="https://t.me/FaithTimeApp"
+              >
                 <img
                   src="/telegram-brands-solid.svg"
                   alt="Logo SVG"
@@ -78,19 +92,31 @@ const Footer: React.FC = () => {
               Social Media
             </div>
             <div className="flex flex-col gap-4">
-              <SocialIcon href="https://www.instagram.com/faithtime_app">
+              <SocialIcon
+                trackName="footer_instagram_social"
+                href="https://www.instagram.com/faithtime_app"
+              >
                 <InstagramIcon />
                 Instagram
               </SocialIcon>
-              <SocialIcon href="https://www.tiktok.com/@faithtime_app">
+              <SocialIcon
+                trackName="footer_tiktok_social"
+                href="https://www.tiktok.com/@faithtime_app"
+              >
                 <TiktokIcon />
                 TikTok
               </SocialIcon>
-              <SocialIcon href="https://x.com/faithtimeapp?s=21">
+              <SocialIcon
+                trackName="footer_x_social"
+                href="https://x.com/faithtimeapp?s=21"
+              >
                 <XIcon />
                 X
               </SocialIcon>
-              <SocialIcon href="https://www.facebook.com/faithtimeapp/?rdid=XTf5hxyjc7o3pAdA">
+              <SocialIcon
+                trackName="footer_facebook_social"
+                href="https://www.facebook.com/faithtimeapp/?rdid=XTf5hxyjc7o3pAdA"
+              >
                 <FacebookIcon />
                 Facebook
               </SocialIcon>
@@ -105,18 +131,20 @@ const Footer: React.FC = () => {
           ©2025 MetaVibe. All rights reserved.
         </div>
         <div className="flex gap-5">
-          <a
-            href="/privacy_policy.html"
+          <TrackedLink
+            trackName="footer_privacy_policy"
+            href="#"
             className="text-white/80 no-underline transition-opacity duration-200 ease-in-out hover:opacity-80"
           >
             Privacy Policy
-          </a>
-          <a
-            href="/terms_of_service.html"
+          </TrackedLink>
+          <TrackedLink
+            trackName="footer_terms_license"
+            href="#"
             className="text-white/80 no-underline transition-opacity duration-200 ease-in-out hover:opacity-80"
           >
             Terms & License
-          </a>
+          </TrackedLink>
         </div>
       </div>
     </div>

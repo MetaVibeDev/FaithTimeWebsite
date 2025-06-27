@@ -1,4 +1,8 @@
 import { AppStoreIcon, GooglePlayIcon } from "./icons";
+import { TrackClick } from "./track";
+
+// 创建被 TrackClick 包装的链接组件
+const TrackedLink = TrackClick('a');
 
 export default function Download() {
     return (
@@ -20,14 +24,26 @@ export default function Download() {
                 {/* 下载按钮容器 */}
                 <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-12">
                     {/* App Store 按钮 */}
-                    <a href="https://apps.apple.com/app/faithtime/id6503560893" className=" transition-transform hover:scale-105">
+                    <TrackedLink
+                        trackName="download_section_app_store"
+                        href="https://apps.apple.com/app/faithtime/id6503560893"
+                        className=" transition-transform hover:scale-105"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <AppStoreIcon width={180} />
-                    </a>
+                    </TrackedLink>
 
                     {/* Google Play 按钮 */}
-                    <a href="https://play.google.com/store/apps/details?id=com.metavibe.faithtime&gl=SG" className=" transition-transform hover:scale-105">
+                    <TrackedLink
+                        trackName="download_section_google_play"
+                        href="https://play.google.com/store/apps/details?id=com.metavibe.faithtime&gl=SG"
+                        className=" transition-transform hover:scale-105"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <GooglePlayIcon width={170} />
-                    </a>
+                    </TrackedLink>
                 </div>
             </div>
         </div>

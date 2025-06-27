@@ -1,7 +1,12 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
 import { AppStoreIcon, GooglePlayIcon } from "./icons";
 import Lumi from "./lumi/Lumi";
+import { TrackClick } from "./track";
+
+// 创建被 TrackClick 包装的链接组件
+const TrackedLink = TrackClick('a');
+
 export default function Header() {
     const [width, setWidth] = useState(0);
     useEffect(() => {
@@ -24,22 +29,24 @@ export default function Header() {
                     Start your journey with God—one day, one prayer at a time.
                 </p>
                 <div className="mt-20 sm:mt-0 flex-col sm:flex-row justify-center  md:justify-start  items-center gap-8 sm:gap-4 flex">
-                    <a
+                    <TrackedLink
+                        trackName="app_store_download"
                         href="https://apps.apple.com/app/faithtime/id6503560893"
                         className=" h-14 transition-transform hover:scale-105"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         <AppStoreIcon width={width > 800 ? 180 : 300} height={width < 800 ? 70 : 53} />
-                    </a>
-                    <a
+                    </TrackedLink>
+                    <TrackedLink
+                        trackName="google_play_download"
                         href="https://play.google.com/store/apps/details?id=com.metavibe.faithtime&gl=SG"
                         className="h-14 transition-transform hover:scale-105"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         <GooglePlayIcon width={width > 800 ? 170 : 255} height={width < 800 ? 62 : 53} />
-                    </a>
+                    </TrackedLink>
                 </div>
             </div>
         </div>

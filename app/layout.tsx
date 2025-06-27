@@ -1,3 +1,4 @@
+
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
@@ -46,9 +47,11 @@ export default function RootLayout({
           "min-h-screen bg-background font-sans antialiased",
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
-          <main className="flex-grow">{children}</main>
-        </Providers>
+        <UUIDProvider>
+          <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
+            <main className="flex-grow">{children}</main>
+          </Providers>
+        </UUIDProvider>
       </body>
     </html>
   );
