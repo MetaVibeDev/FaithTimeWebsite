@@ -2,7 +2,7 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
-
+import { Analytics } from '@vercel/analytics/next';
 import { Providers } from "./providers";
 import Footer from "@/components/footer";
 import { siteConfig } from "@/config/site";
@@ -49,7 +49,10 @@ export default function RootLayout({
       >
         <UUIDProvider>
           <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
-            <main className="flex-grow">{children}</main>
+            <main className="flex-grow">
+              {children}
+              <Analytics />
+            </main>
           </Providers>
         </UUIDProvider>
       </body>
