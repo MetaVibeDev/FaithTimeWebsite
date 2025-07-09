@@ -108,9 +108,9 @@ export default function Card() {
 
           <h2 className="card-title">A Warm and Supportive Faith Community</h2>
           <p className="card-text">
-            Ask Bible Chat offers you professional and easy-to-understand
-            answers about doctrine and Scripture anytime, helping to clear
-            doubts and deepen your spiritual understanding.
+            The Little Lamb's Prayer Community is a warm, open space to share
+            prayers, feelings, and insights—offering mutual support and
+            faith-filled connection.
           </p>
         </div>
 
