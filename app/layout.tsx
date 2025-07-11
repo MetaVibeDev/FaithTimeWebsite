@@ -1,8 +1,7 @@
-
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from "@vercel/analytics/next";
 import { Providers } from "./providers";
 import Footer from "@/components/footer";
 import { siteConfig } from "@/config/site";
@@ -41,11 +40,24 @@ export default function RootLayout({
           content="VUnM5YuI09m5zxQfW9K8D67jmRsE_LLQgkgL-sB6wUM"
           name="google-site-verification"
         />
+        {/* Google Analytics */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-K138KE5KKZ"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-K138KE5KKZ');
+            `,
+          }}
+        />
       </head>
       <body
-        className={clsx(
-          "min-h-screen bg-background font-sans antialiased",
-        )}
+        className={clsx("min-h-screen bg-background font-sans antialiased")}
       >
         <UUIDProvider>
           <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
