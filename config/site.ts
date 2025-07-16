@@ -3,7 +3,7 @@ export type SiteConfig = typeof siteConfig;
 export const siteConfig = {
   name: "FaithTime App - Daily Spiritual Companion for Young Christians",
   description:
-    "Embark on a spiritual adventure with FaithTime, your companion for spiritual journeying through sacred sites and daily devotions. Discover christian sacred places, engage in meditation prayers, and receive a daily bible verse. Our app combines pilgrimage with prayer, offering a unique blend of christian meditations and virtual exploration of christianity's most revered locations. Join our faith community church in this transformative journey.",
+    "FaithTime App-The Most Real Faith App for Gen Z. At FaithTime, every prayer, every devotion, every quiet moment helps your inner lamb grow stronger. This lamb isn't just a companion—it's a reflection of you on your journey with God. As you stay faithful in your spiritual habits, your lamb matures—and so do you. Join the community to share your faith journey, connect with others, and walk together in grace. Wherever you are in your walk with God, you're never alone here.",
   navItems: [
     {
       label: "Home",
@@ -29,44 +29,12 @@ export const siteConfig = {
       label: "Contact",
       href: "/footer",
     },
-    // {
-    //   label: "XR",
-    //   href: "/XR",
-    // },
   ],
   navMenuItems: [
-    // {
-    //   label: "Profile",
-    //   href: "/profile",
-    // },
-    // {
-    //   label: "Dashboard",
-    //   href: "/dashboard",
-    // },
-    // {
-    //   label: "Projects",
-    //   href: "/projects",
-    // },
-    // {
-    //   label: "Team",
-    //   href: "/team",
-    // },
-    // {
-    //   label: "Calendar",
-    //   href: "/calendar",
-    // },
-    // {
-    //   label: "Settings",
-    //   href: "/settings",
-    // },
     {
       label: "Help & Feedback",
       href: "/help-feedback",
     },
-    // {
-    //   label: "Logout",
-    //   href: "/logout",
-    // },
   ],
   links: {
     // social medias
