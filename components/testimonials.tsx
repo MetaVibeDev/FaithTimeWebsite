@@ -39,7 +39,8 @@ const testimonials: Testimonial[] = [
     date: "2025-04-10",
     rating: 5,
     title: "This app is very lovely!", // 添加标题
-    comment: "I really think this app could help me with this relationship with God, and especially Jesus Christ! I really think this app is very cool and fun to play with...",
+    comment:
+      "I really think this app could help me with this relationship with God, and especially Jesus Christ! I really think this app is very cool and fun to play with...",
     avatar: "/star/avatar7.png",
   },
   {
@@ -78,7 +79,7 @@ export default function Testimonials() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (typeof window !== 'undefined') {
+      if (typeof window !== "undefined") {
         const width = window.innerWidth;
         if (width < 640) {
           // sm
@@ -100,7 +101,7 @@ export default function Testimonials() {
     };
 
     handleResize();
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
     }
@@ -150,7 +151,6 @@ export default function Testimonials() {
                         {testimonial.date}
                       </p>
                     </div>
-
                   </div>
                   <h4 className="text-xl font-bold mb-2 text-black">
                     {testimonial.title}
@@ -159,7 +159,11 @@ export default function Testimonials() {
                     {[...Array(5)].map((_, i) => (
                       <svg
                         key={i}
-                        className={`w-5 h-5 ${i < testimonial.rating ? "text-yellow-400" : "text-gray-300"}`}
+                        className={`w-5 h-5 ${
+                          i < testimonial.rating
+                            ? "text-yellow-400"
+                            : "text-gray-300"
+                        }`}
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
