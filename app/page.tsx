@@ -19,6 +19,19 @@ import Testimonials from "@/components/testimonials";
 // type TimeoutType = ReturnType<typeof setTimeout> | null;
 
 export default function Home() {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const ua = navigator.userAgent || navigator.vendor;
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('download') === '1') {
+        if (/iPad|iPhone|iPod/.test(ua)) {
+          window.location.href = 'https://apps.apple.com/app/id你的AppStoreID';
+        } else if (/android/i.test(ua)) {
+          window.location.href = 'https://play.google.com/store/apps/details?id=你的包名';
+        }
+      }
+    }
+  }, []);
   // const AppNameWithSlogan = (
   //   <div
   //     className="flex flex-col max-w-lg items-center"
