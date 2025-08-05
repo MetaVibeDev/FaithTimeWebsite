@@ -12,6 +12,7 @@ import { TrackClick, TrackExposure } from "@/components/track";
 import Card from "@/components/card";
 import Download from "@/components/download";
 import Testimonials from "@/components/testimonials";
+import { usePathname } from "next/navigation";
 
 // const TrackedLink = TrackClick(Link);
 // const TrackedButton = TrackClick(Button);
@@ -19,19 +20,7 @@ import Testimonials from "@/components/testimonials";
 // type TimeoutType = ReturnType<typeof setTimeout> | null;
 
 export default function Home() {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const ua = navigator.userAgent || navigator.vendor;
-      const params = new URLSearchParams(window.location.search);
-      if (params.get('download') === '1') {
-        if (/iPad|iPhone|iPod/.test(ua)) {
-          window.location.href = 'https://apps.apple.com/app/faithtime/id6503560893';
-        } else if (/android/i.test(ua)) {
-          window.location.href = 'https://play.google.com/store/apps/details?id=com.metavibe.faithtime&gl=SG';
-        }
-      }
-    }
-  }, []);
+
   // const AppNameWithSlogan = (
   //   <div
   //     className="flex flex-col max-w-lg items-center"
