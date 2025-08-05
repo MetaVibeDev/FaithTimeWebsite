@@ -25,9 +25,9 @@ export default function Home() {
       const params = new URLSearchParams(window.location.search);
       if (params.get('download') === '1') {
         if (/iPad|iPhone|iPod/.test(ua)) {
-          window.location.href = 'https://apps.apple.com/app/id你的AppStoreID';
+          window.location.href = 'https://apps.apple.com/app/faithtime/id6503560893';
         } else if (/android/i.test(ua)) {
-          window.location.href = 'https://play.google.com/store/apps/details?id=你的包名';
+          window.location.href = 'https://play.google.com/store/apps/details?id=com.metavibe.faithtime&gl=SG';
         }
       }
     }
