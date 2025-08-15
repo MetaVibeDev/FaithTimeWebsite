@@ -55,7 +55,7 @@ export default function Header() {
               />
             </TrackedLink>
             <div
-              className="hover:scale-105 transition-all duration-300 px-3 py-[10px] lg:scale-80"
+              className="hover:scale-105 transition-all duration-300 px-3 py-[10px] md:scale-80"
               style={{
                 cursor: "pointer",
                 borderColor: "gray",
