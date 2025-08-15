@@ -21,14 +21,14 @@ export default function Header() {
     <div className="sm:pt-0 relative overflow-hidden px-4 py-12 lg:px-[200px] md:px-[100px] w-full sm::h-[75vh] h-[100vh] bg-black bg-gradient-to-br from-[#FFBBEC] to-[#A9C9FF] flex justify-center">
       <div className="z-10 w-[1200px] flex sm:items-center flex-col sm:flex-row">
         <img className="sm:hidden flex w-48" src="/images/faithtimeicon.png" />
-        <div className="max-w-[42rem] md:text-start text-center mt-24 sm:mt-0 ">
+        <div className="max-w-[42rem] md:text-start text-center mt-16 sm:mt-0 ">
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-black mb-6 leading-tight">
             Your daily steps, your lamb's growth.
           </h1>
           <p className="sm:text-xl md:text-2xl text-gray-700 lg:mb-12 mb-4">
             Start your journey with God—one day, one prayer at a time.
           </p>
-          <div className="mt-20 sm:mt-0 flex-col sm:flex-row justify-center  md:justify-start  items-center gap-8 sm:gap-4 flex">
+          <div className="mt-16 sm:mt-0 flex-col sm:flex-row justify-center  md:justify-start  items-center gap-8 sm:gap-4 flex">
             <TrackedLink
               trackName="app_store_download"
               href="https://apps.apple.com/app/faithtime/id6503560893"
@@ -41,6 +41,7 @@ export default function Header() {
                 height={width < 800 ? 70 : 53}
               />
             </TrackedLink>
+
             <TrackedLink
               trackName="google_play_download"
               href="https://play.google.com/store/apps/details?id=com.metavibe.faithtime&gl=SG"
@@ -53,55 +54,49 @@ export default function Header() {
                 height={width < 800 ? 62 : 53}
               />
             </TrackedLink>
-          </div>
-          <div>
-            <button
+            <div
+              className="hover:scale-105 transition-all duration-300 px-3 py-[10px] lg:scale-80"
               style={{
-                position: "relative",
-                display: "inline-flex",
+                cursor: "pointer",
+                borderColor: "gray",
+                borderWidth: 1,
+                width: 210,
+                borderRadius: 8,
+                backgroundColor: "black",
+                display: "flex",
                 alignItems: "center",
-                color: "#000",
-                fontFamily: "Inter, sans-serif",
+                color: "white",
+                fontFamily: "sans-serif",
                 fontWeight: 700,
-                fontSize: 30,
+                fontSize: 24,
                 lineHeight: "100%",
                 letterSpacing: "0%",
                 textAlign: "center",
-                borderBottom: "2px solid #000",
-                paddingBottom: 1,
-                marginLeft: 80,
-                marginTop: 20,
-                paddingLeft: 60,
+                gap: 8,
               }}
               onClick={() => {
                 window.open("https://discord.gg/GDHzvamn7a", "_blank");
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = "#4b5563";
-                e.currentTarget.style.borderBottomColor = "#4b5563";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = "#000";
-                e.currentTarget.style.borderBottomColor = "#000";
-              }}
+
             >
               <img
                 src="/star/discode.png"
                 alt="Discord"
                 style={{
-                  position: "absolute",
-                  top: "50%",
-                  left: 5,
-                  transform: "translateY(-50%)",
-                  width: 49,
-                  height: 49,
-                  objectFit: "contain",
-                  marginLeft: -70,
+                  width: 42,
+                  height: 42,
                 }}
               />
-              <span style={{ marginLeft: -60 }}>Join our Discord</span>
-            </button>
+              <div className="flex flex-col flex-1 items-start mt-[-4px]  ">
+                <span className="text-sm"> Join our discord</span>
+                <span>Community</span>
+              </div>
+
+            </div>
           </div>
+
+
+
         </div>
       </div>
       <div
@@ -195,6 +190,6 @@ export default function Header() {
         </div>
         <img className="relative" src="/star/god.png" />
       </div>
-    </div>
+    </div >
   );
 }
