@@ -13,14 +13,13 @@ import Card from "@/components/card";
 import Download from "@/components/download";
 import Testimonials from "@/components/testimonials";
 import { usePathname } from "next/navigation";
-
+import Data from "@/components/data";
 // const TrackedLink = TrackClick(Link);
 // const TrackedButton = TrackClick(Button);
 // const TrackedDiv = TrackExposure("div");
 // type TimeoutType = ReturnType<typeof setTimeout> | null;
 
 export default function Home() {
-
   // const AppNameWithSlogan = (
   //   <div
   //     className="flex flex-col max-w-lg items-center"
@@ -81,6 +80,9 @@ export default function Home() {
       </div>
       <div id="footer">
         <Footer />
+      </div>
+      <div id="track">
+        <Data />
       </div>
     </>
   );
