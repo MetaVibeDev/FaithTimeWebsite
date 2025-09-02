@@ -1,8 +1,8 @@
 {
-    "rewrites": [
-      {
-        "source": "/content/:path*",
-        "destination": "https://www.faithtime/content/:path*"
-      }
-    ]
-  }
+  "rewrites": [
+    {
+      "source": "/content/:path*",
+      "destination": "https://wordpress-1515829-5825823.cloudwaysapps.com/:path*"
+    }
+  ]
+}
