@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+      {
+        "source": "/content/:path*",
+        "destination": "https://www.faithtime/content/:path*"
+      }
+    ]
+  }
