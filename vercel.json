@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/content/:path*",
-      "destination": "https://wordpress-1515829-5825823.cloudwaysapps.com/:path*"
+      "destination": "https://wordpress-1518437-5838623.cloudwaysapps.com/:path*"
     }
   ]
 }
