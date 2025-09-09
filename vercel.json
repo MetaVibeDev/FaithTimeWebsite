@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/content",
+      "destination": "https://wordpress-1518437-5838623.cloudwaysapps.com/"
+    },
+    {
       "source": "/content/:path*",
       "destination": "https://wordpress-1518437-5838623.cloudwaysapps.com/:path*"
     }
