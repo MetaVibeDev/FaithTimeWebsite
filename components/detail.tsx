@@ -85,13 +85,13 @@ export default function Detail() {
             >
               <div className="absolute z-2 -top-48 right-0 hidden md:flex">
                 <Lumi
-                  animation="love"
+                  animation="E002"
                   color="purple"
                   size={300}
                   isPlaying={activeSection === 0}
                 />
               </div>
-              <div className="relative z-2 w-full mx-auto flex flex-row items-center lg:items-start gap-12 ">
+              <div className="relative z-50 w-full mx-auto flex flex-row items-center lg:items-start gap-12 ">
                 <div className="md:w-1/2 w-3/5 space-y-6 flex-col flex gap-4">
                   <h2
                     className="lg:text-[32px] md:text-xl text-sm font-semibold text-black"
@@ -162,16 +162,16 @@ export default function Detail() {
             >
               <div className="absolute z-2 -top-48 md:left-0 hidden md:flex">
                 <Lumi
-                  animation="happy"
+                  animation="E003"
                   color="orange"
                   size={300}
                   isPlaying={activeSection === 1}
                 />
               </div>
-              <div className="relative z-1 max-w-7xl mx-auto flex flex-row items-center lg:items-start gap-12">
+              <div className="relative z-50 max-w-7xl mx-auto flex flex-row items-center lg:items-start gap-12">
                 <div className="md:w-1/2 w-2/5 flex justify-center">
                   <div
-                    className="border-4 border-solid border-black rounded-3xl md:w-[50%] overflow-hidden w-[80%] cursor-pointer"
+                    className="border-4 z-50 border-solid border-black rounded-3xl md:w-[50%] overflow-hidden w-[80%] cursor-pointer"
                     onClick={(e) => handleImageClick(1, e)}
                   >
                     <Swiper
@@ -236,13 +236,13 @@ export default function Detail() {
             >
               <div className="absolute z-2 -top-48 right-0 hidden md:flex">
                 <Lumi
-                  animation="doubt"
+                  animation="E006"
                   color="green"
                   size={300}
                   isPlaying={activeSection === 2}
                 />
               </div>
-              <div className="relative z-2 w-full mx-auto flex flex-row items-center lg:items-start gap-12 ">
+              <div className="relative z-50 w-full mx-auto flex flex-row items-center lg:items-start gap-12 ">
                 <div className="md:w-1/2 w-3/5 space-y-6 flex-col flex gap-4">
                   <h2
                     className="lg:text-[32px] md:text-xl text-sm font-semibold text-black"
@@ -309,18 +309,18 @@ export default function Detail() {
               onMouseEnter={() => handleSectionMouseEnter(3)}
               onMouseLeave={() => handleSectionMouseLeave(3)}
             >
-              <div className="absolute z-2 -top-48 md:left-0 hidden md:flex">
+              <div className="absolute 1 -top-48 md:left-0 hidden md:flex">
                 <Lumi
-                  animation="think"
+                  animation="E007"
                   color="blue"
                   size={300}
                   isPlaying={activeSection === 3}
                 />
               </div>
-              <div className="relative z-1 max-w-7xl mx-auto flex flex-row items-center lg:items-start gap-12">
+              <div className="relative z-100 max-w-7xl mx-auto flex flex-row items-center lg:items-start gap-12">
                 <div className="md:w-1/2 w-2/5 flex justify-center">
                   <div
-                    className="border-4 border-solid border-black rounded-3xl md:w-[50%] overflow-hidden w-[80%] cursor-pointer"
+                    className="z-50 border-4 border-solid border-black rounded-3xl md:w-[50%] overflow-hidden w-[80%] cursor-pointer" 
                     onClick={(e) => handleImageClick(3, e)}
                   >
                     <Swiper

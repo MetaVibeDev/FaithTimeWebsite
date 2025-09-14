@@ -99,32 +99,35 @@ export default function Header() {
 
         </div>
       </div>
-      <div
-        style={{
-          position: "absolute",
-          left: width < 800 ? `${-width * 0.3}px` : `${-width * 0.1}px`,
-          bottom: `${width * 0}px`,
-        }}
-      >
-        <Lumi
-          animation="sleep"
-          size={width < 800 ? width : width / 3}
-          color="orange"
-          isPlaying={true}
-        />
-      </div>
+     
       <div
         className="rotate-12"
         style={{
+          zIndex:2,
           position: "absolute",
           left: width < 800 ? `${width * -0.3}px` : `${width * -0.07}px`,
           bottom: width < 800 ? `${width * -0.3}px` : `${width * -0.1}px`,
         }}
       >
         <Lumi
-          animation="wink"
+          animation="E008"
           size={width < 800 ? width : width / 3}
           color="purple"
+          isPlaying={true}
+        />
+      </div>
+       <div
+        style={{
+          position: "absolute",
+          zIndex:1,
+          left: width < 800 ? `${-width * 0.3}px` : `${-width * 0.1}px`,
+          bottom: `${width * 0}px`,
+        }}
+      >
+        <Lumi
+          animation="E013"
+          size={width < 800 ? width : width / 3}
+          color="orange"
           isPlaying={true}
         />
       </div>
@@ -137,26 +140,13 @@ export default function Header() {
         }}
       >
         <Lumi
-          animation="love"
+          animation="E002"
           size={width < 800 ? width / 2 : width / 3}
           color="blue"
           isPlaying={true}
         />
       </div>
-      <div
-        style={{
-          position: "absolute",
-          left: width < 800 ? `${width * 0.1}px` : `${width * 0.44}px`,
-          bottom: width < 800 ? `${width * -0.15}px` : `${width * -0.07}px`,
-        }}
-      >
-        <Lumi
-          animation="sing"
-          size={width < 800 ? width / 2 : width / 5}
-          color="green"
-          isPlaying={true}
-        />
-      </div>
+     
       <div
         style={{
           position: "absolute",
@@ -166,7 +156,7 @@ export default function Header() {
         }}
       >
         <Lumi
-          animation="default"
+          animation="E003"
           size={width < 800 ? width : width / 2.3}
           color="white"
           isPlaying={true}

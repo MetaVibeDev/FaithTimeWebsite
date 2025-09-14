@@ -1,249 +1,172 @@
 export type LumiAnimationType =
-    | 'default'
-    | 'astonish'
-    | 'celebrate'
-    | 'cry'
-    | 'doubt'
-    | 'happy'
-    | 'hope'
-    | 'love'
-    | 'sing'
-    | 'sleep'
-    | 'think'
-    | 'walk'
-    | 'wink'
-    | 'jump';
+    | 'E001'
+    | 'E002'
+    | 'E003'
+    | 'E004'
+    | 'E005'
+    | 'E006'
+    | 'E007'
+    | 'E008'
+    | 'E009'
+    | 'E010'
+    | 'E011'
+    | 'E012'
+    | 'E013'
+    | 'E015'
+    | 'E016'
+    | 'E017'
+    | 'E018'
+    | 'E019'
+    | 'E020'
+    | 'E021'
+    | 'E022'
+
+// Mood动画类型（缺少E001、E004、E005、E014）
+export type MoodAnimationType =
+    | 'E002'
+    | 'E003'
+    | 'E006'
+    | 'E007'
+    | 'E008'
+    | 'E009'
+    | 'E010'
+    | 'E011'
+    | 'E012'
+    | 'E013'
+    | 'E015'
+    | 'E016'
+    | 'E017'
+    | 'E018'
+    | 'E019'
+    | 'E020'
+    | 'E021'
+    | 'E022'
+
+// Hand和Foot动画类型（与Lumi相同）
+export type HandAnimationType = LumiAnimationType;
+export type FootAnimationType = LumiAnimationType;
 
 export type LumiColorType = 'blue' | 'green' | 'purple' | 'orange' | 'white';
 
 // 蓝色动画资源
 const blueAnimations = {
-    default: {
-        1: { uri: '/lumi/blue/Default.json' },
-    },
-    astonish: {
-        1: { uri: '/lumi/blue/Astonish.json' },
-    },
-    celebrate: {
-        1: { uri: '/lumi/blue/Celebrate.json' },
-    },
-    cry: {
-        1: { uri: '/lumi/blue/Cry.json' },
-    },
-    doubt: {
-        1: { uri: '/lumi/blue/Doubt.json' },
-    },
-    happy: {
-        1: { uri: '/lumi/blue/Happy.json' },
-    },
-    hope: {
-        1: { uri: '/lumi/blue/Hope.json' },
-    },
-    love: {
-        1: { uri: '/lumi/blue/Love.json' },
-    },
-    sing: {
-        1: { uri: '/lumi/blue/Sing.json' },
-    },
-    sleep: {
-        1: { uri: '/lumi/blue/Sleep.json' },
-    },
-    think: {
-        1: { uri: '/lumi/blue/Think.json' },
-    },
-    walk: {
-        1: { uri: '/lumi/blue/Walk.json' },
-    },
-    wink: {
-        1: { uri: '/lumi/blue/Wink.json' },
-    },
-    jump: {
-        1: { uri: '/lumi/blue/Jump.json' },
-    },
+  E001: { 1: { uri: '/lumi/blue/E001.json' } },
+  E002: { 1: { uri: '/lumi/blue/E002.json' } },
+  E003: { 1: { uri: '/lumi/blue/E003.json' } },
+  E004: { 1: { uri: '/lumi/blue/E004.json' } },
+  E005: { 1: { uri: '/lumi/blue/E005.json' } },
+  E006: { 1: { uri: '/lumi/blue/E006.json' } },
+  E007: { 1: { uri: '/lumi/blue/E007.json' } },
+  E008: { 1: { uri: '/lumi/blue/E008.json' } },
+  E009: { 1: { uri: '/lumi/blue/E009.json' } },
+  E010: { 1: { uri: '/lumi/blue/E010.json' } },
+  E011: { 1: { uri: '/lumi/blue/E011.json' } },
+  E012: { 1: { uri: '/lumi/blue/E012.json' } },
+  E013: { 1: { uri: '/lumi/blue/E013.json' } },
+  E015: { 1: { uri: '/lumi/blue/E015.json' } },
+  E016: { 1: { uri: '/lumi/blue/E016.json' } },
+  E017: { 1: { uri: '/lumi/blue/E017.json' } },
+  E018: { 1: { uri: '/lumi/blue/E018.json' } },
+  E019: { 1: { uri: '/lumi/blue/E019.json' } },
+  E020: { 1: { uri: '/lumi/blue/E020.json' } },
+  E021: { 1: { uri: '/lumi/blue/E021.json' } },
+  E022: { 1: { uri: '/lumi/blue/E022.json' } },
 };
 
-// 绿色动画资源
 const greenAnimations = {
-    default: {
-        1: { uri: '/lumi/green/Default.json' },
-    },
-    astonish: {
-        1: { uri: '/lumi/green/Astonish.json' },
-    },
-    celebrate: {
-        1: { uri: '/lumi/green/Celebrate.json' },
-    },
-    cry: {
-        1: { uri: '/lumi/green/Cry.json' },
-    },
-    doubt: {
-        1: { uri: '/lumi/green/Doubt.json' },
-    },
-    happy: {
-        1: { uri: '/lumi/green/Happy.json' },
-    },
-    hope: {
-        1: { uri: '/lumi/green/Hope.json' },
-    },
-    love: {
-        1: { uri: '/lumi/green/Love.json' },
-    },
-    sing: {
-        1: { uri: '/lumi/green/Sing.json' },
-    },
-    sleep: {
-        1: { uri: '/lumi/green/Sleep.json' },
-    },
-    think: {
-        1: { uri: '/lumi/green/Think.json' },
-    },
-    walk: {
-        1: { uri: '/lumi/green/Walk.json' },
-    },
-    wink: {
-        1: { uri: '/lumi/green/Wink.json' },
-    },
-    jump: {
-        1: { uri: '/lumi/green/Jump.json' },
-    },
+  E001: { 1: { uri: '/lumi/green/E001.json' } },
+  E002: { 1: { uri: '/lumi/green/E002.json' } },
+  E003: { 1: { uri: '/lumi/green/E003.json' } },
+  E004: { 1: { uri: '/lumi/green/E004.json' } },
+  E005: { 1: { uri: '/lumi/green/E005.json' } },
+  E006: { 1: { uri: '/lumi/green/E006.json' } },
+  E007: { 1: { uri: '/lumi/green/E007.json' } },
+  E008: { 1: { uri: '/lumi/green/E008.json' } },
+  E009: { 1: { uri: '/lumi/green/E009.json' } },
+  E010: { 1: { uri: '/lumi/green/E010.json' } },
+  E011: { 1: { uri: '/lumi/green/E011.json' } },
+  E012: { 1: { uri: '/lumi/green/E012.json' } },
+  E013: { 1: { uri: '/lumi/green/E013.json' } },
+  E015: { 1: { uri: '/lumi/green/E015.json' } },
+  E016: { 1: { uri: '/lumi/green/E016.json' } },
+  E017: { 1: { uri: '/lumi/green/E017.json' } },
+  E018: { 1: { uri: '/lumi/green/E018.json' } },
+  E019: { 1: { uri: '/lumi/green/E019.json' } },
+  E020: { 1: { uri: '/lumi/green/E020.json' } },
+  E021: { 1: { uri: '/lumi/green/E021.json' } },
+  E022: { 1: { uri: '/lumi/green/E022.json' } },
 };
-
-// 紫色动画资源
 const purpleAnimations = {
-    default: {
-        1: { uri: '/lumi/purple/Default.json' },
-    },
-    astonish: {
-        1: { uri: '/lumi/purple/Astonish.json' },
-    },
-    celebrate: {
-        1: { uri: '/lumi/purple/Celebrate.json' },
-    },
-    cry: {
-        1: { uri: '/lumi/purple/Cry.json' },
-    },
-    doubt: {
-        1: { uri: '/lumi/purple/Doubt.json' },
-    },
-    happy: {
-        1: { uri: '/lumi/purple/Happy.json' },
-    },
-    hope: {
-        1: { uri: '/lumi/purple/Hope.json' },
-    },
-    love: {
-        1: { uri: '/lumi/purple/Love.json' },
-    },
-    sing: {
-        1: { uri: '/lumi/purple/Sing.json' },
-    },
-    sleep: {
-        1: { uri: '/lumi/purple/Sleep.json' },
-    },
-    think: {
-        1: { uri: '/lumi/purple/Think.json' },
-    },
-    walk: {
-        1: { uri: '/lumi/purple/Walk.json' },
-    },
-    wink: {
-        1: { uri: '/lumi/purple/Wink.json' },
-    },
-    jump: {
-        1: { uri: '/lumi/purple/Jump.json' },
-    },
+  E001: { 1: { uri: '/lumi/purple/E001.json' } },
+  E002: { 1: { uri: '/lumi/purple/E002.json' } },
+  E003: { 1: { uri: '/lumi/purple/E003.json' } },
+  E004: { 1: { uri: '/lumi/purple/E004.json' } },
+  E005: { 1: { uri: '/lumi/purple/E005.json' } },
+  E006: { 1: { uri: '/lumi/purple/E006.json' } },
+  E007: { 1: { uri: '/lumi/purple/E007.json' } },
+  E008: { 1: { uri: '/lumi/purple/E008.json' } },
+  E009: { 1: { uri: '/lumi/purple/E009.json' } },
+  E010: { 1: { uri: '/lumi/purple/E010.json' } },
+  E011: { 1: { uri: '/lumi/purple/E011.json' } },
+  E012: { 1: { uri: '/lumi/purple/E012.json' } },
+  E013: { 1: { uri: '/lumi/purple/E013.json' } },
+  E015: { 1: { uri: '/lumi/purple/E015.json' } },
+  E016: { 1: { uri: '/lumi/purple/E016.json' } },
+  E017: { 1: { uri: '/lumi/purple/E017.json' } },
+  E018: { 1: { uri: '/lumi/purple/E018.json' } },
+  E019: { 1: { uri: '/lumi/purple/E019.json' } },
+  E020: { 1: { uri: '/lumi/purple/E020.json' } },
+  E021: { 1: { uri: '/lumi/purple/E021.json' } },
+  E022: { 1: { uri: '/lumi/purple/E022.json' } },
 };
 
-// 橙色动画资源
 const orangeAnimations = {
-    default: {
-        1: { uri: '/lumi/orange/Default.json' },
-    },
-    astonish: {
-        1: { uri: '/lumi/orange/Astonish.json' },
-    },
-    celebrate: {
-        1: { uri: '/lumi/orange/Celebrate.json' },
-    },
-    cry: {
-        1: { uri: '/lumi/orange/Cry.json' },
-    },
-    doubt: {
-        1: { uri: '/lumi/orange/Doubt.json' },
-    },
-    happy: {
-        1: { uri: '/lumi/orange/Happy.json' },
-    },
-    hope: {
-        1: { uri: '/lumi/orange/Hope.json' },
-    },
-    love: {
-        1: { uri: '/lumi/orange/Love.json' },
-    },
-    sing: {
-        1: { uri: '/lumi/orange/Sing.json' },
-    },
-    sleep: {
-        1: { uri: '/lumi/orange/Sleep.json' },
-    },
-    think: {
-        1: { uri: '/lumi/orange/Think.json' },
-    },
-    walk: {
-        1: { uri: '/lumi/orange/Walk.json' },
-    },
-    wink: {
-        1: { uri: '/lumi/orange/Wink.json' },
-    },
-    jump: {
-        1: { uri: '/lumi/orange/Jump.json' },
-    },
+  E001: { 1: { uri: '/lumi/orange/E001.json' } },
+  E002: { 1: { uri: '/lumi/orange/E002.json' } },
+  E003: { 1: { uri: '/lumi/orange/E003.json' } },
+  E004: { 1: { uri: '/lumi/orange/E004.json' } },
+  E005: { 1: { uri: '/lumi/orange/E005.json' } },
+  E006: { 1: { uri: '/lumi/orange/E006.json' } },
+  E007: { 1: { uri: '/lumi/orange/E007.json' } },
+  E008: { 1: { uri: '/lumi/orange/E008.json' } },
+  E009: { 1: { uri: '/lumi/orange/E009.json' } },
+  E010: { 1: { uri: '/lumi/orange/E010.json' } },
+  E011: { 1: { uri: '/lumi/orange/E011.json' } },
+  E012: { 1: { uri: '/lumi/orange/E012.json' } },
+  E013: { 1: { uri: '/lumi/orange/E013.json' } },
+  E015: { 1: { uri: '/lumi/orange/E015.json' } },
+  E016: { 1: { uri: '/lumi/orange/E016.json' } },
+  E017: { 1: { uri: '/lumi/orange/E017.json' } },
+  E018: { 1: { uri: '/lumi/orange/E018.json' } },
+  E019: { 1: { uri: '/lumi/orange/E019.json' } },
+  E020: { 1: { uri: '/lumi/orange/E020.json' } },
+  E021: { 1: { uri: '/lumi/orange/E021.json' } },
+  E022: { 1: { uri: '/lumi/orange/E022.json' } },
 };
 
 // 白色动画资源
 const whiteAnimations = {
-    default: {
-        1: { uri: '/lumi/white/Default.json' },
-    },
-    astonish: {
-        1: { uri: '/lumi/white/Astonish.json' },
-    },
-    celebrate: {
-        1: { uri: '/lumi/white/Celebrate.json' },
-    },
-    cry: {
-        1: { uri: '/lumi/white/Cry.json' },
-    },
-    doubt: {
-        1: { uri: '/lumi/white/Doubt.json' },
-    },
-    happy: {
-        1: { uri: '/lumi/white/Happy.json' },
-    },
-    hope: {
-        1: { uri: '/lumi/white/Hope.json' },
-    },
-    love: {
-        1: { uri: '/lumi/white/Love.json' },
-    },
-    sing: {
-        1: { uri: '/lumi/white/Sing.json' },
-    },
-    sleep: {
-        1: { uri: '/lumi/white/Sleep.json' },
-    },
-    think: {
-        1: { uri: '/lumi/white/Think.json' },
-    },
-    walk: {
-        1: { uri: '/lumi/white/Walk.json' },
-    },
-    wink: {
-        1: { uri: '/lumi/white/Wink.json' },
-    },
-    jump: {
-        1: { uri: '/lumi/white/Jump.json' },
-    },
+  E001: { 1: { uri: '/lumi/white/E001.json' } },
+  E002: { 1: { uri: '/lumi/white/E002.json' } },
+  E003: { 1: { uri: '/lumi/white/E003.json' } },
+  E004: { 1: { uri: '/lumi/white/E004.json' } },
+  E005: { 1: { uri: '/lumi/white/E005.json' } },
+  E006: { 1: { uri: '/lumi/white/E006.json' } },
+  E007: { 1: { uri: '/lumi/white/E007.json' } },
+  E008: { 1: { uri: '/lumi/white/E008.json' } },
+  E009: { 1: { uri: '/lumi/white/E009.json' } },
+  E010: { 1: { uri: '/lumi/white/E010.json' } },
+  E011: { 1: { uri: '/lumi/white/E011.json' } },
+  E012: { 1: { uri: '/lumi/white/E012.json' } },
+  E013: { 1: { uri: '/lumi/white/E013.json' } },
+  E015: { 1: { uri: '/lumi/white/E015.json' } },
+  E016: { 1: { uri: '/lumi/white/E016.json' } },
+  E017: { 1: { uri: '/lumi/white/E017.json' } },
+  E018: { 1: { uri: '/lumi/white/E018.json' } },
+  E019: { 1: { uri: '/lumi/white/E019.json' } },
+  E020: { 1: { uri: '/lumi/white/E020.json' } },
+  E021: { 1: { uri: '/lumi/white/E021.json' } },
+  E022: { 1: { uri: '/lumi/white/E022.json' } },
 };
 
 // 动画配置映射
@@ -254,6 +177,84 @@ export const animationConfigs: Record<LumiColorType, Record<LumiAnimationType, R
     orange: orangeAnimations,
     white: whiteAnimations,
 };
+
+// Mood动画资源配置
+export const moodAnimations: Record<MoodAnimationType, string> = {
+  E002: '/mood/E002.json',
+  E003: '/mood/E003.json',
+  E006: '/mood/E006.json',
+  E007: '/mood/E007.json',
+  E008: '/mood/E008.json',
+  E009: '/mood/E009.json',
+  E010: '/mood/E010.json',
+  E011: '/mood/E011.json',
+  E012: '/mood/E012.json',
+  E013: '/mood/E013.json',
+  E015: '/mood/E015.json',
+  E016: '/mood/E016.json',
+  E017: '/mood/E017.json',
+  E018: '/mood/E018.json',
+  E019: '/mood/E019.json',
+  E020: '/mood/E020.json',
+  E021: '/mood/E021.json',
+  E022: '/mood/E022.json',
+};
+
+// Hand动画资源配置
+export const handAnimations: Record<HandAnimationType, string> = {
+  E001: '/hand/E001.json',
+  E002: '/hand/E002.json',
+  E003: '/hand/E003.json',
+  E004: '/hand/E004.json',
+  E005: '/hand/E005.json',
+  E006: '/hand/E006.json',
+  E007: '/hand/E007.json',
+  E008: '/hand/E008.json',
+  E009: '/hand/E009.json',
+  E010: '/hand/E010.json',
+  E011: '/hand/E011.json',
+  E012: '/hand/E012.json',
+  E013: '/hand/E013.json',
+  E015: '/hand/E015.json',
+  E016: '/hand/E016.json',
+  E017: '/hand/E017.json',
+  E018: '/hand/E018.json',
+  E019: '/hand/E019.json',
+  E020: '/hand/E020.json',
+  E021: '/hand/E021.json',
+  E022: '/hand/E022.json',
+};
+
+// Foot动画资源配置
+export const footAnimations: Record<FootAnimationType, string> = {
+  E001: '/foot/E001.json',
+  E002: '/foot/E002.json',
+  E003: '/foot/E003.json',
+  E004: '/foot/E004.json',
+  E005: '/foot/E005.json',
+  E006: '/foot/E006.json',
+  E007: '/foot/E007.json',
+  E008: '/foot/E008.json',
+  E009: '/foot/E009.json',
+  E010: '/foot/E010.json',
+  E011: '/foot/E011.json',
+  E012: '/foot/E012.json',
+  E013: '/foot/E013.json',
+  E015: '/foot/E015.json',
+  E016: '/foot/E016.json',
+  E017: '/foot/E017.json',
+  E018: '/foot/E018.json',
+  E019: '/foot/E019.json',
+  E020: '/foot/E020.json',
+  E021: '/foot/E021.json',
+  E022: '/foot/E022.json',
+};
+
+// 兼容性导出（保持原有的MOOD导出）
+export const MOOD = moodAnimations;
+
+
+
 
 // VIP版本的动画配置（目前与普通版本相同，可以后续扩展不同的VIP动画）
 export const vipAnimationConfigs: Record<LumiColorType, Record<LumiAnimationType, Record<number, any>>> = {
