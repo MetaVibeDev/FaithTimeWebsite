@@ -84,11 +84,10 @@ export default function Detail() {
               onMouseLeave={() => handleSectionMouseLeave(0)}
             >
               <div className="absolute z-2 -top-48 right-0 hidden md:flex">
-                <Lumi
-                  animation="E002"
-                  color="purple"
-                  size={300}
-                  isPlaying={activeSection === 0}
+                <img
+                  src="/images/Sheep_1.gif"
+                  alt="animation"
+                  style={{ width: 300, height: "auto" }}
                 />
               </div>
               <div className="relative z-50 w-full mx-auto flex flex-row items-center lg:items-start gap-12 ">
@@ -161,11 +160,10 @@ export default function Detail() {
               onMouseLeave={() => handleSectionMouseLeave(1)}
             >
               <div className="absolute z-2 -top-48 md:left-0 hidden md:flex">
-                <Lumi
-                  animation="E003"
-                  color="orange"
-                  size={300}
-                  isPlaying={activeSection === 1}
+                <img
+                  src="/images/Sheep_5.gif"
+                  alt="animation"
+                  style={{ width: 300, height: "auto" }}
                 />
               </div>
               <div className="relative z-50 max-w-7xl mx-auto flex flex-row items-center lg:items-start gap-12">
@@ -234,12 +232,11 @@ export default function Detail() {
               onMouseEnter={() => handleSectionMouseEnter(2)}
               onMouseLeave={() => handleSectionMouseLeave(2)}
             >
-              <div className="absolute z-2 -top-48 right-0 hidden md:flex">
-                <Lumi
-                  animation="E006"
-                  color="green"
-                  size={300}
-                  isPlaying={activeSection === 2}
+              <div className="absolute z-2 -top-56 right-0 hidden md:flex">
+                <img
+                  src="/images/Sheep_4.gif"
+                  alt="animation"
+                  style={{ width: 300, height: "auto" }}
                 />
               </div>
               <div className="relative z-50 w-full mx-auto flex flex-row items-center lg:items-start gap-12 ">
@@ -309,18 +306,17 @@ export default function Detail() {
               onMouseEnter={() => handleSectionMouseEnter(3)}
               onMouseLeave={() => handleSectionMouseLeave(3)}
             >
-              <div className="absolute 1 -top-48 md:left-0 hidden md:flex">
-                <Lumi
-                  animation="E007"
-                  color="blue"
-                  size={300}
-                  isPlaying={activeSection === 3}
+              <div className="absolute 1 -top-52 md:left-0 hidden md:flex">
+                <img
+                  src="/images/Sheep_2.gif"
+                  alt="animation"
+                  style={{ width: 300, height: "auto" }}
                 />
               </div>
               <div className="relative z-100 max-w-7xl mx-auto flex flex-row items-center lg:items-start gap-12">
                 <div className="md:w-1/2 w-2/5 flex justify-center">
                   <div
-                    className="z-50 border-4 border-solid border-black rounded-3xl md:w-[50%] overflow-hidden w-[80%] cursor-pointer" 
+                    className="z-50 border-4 border-solid border-black rounded-3xl md:w-[50%] overflow-hidden w-[80%] cursor-pointer"
                     onClick={(e) => handleImageClick(3, e)}
                   >
                     <Swiper
