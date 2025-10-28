@@ -77,7 +77,6 @@ export default function Header() {
               onClick={() => {
                 window.open("https://discord.gg/GDHzvamn7a", "_blank");
               }}
-
             >
               <img
                 src="/star/discode.png"
@@ -91,75 +90,78 @@ export default function Header() {
                 <span className="text-sm"> Join our discord</span>
                 <span>Community</span>
               </div>
-
             </div>
           </div>
-
-
-
         </div>
       </div>
-     
+
       <div
         className="rotate-12"
         style={{
-          zIndex:2,
+          zIndex: width < 800 ? 0 : 2,
           position: "absolute",
-          left: width < 800 ? `${width * -0.3}px` : `${width * -0.07}px`,
-          bottom: width < 800 ? `${width * -0.3}px` : `${width * -0.1}px`,
+          left: width < 800 ? `${-width * 0.27}px` : `${-width * 0.09}px`,
+          bottom: width < 800 ? `${width * 0.22}px` : `${width * -0.09}px`,
         }}
       >
-        <Lumi
-          animation="E008"
-          size={width < 800 ? width : width / 3}
-          color="purple"
-          isPlaying={true}
-        />
-      </div>
-       <div
-        style={{
-          position: "absolute",
-          zIndex:1,
-          left: width < 800 ? `${-width * 0.3}px` : `${-width * 0.1}px`,
-          bottom: `${width * 0}px`,
-        }}
-      >
-        <Lumi
-          animation="E013"
-          size={width < 800 ? width : width / 3}
-          color="orange"
-          isPlaying={true}
+        <img
+          src="/images/Sheep_3.gif" // 替换为你的GIF文件路径
+          alt="animation"
+          style={{
+            width: width < 800 ? width * 0.9 : width / 3,
+            height: "auto", // 保持宽高比
+          }}
         />
       </div>
       <div
-        className="-rotate-12 sm:rotate-0"
         style={{
           position: "absolute",
-          left: width < 800 ? `${width * 0.7}px` : `${width * 0.44}px`,
-          bottom: width < 800 ? `${width * 0.2}px` : `${width * -0.1}px`,
+          left: width < 800 ? `${width * -0.3}px` : `${width * -0.09}px`,
+          bottom: width < 800 ? `${width * -0.3}px` : `${width * 0.02}px`,
         }}
       >
-        <Lumi
-          animation="E002"
-          size={width < 800 ? width / 2 : width / 3}
-          color="blue"
-          isPlaying={true}
+        <img
+          src="/images/Sheep_5.gif" // 替换为你的GIF文件路径
+          alt="animation"
+          style={{
+            width: width < 800 ? width * 0.9 : width / 3.5,
+            height: "auto", // 保持宽高比
+          }}
         />
       </div>
-     
+
       <div
         style={{
           position: "absolute",
-          right: width < 800 ? `${width * -0.3}px` : `${width * -0.15}px`,
-          bottom: width < 800 ? `${width * -0.3}px` : `${width * -0.15}px`,
+          right: width < 800 ? `${width * -0.25}px` : `${width * -0.1}px`,
+          bottom: width < 800 ? `${width * 0.15}px` : `${width * -0.15}px`,
           transform: "rotate(-12deg)",
         }}
       >
-        <Lumi
-          animation="E003"
-          size={width < 800 ? width : width / 2.3}
-          color="white"
-          isPlaying={true}
+        <img
+          src="/images/Sheep_1.gif" // 替换为你的GIF文件路径
+          alt="animation"
+          style={{
+            width: width < 800 ? width * 0.7 : width / 2.8,
+            height: "auto", // 保持宽高比
+          }}
+        />
+      </div>
+      <div
+        style={{
+          zIndex: 0,
+          position: "absolute",
+          right: width < 800 ? `${width * -0.2}px` : `${width * 0.25}px`,
+          bottom: width < 800 ? `${width * -0.25}px` : `${width * -0.08}px`,
+        }}
+      >
+        <img
+          src="/images/Sheep_2.gif" // 替换为你的GIF文件路径
+          alt="animation"
+          style={{
+            width: width < 800 ? width * 0.9 : width / 3.7,
+            height: "auto", // 保持宽高比
+          }}
         />
       </div>
       <div
@@ -180,6 +182,6 @@ export default function Header() {
         </div>
         <img className="relative" src="/star/god.png" />
       </div>
-    </div >
+    </div>
   );
 }
