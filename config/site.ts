@@ -6,28 +6,28 @@ export const siteConfig = {
     "FaithTime App-The Most Real Faith App for Gen Z. At FaithTime, every prayer, every devotion, every quiet moment helps your inner lamb grow stronger. This lamb isn't just a companion—it's a reflection of you on your journey with God. As you stay faithful in your spiritual habits, your lamb matures—and so do you. Join the community to share your faith journey, connect with others, and walk together in grace. Wherever you are in your walk with God, you're never alone here.",
   navItems: [
     {
-      label: "Home",
-      href: "/home",
-    },
-    {
-      label: "Services",
-      href: "/header",
+      label: "Guide",
+      href: "https://www.faithtime.ai/content/",
     },
     {
       label: "About",
-      href: "/card",
+      href: "https://www.faithtime.ai/content/about/",
     },
     {
-      label: "Reviews",
-      href: "/detail",
+      label: "Features",
+      href: "https://www.faithtime.ai/content/features/",
     },
     {
-      label: "Downland",
-      href: "/download",
+      label: "Download",
+      href: "https://www.faithtime.ai/content/download/",
+    },
+    {
+      label: "Support",
+      href: "https://www.faithtime.ai/content/support/",
     },
     {
       label: "Contact",
-      href: "/footer",
+      href: "https://www.faithtime.ai/content/contact/",
     },
   ],
   navMenuItems: [

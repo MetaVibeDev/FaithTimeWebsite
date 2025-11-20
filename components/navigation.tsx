@@ -1,9 +1,27 @@
 import Image from "next/image";
 import React from "react";
+import { siteConfig } from "@/config/site";
 
 interface NavigationHeaderProps {
   className?: string;
 }
+
+interface NavLinkProps {
+  href: string;
+  label: string;
+}
+
+const NavLink: React.FC<NavLinkProps> = ({ href, label }) => {
+  return (
+    <a
+      href={href}
+      className="text-base py-[15px] text-[#202020] hover:text-gray-600 transition-colors duration-200"
+      style={{ fontFamily: "Roboto, sans-serif", fontWeight: "500" }}
+    >
+      {label}
+    </a>
+  );
+};
 
 const NavigationHeader: React.FC<NavigationHeaderProps> = ({
   className = "",
@@ -22,42 +40,9 @@ const NavigationHeader: React.FC<NavigationHeaderProps> = ({
           </div>
           {/* Navigation Links */}
           <nav className="md:flex  hidden items-center space-x-8">
-            <a
-              href="#home"
-              className="text-sm font-medium text-black hover:text-gray-600 transition-colors duration-200"
-            >
-              Home
-            </a>
-            <a
-              href="#card"
-              className="text-sm font-medium text-black hover:text-gray-600 transition-colors duration-200"
-            >
-              Services
-            </a>
-            <a
-              href="#detail"
-              className="text-sm font-medium text-black hover:text-gray-600 transition-colors duration-200"
-            >
-              About
-            </a>
-            <a
-              href="#testimonials"
-              className="text-sm font-medium text-black hover:text-gray-600 transition-colors duration-200"
-            >
-              Reviews
-            </a>
-            <a
-              href="#download"
-              className="text-sm font-medium text-black hover:text-gray-600 transition-colors duration-200"
-            >
-              Download
-            </a>
-            <a
-              href="#footer"
-              className="text-sm font-medium text-black hover:text-gray-600 transition-colors duration-200"
-            >
-              Contact
-            </a>
+            {siteConfig.navItems.map((item) => (
+              <NavLink key={item.href} href={item.href} label={item.label} />
+            ))}
           </nav>
           {/* CTA Button */}
         </div>
